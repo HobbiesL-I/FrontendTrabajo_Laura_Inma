@@ -17,18 +17,21 @@
 <body class="body-area">
     <header class="header-area">
 
-        <ul class="headerMenu-left font-title">
-            <li onclick="window.location.href=''">Juegos de Mesa</li>
-            <li onclick="window.location.href=''">Películas</li>
-        </ul>
-
         <div class="header-image">
             <img src="https://placehold.co/100" alto="Logo Página Web">
         </div>
 
-        <ul class="headerMenu-right font-title">
+        <ul class="headerMenu-left font-title">
+            <li onclick="window.location.href=''">Juegos de Mesa</li>
+            <li onclick="window.location.href=''">Películas</li>
             <li onclick="window.location.href=''">Mis Reseñas</li>
         </ul>
+
+        <div class="headerMenu-right font-title">
+                <form method="get" id="search-pirate">
+                    <input type="search" id="s" class="search-hobbie" value="" placeholder="Busca por titulo" />
+                </form>
+            </div>
     </header>
 
     <div class="container-area">
@@ -74,15 +77,46 @@
                 </div>
 
                 <div class="movies-images">
-                    <img class="new-image" src="./images/movies_example.jpg" alto="Imagenes peliculas">
+                    <ul>
+                        <li>
+                            <div class="movie-elements">
+                                <img class="movie-image" src="./images/film01.jpg" alt="Juego de Mesa">
+                                <button onclick="window.location.href=''" class="btn-moreInfo">Más información</button>
+                            </div>
+
+                            <div class="movie-elements">
+                                <img class="movie-image" src="./images/film02.jpg" alt="Juego de Mesa">
+                                <button onclick="window.location.href=''" class="btn-moreInfo">Más información</button>
+                            </div>
+                            <div class="movie-elements">
+                                <img class="movie-image" src="./images/film03.jpg" alt="Juego de Mesa">
+                                <button onclick="window.location.href=''" class="btn-moreInfo">Más información</button>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
             </section>
 
             <section class="container-boardgames">
-                <div class="boardgames-images">
-                    <img class="new-image" src="./images/movies_example.jpg" alto="Imagenes juegos de mesa">
-                </div>
+                <ul>
+                    <!--TODO Cambiar los nombres de las clases para boardgames o hacer genericos para ambos en ciertos elementos-->
+                        <li>
+                            <div class="movie-elements">
+                                <img class="movie-image" src="./images/Boardgame01.jpg" alt="Juego de Mesa">
+                                <button onclick="window.location.href=''" class="btn-moreInfo">Más información</button>
+                            </div>
+
+                            <div class="movie-elements">
+                                <img class="movie-image" src="./images/Boardgame02.jpg" alt="Juego de Mesa">
+                                <button onclick="window.location.href=''" class="btn-moreInfo">Más información</button>
+                            </div>
+                            <div class="movie-elements">
+                                <img class="movie-image" src="./images/Boardgame03.png" alt="Juego de Mesa">
+                                <button onclick="window.location.href=''" class="btn-moreInfo">Más información</button>
+                            </div>
+                        </li>
+                    </ul>
 
                 <div class="boardgames-information">
                     <h1>¡Nuestra biblioteca de juegos de mesa!</h1>
