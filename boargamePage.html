@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Mesa</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Momo+Trust+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Paytone+One&family=Playwrite+DE+SAS:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rozha+One&family=Rye&family=Satisfy&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styleCommonElements.css">
+    <link rel="stylesheet" href="css/styleFonts.css">
+    <link rel="stylesheet" href="css/styleBoardgame.css">
+</head>
+
+<body>
+    <header class="header-area">
+
+        <div class="header-image">
+            <img src="https://placehold.co/100" alto="Logo Página Web">
+        </div>
+
+        <ul class="headerMenu-left font-title">
+            <li onclick="window.location.href=''">Juegos de Mesa</li>
+            <li onclick="window.location.href=''">Películas</li>
+            <li onclick="window.location.href=''">Mis Reseñas</li>
+        </ul>
+
+        <div class="headerMenu-right font-title">
+            <form method="get" id="search-hobbie">
+                <input type="search" id="s" class="search-hobbie" value=""
+                    placeholder="¡Búscalo directamente y no te pierdas nada!" />
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="container-boardgameData">
+            <div class="container-images">
+                <div class="slider-frame">
+                    <ul>
+                        <li><img src="https://placehold.co/150x100" alt=""></li>
+                        <li><img src="https://placehold.co/150x100" alt=""></li>
+                        <li><img src="https://placehold.co/150x100" alt=""></li>
+                        <li><img src="https://placehold.co/150x100" alt=""></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="container-data">
+                <div class="data-title">
+                    <h1>Nombre</h1>
+                </div>
+
+                <div class="data-information">
+                    <h2>Precio</h2>
+                    <p>Descripcion del juego de mesa</p>
+                    <div>
+                        <p>Categoria: </p>
+                        <p>Mecánica: </p>
+                        <p>Edad: </p>
+                        <p>Complejidad: </p>
+
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td>Español</td>
+                                <td>Inglés</td>
+                                <td>Portugues</td>
+                            </tr>
+                            <tr>
+                                <td>Idiomas</td>
+                                <td><i class="fa-regular fa-circle-check"></i></td>
+                                <td><i class="fa-regular fa-circle-xmark"></i></td>
+                                <td><i class="fa-regular fa-circle-check"></i></td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>3+</td>
+                            </tr>
+
+                            <tr>
+                                <td>Jugadores</td>
+                                <td><i class="fa-regular fa-circle-check"></i></td>
+                                <td><i class="fa-regular fa-circle-xmark"></i></td>
+                                <td><i class="fa-regular fa-circle-check"></i></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="container-recomendations">
+            <h1>Otros juegos que te podrian gustar</h1>
+            <div class="recomendation-list">
+                <div>
+                    <div class="recomendation-boardgame">
+                        <img class="boardgame-image" src="https://placehold.co/200x250">
+                        <p>Nombre juego</p>
+                        <div>
+                            <button onclick="window.location.href=''" class="btn-style">Más información</button>
+                            <button onclick="window.location.href=''" class="btn-style">Valorar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="recomendation-boardgame">
+                        <img class="boardgame-image" src="https://placehold.co/200x250">
+                        <p>Nombre juego</p>
+                        <div>
+                            <button onclick="window.location.href=''" class="btn-style">Más información</button>
+                            <button onclick="window.location.href=''" class="btn-style">Valorar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="recomendation-boardgame">
+                        <img class="boardgame-image" src="https://placehold.co/200x250">
+                        <p>Nombre juego</p>
+                        <div>
+                            <button onclick="window.location.href=''" class="btn-style">Más información</button>
+                            <button onclick="window.location.href=''" class="btn-style">Valorar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="recomendation-boardgame">
+                        <img class="boardgame-image" src="https://placehold.co/200x250">
+                        <p>Nombre juego</p>
+                        <div>
+                            <button onclick="window.location.href=''" class="btn-style">Más información</button>
+                            <button onclick="window.location.href=''" class="btn-style">Valorar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer-area">
+        <h1>Subscribete a nuestro boletin para mantenerte informad@ de las últimas tendencias</h1>
+        <form>
+            <input class="field" placeholder="Correo electrónico" type="text" required>
+            <button onclick="window.location.href=''" class="btn-submit">Subscribirse</button>
+        </form>
+        <div class="footer-images">
+            <a href="" class="socialMedia-btn">
+                <img class="image-socialMedia" src="./images/icon_insta.png" alto="Logo Página Web">
+            </a>
+
+            <a href="">
+                <img class="image-socialMedia" src="./images/icon_tiktok.png" alto="Logo Página Web">
+            </a>
+
+            <a href="">
+                <img class="image-socialMedia" src="./images/icon_linkedin.png" alto="Logo Página Web">
+            </a>
+        </div>
+        <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+    </footer>
+
+</body>
+
+</html>
