@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Juego de Mesa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styleCommonElements.css">
+    <link rel="stylesheet" href="css/styleFonts.css">
+    <link rel="stylesheet" href="css/styleNewBoardgame.css">
+</head>
+<body class="body-area">
+
+    <div class="form-data">
+
+        <form>
+            <div class="title">
+                <h1>NUEVO JUEGO</h1>
+            </div>
+            <div class="space">
+                <div class="space-small">
+                    <input class="field-small" placeholder="Nombre*" type="text" required>
+                    <input class="field-small" placeholder="Número máximo de jugadores*" type="text" required>
+                    <label class="haki-option">
+                            <input type="checkbox"><label for="box">Modo Solitario</label>
+                        </label>
+                </div>
+                <div class="space-small">
+                    <input class="field-small" placeholder="Precio*" type="text" required>
+                    <input class="field-small" placeholder="Duración de la partida (aprox.)*" type="text" required><br>
+                </div>
+                <div class="space-small">
+                    <input class="field-small" placeholder="Mecánica" type="text" required>
+                    <input class="field-small" placeholder="Edad" type="text" required><br>
+                </div>
+                <div class="space-small">
+                    <input class="field-small" placeholder="Dificultad*" type="text" required>
+                    <!--El campo de categorias cambiarlo a un elemento de form que permita multiple seleccion accediendo a los campos
+                    ya establecidos en los insert de la tabla category de la base de datos-->
+                    <input class="field-small" placeholder="Categorias" type="text" required><br>
+                </div>
+                <div class="space-small">
+                    <!--Lo mismo que en el campo categorias-->
+                    <input class="field-small" placeholder="Idiomas*" type="text" required>
+                </div>
+            </div>
+
+            <div class="space">
+                <textarea class="field-description" placeholder="Descripción" rows="9" cols="90"></textarea>
+            </div>
+            <h1>¡Añade las imagenes que quieras!</h1>
+            <div class="space">
+                <input type="file" id="foto" name="foto" accept="image/*" class="input-file">
+            </div>
+            <button onclick="window.location.href='logPoseCode.html'">AÑADIR JUEGO DE MESA</button>
+            
+            <div class="title">
+                <p>2025 One Piece 1990-2025 Toei Animation | ShonenJump</p>
+            </div>
+        </form>
+</body>
+</html>

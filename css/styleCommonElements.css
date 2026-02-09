@@ -1,12 +1,13 @@
 :root{
-    --color-main: #ffead8;
-    --color-firstSecondary: #e8988a;
+    --color-main: rgb(255, 234, 216);
+    --color-firstSecondary: rgb(232, 152, 138);
     --color-secondSecondary: #9c3f88;
     --color-tertiary: #2a1458;
 }
 
 body {
     background-color: rgba(255, 234, 216, 0.8);
+    padding-top: 100px; /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
     /*background-image: url('../images/background_image.jpg');
     background-size: 30% auto;
     background-repeat: repeat;
@@ -15,7 +16,12 @@ body {
 }
 
 .header-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: var(--color-firstSecondary);
+    z-index: 1000;
     display: flex;
     padding: 1%;
     align-items: center;

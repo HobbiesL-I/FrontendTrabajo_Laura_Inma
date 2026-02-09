@@ -10,6 +10,7 @@
 
 .container-images{
     grid-area: images;
+    padding-top:80px; /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
 }
 
 .container-boardgameData {
@@ -76,6 +77,22 @@
     background-color: var(--color-firstSecondary);
     border-radius: 7px;
     padding: 2%;
+}
+
+.information-element{
+    border-bottom: 2px solid var(--color-main)
+
+}
+.data-share{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.data-detail{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .container-recomendations {
