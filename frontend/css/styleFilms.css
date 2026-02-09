@@ -1,129 +1,88 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Fredoka";
-}
-body {
-    background-color:#ffEad8 ;
-}
-.header-area {
-    background-color: #e8988a;
-    display: flex;
-    padding: 1%;
-    align-items: center;
-    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
 }
 
-.headerMenu-left {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    width: 50%;
+/* BODY */
+body {
+  background-color: #ffead8;
+}
+
+/* ================= HEADER ================= */
+
+.header-area {
+  background-color: #e8988a;
+  display: flex;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .header-image {
-    display: flex;
-    justify-content: center;
-    width: 60%;
+  width: 15%;
+}
+
+.headerMenu-left {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  width: 55%;
+}
+
+.headerMenu-left li {
+  cursor: pointer;
 }
 
 .headerMenu-right {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    width: 50%;
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
 }
 
+.search-hobbie {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+}
 
-    
-
-.main-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-.logo {
-    font-family: "Fredoka", sans-serif;
-    font-size: 20px;
-}
-.logo span {
-    color: #9b177E;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-nav ul li {
-    cursor: pointer;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-nav ul li:hover {
-    color: #9b177E;
-}
-/* ===============================
-   HERO / PRESENTACIÓN FULL SCREEN
-================================ */
+/* ================= PRESENTACIÓN ================= */
 
 .presentacion {
-  height: 100vh;              /* Pantalla completa */
+  height: 80vh;
+   min-height: 500px;
   position: relative;
   overflow: hidden;
 }
 
-/* Imagen ocupa todo */
-.presentacion--imagen {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.hero img {
   width: 100%;
   height: 100%;
-  z-index: 1;
+  object-fit: cover;
+  display: block;
 }
 
-.presentacion--imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-   background-color:#E8988a;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;         /* Clave: no se deforma */
-}
 
-/* Oscurecer imagen (efecto Netflix) */
-.presentacion::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.4),
-    #141414
-  );
-  z-index: 2;
-}
-
-/* Texto encima de la imagen */
 .header-content {
   position: relative;
   z-index: 3;
   height: 100%;
   display: flex;
   align-items: center;
+  padding-left: 60px;
 }
 
 .header-txt {
   max-width: 600px;
   color: white;
-  padding-left: 60px;
 }
 
 .header-txt h1 {
@@ -136,76 +95,137 @@ nav ul li:hover {
   line-height: 1.5;
 }
 
+/* ================= MAIN ================= */
 
-.container{
-    display: flex;
-    gap: 29px;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
 .peliculas {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 40px 30px;
 }
+
+/* FILA / CATEGORÍA */
+.fila {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.fila h2 {
+  margin-bottom: 15px;
+}
+
+/* CARRUSEL */
+.pelis {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 40px;
+}
+
+.pelis::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD PELÍCULA */
 .pelicula {
-    background-color:#E8988a;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
+  min-width: 240px;
+  background-color: #e8988a;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 .pelicula:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
+
 .pelicula img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 15px;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  height: 300px;
+  object-fit: cover;
 }
+
 .pelicula h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
-.footer-area{
-    background-color: #2a1458;
-    color: #ffead8;
-    margin-top: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+/* BOTONES */
+.pelicula button {
+  background-color: #b0444e;
+  color: #ffead8;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+/* FLECHAS */
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #b0444e;
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.izquierda {
+  left: -25px;
+}
+
+.derecha {
+  right: -25px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer-area {
+  background-color: #2a1458;
+  color: #ffead8;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-area form {
+  display: flex;
+  gap: 10px;
+}
+
+.field {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-submit {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: #e8988a;
+  cursor: pointer;
 }
 
 .footer-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0;
-    padding: 0;
+  display: flex;
+  gap: 15px;
 }
 
 .image-socialMedia {
-    width: 40px;
-    height: 40px;
-    margin: 0;
-    padding: 0;
-    display: block;
+  width: 40px;
+  height: 40px;
 }
 
-.socialMedia-btn {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-}

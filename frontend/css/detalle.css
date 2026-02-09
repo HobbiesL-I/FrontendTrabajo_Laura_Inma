@@ -1,0 +1,39 @@
+#detalle-pelicula {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+#detalle-pelicula img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+#detalle-pelicula h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: "Rozha One", serif;
+}
+
+#detalle-pelicula p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#detalle-pelicula a {
+  display: inline-block;
+  margin-top: 20px;
+  color: rgb(82, 45, 45);
+  background-color:#b0444e;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#detalle-pelicula a:hover {
+  background-color: #be5586;
+}
