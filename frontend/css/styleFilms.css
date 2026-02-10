@@ -131,7 +131,7 @@ body {
   min-width: 240px;
   background-color: #e8988a;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 2px;
   text-align: center;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -143,7 +143,7 @@ body {
 
 .pelicula img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 4px;
   margin-bottom: 10px;
   height: 300px;
   object-fit: cover;
