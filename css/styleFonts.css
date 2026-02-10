@@ -1,12 +1,12 @@
 /*Tipografía para títulos: Fredoka*/
 .font-title {
-    font-family: "Fredoka", sans-serif;
-    font-size: 20px;
-    font-weight: weight;
-    font-style: normal;
+  font-family: "Fredoka", sans-serif;
+  font-size: 20px;
+  font-weight: weight;
+  font-style: normal;
 }
 
-h1{
+h1 {
   font-family: "Rozha One", serif;
   font-size: 30px;
   font-weight: 200;

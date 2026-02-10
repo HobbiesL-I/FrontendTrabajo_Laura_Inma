@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-main: rgb(255, 234, 216);
     --color-firstSecondary: rgb(232, 152, 138);
     --color-secondSecondary: #9c3f88;
@@ -7,7 +7,8 @@
 
 body {
     background-color: rgba(255, 234, 216, 0.8);
-    padding-top: 100px; /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
+    padding-top: 100px;
+    /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
     /*background-image: url('../images/background_image.jpg');
     background-size: 30% auto;
     background-repeat: repeat;
@@ -48,35 +49,41 @@ body {
     width: 50%;
 }
 
-table{
+.search-hobbie {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+table {
     margin-bottom: 10px;
     border-collapse: separate;
     border-spacing: 8px 4px;
     color: var(--color-main);
     border: 2px solid var(--color-main);
-    gap:10px;
+    gap: 10px;
 }
 
-table th{
+table th {
     background-color: var(--color-main);
-    border-right:2px solid var(--color-firstSecondary);
+    border-right: 2px solid var(--color-firstSecondary);
     text-align: center;
     vertical-align: middle;
 }
 
-table td{
+table td {
     padding: 5px 10px;
     text-align: center;
     vertical-align: middle;
 }
 
-table td:first-child{
+table td:first-child {
     background-color: var(--color-firstSecondary);
     text-align: center;
     vertical-align: middle;
 }
 
-.footer-area{
+.footer-area {
     background-color: var(--color-firstSecondary);
     color: var(--color-main);
     margin-top: 1%;
@@ -92,6 +99,20 @@ table td:first-child{
     gap: 15px;
     margin: 20px 0;
     padding: 0;
+}
+
+.field {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-submit {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #e8988a;
+    cursor: pointer;
 }
 
 .image-socialMedia {
