@@ -42,5 +42,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  const buscador = document.getElementById("s");
+const peliculas = document.querySelectorAll(".pelicula");
+
+buscador.addEventListener("input", () => {
+  const texto = buscador.value.toLowerCase();
+
+  peliculas.forEach(peli => {
+    const titulo = peli.querySelector("h3").textContent.toLowerCase();
+
+    if (titulo.includes(texto)) {
+      peli.style.display = "block";
+    } else {
+      peli.style.display = "none";
+    }
+  });
+});
+
 });
 

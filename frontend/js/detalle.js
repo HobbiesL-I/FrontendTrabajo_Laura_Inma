@@ -1,7 +1,7 @@
 const peliculas = {
   "iron-man": {
     titulo: "Iron Man ",
-    imagen: "imagenes/iron man.jpg",
+    imagen: "imagenes/iron-man.jpg",
     descripcion: "Tony Stark se enfrenta a un poderoso enemigo mientras lucha con su propia identidad."
   },
   "guardianes-de-la-galaxia": {
@@ -13,7 +13,29 @@ const peliculas = {
     titulo: "Capitana Marvel",
     imagen: "imagenes/capitana marvel.jpg",
     descripcion: "Carol Danvers descubre sus poderes y su verdadero origen."
-  }
+  },
+  "MARVEL X-MEN": {
+    titulo: "X-Men",
+    imagen: "imagenes/MARVEL X-MEN.jpg",
+    descripcion: "Un grupo de mutantes lucha por su supervivencia en un mundo hostil."
+  },
+  "Lida de la justicia": {
+    titulo: "Liga de la Justicia",
+    imagen: "imagenes/Lida de la justicia.jpg",
+    descripcion: "Un grupo de superhéroes se une para proteger la Tierra."
+  },
+  "Batman vs Superman": {
+    titulo: "Batman vs Superman",
+    imagen: "imagenes/Batman vs Superman.jpg",
+    descripcion: "Batman y Superman se enfrentan en una batalla épica."
+  },
+  "doctor strange": {
+    titulo: "Doctor Strange",
+    imagen: "imagenes/doctor strange.jpg",
+    descripcion: "Un neurocirujano descubre el mundo de la magia y las dimensiones ocultas."
+  },
+
+
   
 };
 
