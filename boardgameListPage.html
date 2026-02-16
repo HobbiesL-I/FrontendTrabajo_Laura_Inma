@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Momo+Trust+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Paytone+One&family=Playwrite+DE+SAS:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rozha+One&family=Rye&family=Satisfy&family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
+    <script src="./js/script-dom-boardgamesListPage.js"></script>
     <link rel="stylesheet" href="css/styleCommonElements.css">
     <link rel="stylesheet" href="css/styleFonts.css">
     <link rel="stylesheet" href="css/styleBoardgameList.css">
@@ -23,9 +24,9 @@
         </div>
 
         <ul class="headerMenu-left font-title">
-            <li onclick="window.location.href=''">Juegos de Mesa</li>
-            <li onclick="window.location.href=''">Películas</li>
-            <li onclick="window.location.href=''">Mis Reseñas</li>
+            <li onclick="window.location.href='boardgameListPage.html'" class="header-options">Juegos de Mesa</li>
+            <li onclick="window.location.href=''" class="header-options">Películas</li>
+            <li onclick="window.location.href=''" class="header-options">Mis Reseñas</li>
         </ul>
 
         <div class="headerMenu-right font-title">
@@ -36,136 +37,31 @@
         </div>
     </header>
 
-    <div class="container-area">
+    <div class="container-area" id="option">
 
         <section class="container-filterMenu">
             <!--Menu filtrar-->
             <ul class="filterMenu">
                 <p>Opciones y filtros</p>
 
-                <li>Categoria
-                    <ul>
-                        <li>Party Games</li>
-                        <li>Cooperativos</li>
-                        <li>Estrategia</li>
-                        <li>Cartas</li>
-                    </ul>
+                <li id="age">Edad
+                    <!--SubMenu Edad de juegos || Función createOptions en js-->
                 </li>
 
-                <li>Idiomas
-                    <ul>
-                        <li>Español</li>
-                        <li>Ingles</li>
-                        <li>Frances</li>
-                        <li>Italiano</li>
-                    </ul>
-
+                <li id="numberPlayers">Num. Jugadores
+                    <!--SubMenu Numero de Jugadores || Función createOptions en js-->
                 </li>
-
-                <li>Edad
-                    <ul>
-                        <li>8+</li>
-                        <li>12+</li>
-                        <li>18+</li>
-                    </ul>
+                <li id="mecanic">Mecanica
+                    <!--SubMenu Mecanicas || Función createOptions en js-->
                 </li>
-
-                <li>Num. Jugadores
-                    <ul>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>5</li>
-                    </ul>
-                </li>
-                <li>Mecanica
-                    <ul>
-                        <li>Apuestas</li>
-                        <li>Juego de Roles</li>
-                    </ul>
-                </li>
-                <li>Precio
-                    <ul>
-                        <li>20+</li>
-                        <li>30+</li>
-                        <li>40+</li>
-                    </ul>
+                <li id="price">Precio
+                    <!--SubMenu Precio || Función createOptions en js-->
                 </li>
             </ul>
         </section>
 
-        <section class="container-boardgameList">
-            <!--listado juegos de mesa-->
-
-            <div class="list-boardgame">
-                <img class="boardgame-image" src="https://placehold.co/200x250">
-                <p>Nombre juego</p>
-                <div>
-                    <button onclick="window.location.href='boardgamePage.html'" class="btn-style">Más
-                        información</button>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                </div>
-            </div>
-
-            <div class="list-boardgame">
-                <img class="boardgame-image" src="https://placehold.co/200x250">
-                <p>Nombre juego</p>
-                <div>
-                    <button onclick="window.location.href='boardgamePage.html'" class="btn-style">Más
-                        información</button>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                </div>
-            </div>
-
-            <div class="list-boardgame">
-                <img class="boardgame-image" src="https://placehold.co/200x250">
-                <p>Nombre juego</p>
-                <div>
-                    <button onclick="window.location.href='boardgamePage.html'" class="btn-style">Más
-                        información</button>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                </div>
-            </div>
-
-            <div class="list-boardgame">
-                <img class="boardgame-image" src="https://placehold.co/200x250">
-                <p>Nombre juego</p>
-                <div>
-                    <button onclick="window.location.href='boardgamePage.html'" class="btn-style">Más
-                        información</button>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                </div>
-            </div>
-
-            <div class="list-boardgame">
-                <img class="boardgame-image" src="https://placehold.co/200x250">
-                <p>Nombre juego</p>
-                <div>
-                    <button onclick="window.location.href='boardgamePage.html'" class="btn-style">Más
-                        información</button>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                </div>
-            </div>
-
-            <div class="list-boardgame">
-                <img class="boardgame-image" src="https://placehold.co/200x250">
-                <p>Nombre juego</p>
-                <div>
-                    <button onclick="window.location.href='boardgamePage.html'" class="btn-style">Más
-                        información</button>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                </div>
-            </div>
-
-            <div class="list-boardgame">
-                <img class="boardgame-image" src="https://placehold.co/200x250">
-                <p>Nombre juego</p>
-                <div>
-                    <button onclick="window.location.href='boardgamePage.html'" class="btn-style">Más
-                        información</button>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                </div>
-            </div>
-
+        <section class="container-boardgameList" id="content">
+            <!--listado juegos de mesa || Función createBoardgames en js-->
         </section>
 
 
