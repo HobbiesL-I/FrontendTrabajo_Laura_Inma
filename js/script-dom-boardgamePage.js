@@ -2,10 +2,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('detalles del juego de mesa');
 
     let params = new URLSearchParams(document.location.search);
-    let id = params.get("id");
-    console.log(id);
+    let idBoardgamePage = params.get("id");
+    console.log(idBoardgamePage);
 
-    const url = `http://localhost:8080/hobbies/boardgames/${id}`;
+    let difficultyBoardgame = params.get("difficulty");
+    console.log(difficultyBoardgame);
+    
+    const url = `http://localhost:8080/hobbies/boardgames/${idBoardgamePage}`;
 
     const getBoardgameData = async () => {
         try {
@@ -18,9 +21,48 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
+    const urlValoration = `http://localhost:8080/hobbies/valorationsBoardgame/${idBoardgamePage}`;
+
+    const getValorationData = async () => {
+        try {
+
+            const result = await fetch(urlValoration);
+            const valorationList = await result.json();
+            console.log(valorationList);
+
+            const filteredValorations = valorationList.filter(valoration => valoration.idBoardgame == idBoardgamePage);
+            console.log('Valoraciones del juego con id ', idBoardgamePage, filteredValorations)
+
+            if (filteredValorations.length === 0) {
+                createValorationEmpty(filteredValorations);
+            }
+            else {
+                createValoration(filteredValorations);
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const urlBoardgameList = `http://localhost:8080/hobbies/boardgames`;
+    const getRecomendationData = async () => {
+        try {
+            const result = await fetch(urlBoardgameList);
+            const recomendationList = await result.json();
+            console.log(recomendationList);
+
+            const filteredValorations = recomendationList.filter(recomendation => recomendation.difficulty == difficultyBoardgame);
+            console.log('Recomendaciones del juego con id ', idBoardgamePage, filteredValorations);
+            createRecomendation(recomendationList);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     const createBoardgame = (boardgame) => {
         console.log(boardgame);
-        const boardgameElement = document.getElementById('content');
+        const boardgameElement = document.getElementById('boardgame');
 
         const {
             idBoardgame,
@@ -38,26 +80,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
             videoBoardgame
         } = boardgame
 
-        const card = document.createElement(`section`);
-        card.classList.add('container-boardgameData');
-        card.innerHTML = `
-            <div class="container-images">
-                <div class="slider-frame">
-                    <ul>
-                        <li><img src="${imageBoardgame}" alt=""></li>
-                        <li><img src="${videoBoardgame}" alt=""></li>
-                        <li><img src="https://placehold.co/150x100" alt=""></li>
-                        <li><img src="https://placehold.co/150x100" alt=""></li>
-                    </ul>
-                </div>
+        const cardData = document.createElement(`section`);
+        cardData.classList.add('container-boardgameData');
+        cardData.innerHTML = `
+             <div class="container-imageDescription">
+                <h1>${name}</h1>
+                <img src="${imageBoardgame}" alt="${name} image">
+                <h2>Detalles</h2>
                 <p>${description}</p>
             </div>
 
             <div class="container-data">
-                <div class="data-title">
-                    <h1>${name}</h1>
-                </div>
-
                 <div class="data-information">
                     <div class="information-element">
                         <h2>${price}</h2>
@@ -77,15 +110,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                             </tr>
 
                             <tr>
-                                <td>${numberPlayers}</td>
-                                <!--TODO Falta poner que si onePlayer is true sale una cosa y si onePlayer is false sale otra-->
+                                <td>2-6</td>
                                 <td><i class="fa-regular fa-circle-check"></i></td>
-                                <td>${age}</td>
+                                <td>+8</td>
                             </tr>
                         </table>
                     </div>
 
-                    <div>
+                    <div  class="information-element">
                         <h2>Especificaciones</h2>
                         <p>Mecánica: ${mecanic}</p>
                         <p>Complejidad: ${difficulty}</p>
@@ -95,14 +127,89 @@ window.addEventListener('DOMContentLoaded', (event) => {
                             <p>${playTime}</p>
                         </div>
                     </div>
+
+                    <div class="video-tutorial">
+                        <h2>Tutorial</h2>
+                        <a href="${videoBoardgame}" target="_blank">
+                            <img src="https://img.youtube.com/vi/ID/mqdefault.jpg" class="image-youtube" alt="Preview video youtube">
+                            <div class="play-overlay">
+                                <i class="fa-regular fa-circle-play fa-5x"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         `;
 
-        boardgameElement.appendChild(card);
+        boardgameElement.appendChild(cardData);     
+
+    }
+
+    const createValorationEmpty = () => {
+        const cardValoration = document.getElementById('valorationSection');
+        const valorationContent = document.createElement(`div`);
+        valorationContent.classList.add('container-valorations');
+        valorationContent.innerHTML = `
+        <h1>¡Se el primero en valorar este juego!</h1>
+        `
+        cardValoration.appendChild(valorationContent);
+    }
+
+    const createValoration = (valorations) => {
+
+        console.log(valorations);
+
+        const cardValoration = document.getElementById('valorationSection');
+
+        const cardValorationIntro = document.createElement(`div`);
+        cardValorationIntro.classList.add('container-valorations');
+        cardValorationIntro.innerHTML = `
+            <h1>Mira lo que otros opinan</h1>
+        `;
+
+        cardValoration.appendChild(cardValorationIntro);
+
+        const cardValorationList = document.createElement(`div`);
+        cardValorationList.classList.add('valoration');
+
+        valorations.forEach((valorationBoardgame) => {
+            const {
+                namePerson,
+                qualification,
+                review
+            } = valorationBoardgame;
+
+            const tableValoration = document.createElement(`table`);
+
+            tableValoration.innerHTML = `
+                    <tr>
+                        <td><i class="fa-solid fa-star"></i> ${qualification}</td>
+                        <td>Titulo de la valoración</td>
+                    </tr>
+
+                    <tr>
+                        <td>${namePerson}</td>
+                        <td>${review}</td>
+                    </tr>
+            `;
+            cardValorationList.appendChild(tableValoration);
+        });
+
+        cardValorationIntro.appendChild(cardValorationList);
+
+    }
+
+
+
+    const createRecomendation = (recomendations) => {
+        console.log(recomendations)
+
+
     }
 
     getBoardgameData();
+    getValorationData();
+    getRecomendationData();
 
 });
 

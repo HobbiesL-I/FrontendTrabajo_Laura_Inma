@@ -63,28 +63,27 @@ table {
     margin-bottom: 10px;
     border-collapse: separate;
     border-spacing: 8px 4px;
-    color: var(--color-main);
-    border: 2px solid var(--color-main);
+    color: black;
+    border-bottom: 1px solid black;
     gap: 10px;
 }
 
 table th {
-    background-color: var(--color-main);
-    border-right: 2px solid var(--color-firstSecondary);
-    text-align: center;
+    border-right: 2px solid  black;
+    text-align: start;
     vertical-align: middle;
 }
 
 table td {
     padding: 5px 10px;
-    text-align: center;
+    text-align: start;
     vertical-align: middle;
 }
 
 table td:first-child {
-    background-color: var(--color-firstSecondary);
-    text-align: center;
+    text-align: start;
     vertical-align: middle;
+    border-right: 1px solid black;
 }
 
 a{

@@ -5,86 +5,28 @@
     grid-template-rows: auto;
     grid-template-areas:
         "boardgameData"
+        "valorations"
         "recomendations";
-}
-
-.container-images {
-    grid-area: images;
-    padding-top: 80px;
-    /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
 }
 
 .container-boardgameData {
     grid-area: boardgameData;
     display: flex;
-    align-items: stretch;
+    align-items: flex-start;
+    justify-content: center;
     height: 100%;
 }
 
-.slider-frame {
-    flex: 0 0 70%;
-    width: 100%;
-    max-width: 100%;
-    height: 700px;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.slider-frame ul {
+.container-imageDescription {
     display: flex;
-    width: 400%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    animation: slide 16s infinite alternate ease-in-out;
-    box-sizing: border-box;
-}
+    flex-direction: column;
+    width: 50%;
+    margin-top: 1%;
 
-.slider-frame li {
-    flex: 0 0 25%;
-    height: 100%;
-    margin: 0;
-}
-
-.slider-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes slide {
-
-    0%,
-    5% {
-        transform: translateX(0%);
-    }
-
-    25%,
-    30% {
-        transform: translateX(-25%);
-    }
-
-    50%,
-    55% {
-        transform: translateX(-50%);
-    }
-
-    75%,
-    80% {
-        transform: translateX(-75%);
-    }
-
-    100% {
-        transform: translateX(0%);
-    }
 }
 
 .container-data {
-    flex: 1;
     display: flex;
-    flex-basis: 30%;
     flex-direction: column;
     padding: 1%;
     min-width: 30%;
@@ -101,6 +43,7 @@
     background-color: var(--color-firstSecondary);
     border-radius: 7px;
     padding: 2%;
+    margin-top: 18%;
 }
 
 .information-element {
@@ -119,10 +62,40 @@
     gap: 10px;
 }
 
+.video-tutorial {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 58%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 80%;
+}
+
+.image-youtube {
+    width: 95%;
+}
+
+.container-valorations {
+    grid-area: valorations;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
 .container-recomendations {
     grid-area: recomendations;
     display: flex;
     flex-direction: column;
+    padding-left: 9%;
+    padding-right: 9%;
 }
 
 .recomendation-list {

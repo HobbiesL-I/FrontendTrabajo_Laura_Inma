@@ -25,6 +25,7 @@ const createBoardgames = (boardgameList) => {
         const {
             idBoardgame,
             name,
+            difficulty,
             imageBoardgame
         } = boardgame;
 
@@ -34,7 +35,7 @@ const createBoardgames = (boardgameList) => {
             <img class="boardgame-image" src="${imageBoardgame}">
                 <p>${name}</p>
                 <div>
-                    <a href="boardgamePage.html?id=${idBoardgame}">
+                    <a href="boardgamePage.html?id=${idBoardgame}&difficulty=${difficulty}">
                         <button class="btn-style">Más información</button>
                     </a>
                     <button onclick="window.location.href=''" class="btn-style">Valorar</button>

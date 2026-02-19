@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./js/script-dom-boardgamePage.js"></script>    
+    <script src="./js/script-dom-boardgamePage.js"></script>
     <link rel="stylesheet" href="css/styleCommonElements.css">
     <link rel="stylesheet" href="css/styleFonts.css">
     <link rel="stylesheet" href="css/styleBoardgame.css">
@@ -38,25 +38,15 @@
         </div>
     </header>
 
-    <div class="container" id="content">
+    <div class="container" id="boardgame">
         <!--<section class="container-boardgameData">
-            <div class="container-images">
-                <div class="slider-frame">
-                    <ul>
-                        <li><img src="https://placehold.co/150x100" alt=""></li>
-                        <li><img src="https://placehold.co/150x100" alt=""></li>
-                        <li><img src="https://placehold.co/150x100" alt=""></li>
-                        <li><img src="https://placehold.co/150x100" alt=""></li>
-                    </ul>
-                </div>
+            <div class="container-imageDescription">
+                <h1>Nombre</h1>
+                <img src="https://placehold.co/150x100" alt="${name} image">
                 <p>Detalles del juego de mesa (campo descripcion de la base de datos)</p>
             </div>
 
             <div class="container-data">
-                <div class="data-title">
-                    <h1>Nombre</h1>
-                </div>
-
                 <div class="data-information">
                     <div class="information-element">
                         <h2>Precio</h2>
@@ -83,7 +73,7 @@
                         </table>
                     </div>
 
-                    <div>
+                    <div  class="information-element">
                         <h2>Especificaciones</h2>
                         <p>Categoria: </p>
                         <p>Mecánica: </p>
@@ -98,12 +88,61 @@
                             <p>30 min</p>
                         </div>
                     </div>
+
+                    <div class="video-tutorial">
+                        <h2>Tutorial</h2>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                            <img src="https://img.youtube.com/vi/ID/mqdefault.jpg" class="image-youtube" alt="Preview video youtube">
+                            <div class="play-overlay">
+                                <i class="fa-regular fa-circle-play fa-5x"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>-->
+        <section class="container-valorations" id="valorationSection">
+
+
+        </section>
+
+        <!--<section class="container-valorations">
+            <h1>Mira lo que otros opinan</h1>
+            <div class="valoration">
+                <table>
+                    <tr>
+                        <td><i class="fa-solid fa-star"></i> Valoración (sobre 10)</td>
+                        <td>Titulo de la valoración</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nombre o apodo</td>
+                        <td>Comentario</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><i class="fa-solid fa-star"></i> Valoración (sobre 10)</td>
+                        <td>Titulo de la valoración</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nombre o apodo</td>
+                        <td>Lo recomiendo para todos aquellos que les guste la mecánica de construcción de mazos y que
+                            busquen un juego reconocible, pero con un toque diferente para que sea distinto de los
+                            demás. Si eres fan de los libros lo vas a disfrutar mucho más.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>-->
+        <!--Prototipo de lo saldrá si no hay valoraciones
+        <section class="container-valorations">
+            <h1>¡Se el primero en valorar ${name}</h1>
+            <p>Esto saldrá si no hay juegos de mesa</p>
+        </section>-->
 
         <section class="container-recomendations">
-            <h1>Otros juegos que te podrian gustar</h1>
+            <h1>Otros juegos que te podrian gustar si has jugado a (nombre del juego)</h1>
             <div class="recomendation-list">
                 <div>
                     <div class="recomendation-boardgame">
