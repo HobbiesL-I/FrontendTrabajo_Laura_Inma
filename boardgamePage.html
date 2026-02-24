@@ -25,9 +25,11 @@
         </div>
 
         <ul class="headerMenu-left font-title">
-            <li onclick="window.location.href='boardgameListPage.html'">Juegos de Mesa</li>
-            <li onclick="window.location.href=''">Películas</li>
-            <li onclick="window.location.href=''">Mis Reseñas</li>
+            <li onclick="window.location.href=''" class="header-options">Inicio</li>
+            <li onclick="window.location.href='boardgameListPage.html'" class="header-options">Juegos de Mesa</li>
+            <li onclick="window.location.href=''" class="header-options">Películas</li>
+            <li onclick="window.location.href=''" class="header-options">Añadir Juego Nuevo</li>
+            <li onclick="window.location.href=''" class="header-options">Añadir Película Nueva</li>
         </ul>
 
         <div class="headerMenu-right font-title">
@@ -141,8 +143,8 @@
             <p>Esto saldrá si no hay juegos de mesa</p>
         </section>-->
 
-        <section class="container-recomendations">
-            <h1>Otros juegos que te podrian gustar si has jugado a (nombre del juego)</h1>
+        <section class="container-recomendations" id="sectionRecomendation">
+            <!--<h1>Otros juegos que te podrian gustar si has jugado a (nombre del juego)</h1>
             <div class="recomendation-list">
                 <div>
                     <div class="recomendation-boardgame">
@@ -187,30 +189,53 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </section>
     </div>
 
-    <footer class="footer-area">
-        <h1>Subscribete a nuestro boletin para mantenerte informad@ de las últimas tendencias</h1>
-        <form>
-            <input class="field" placeholder="Correo electrónico" type="text" required>
-            <button onclick="window.location.href=''" class="btn-submit">Subscribirse</button>
-        </form>
-        <div class="footer-images">
-            <a href="" class="socialMedia-btn">
-                <img class="image-socialMedia" src="./images/icon_insta.png" alto="Logo Página Web">
-            </a>
+    <footer>
+        <div class="footer-content">
 
-            <a href="">
-                <img class="image-socialMedia" src="./images/icon_tiktok.png" alto="Logo Página Web">
-            </a>
+            <div class="footer-section">
+                <h3>Titulo pagina web</h3>
+                <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
+            </div>
 
-            <a href="">
-                <img class="image-socialMedia" src="./images/icon_linkedin.png" alto="Logo Página Web">
-            </a>
+            <div class="footer-section">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
+                    <li><a href="#">Peliculas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
+                <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>¡Encuentranos en nuestras redes sociales!</h4>
+                <div class="social-links">
+                    <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
+                </div>
+            </div>
         </div>
-        <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+
+        <div class="footer-bottom">
+            <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+            <div class="footer-links">
+                <a href="">Política de privacidad</a>
+                <a href="">Términos de uso</a>
+                <a href="">Cookies</a>
+            </div>
+        </div>
     </footer>
 
 </body>

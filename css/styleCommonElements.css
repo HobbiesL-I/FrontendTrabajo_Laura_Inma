@@ -1,12 +1,12 @@
 :root {
     --color-main: rgb(255, 234, 216);
     --color-firstSecondary: rgb(232, 152, 138);
-    --color-secondSecondary: #9c3f88;
-    --color-tertiary: #2a1458;
+    --color-secondSecondary: rgb(156, 63, 136);
+    --color-tertiary: rgb(42, 20, 88);
 }
 
 body {
-    background-color: rgba(255, 234, 216, 0.8);
+    /*background-color: rgba(255, 234, 216, 0.8);*/
     padding-top: 100px;
     /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
     /*background-image: url('../images/background_image.jpg');
@@ -29,7 +29,7 @@ body {
     box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header-options{
+.header-options {
     cursor: pointer;
 }
 
@@ -69,7 +69,7 @@ table {
 }
 
 table th {
-    border-right: 2px solid  black;
+    border-right: 2px solid black;
     text-align: start;
     vertical-align: middle;
 }
@@ -86,52 +86,91 @@ table td:first-child {
     border-right: 1px solid black;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.footer-area {
-    background-color: var(--color-firstSecondary);
-    color: var(--color-main);
-    margin-top: 1%;
+.newsletter {
+    background-color: rgba(232, 152, 138, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 98vw;
+    margin-bottom: 20%;
+    margin-top: 20%;
 }
 
-.footer-images {
+form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0;
+    gap: 10px;
+    padding: 3%;
+
+}
+
+footer {
+    background: var(--color-firstSecondary);
+    color: var(--color-tertiary);
+    padding: 1%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+h3,
+h4 {
+    color: black;
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+}
+
+.footer-section ul {
+    list-style: none;
     padding: 0;
 }
 
-.field {
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
+.footer-section ul li {
+    margin-bottom: 0.5rem;
 }
 
-.btn-submit {
-    padding: 8px 15px;
-    border-radius: 8px;
-    border: none;
-    background-color: #e8988a;
-    cursor: pointer;
+.footer-section a {
+    color: var(--color-tertiary);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.image-socialMedia {
-    width: 40px;
-    height: 40px;
-    margin: 0;
-    padding: 0;
-    display: block;
+.footer-section a:hover {
+    color: var(--color-main);
 }
 
-.socialMedia-btn {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-tertiary);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    font-size: 0.9rem;
 }

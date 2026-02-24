@@ -39,6 +39,10 @@ const createBoardgames = (boardgameList) => {
                         <button class="btn-style">Más información</button>
                     </a>
                     <button onclick="window.location.href=''" class="btn-style">Valorar</button>
+                    <a href="boardgameDeletePage.html?id=${idBoardgame}&name=${name}">
+                        <button class="btn-style"><i class="fa-solid fa-trash"></i></button>
+                    </a>
+                    
                 </div>
         `;
 
@@ -102,56 +106,33 @@ const createOptions = (boardgameOptions) => {
 
     listPlayers.appendChild(playersCard);
 
-    //Mostramos los rangos de mecanicas registradas en la base de datos en un elemento ul.
-    const listMecanic = document.getElementById('mecanic');
-    const mecanic = boardgameOptions.map(boardgame => boardgame.mecanic);
-    const differentMecanics = [];
-
-    for (let i = 0; i < mecanic.length; i++) {
-        if (!differentMecanics.includes(mecanic[i])) {
-            differentMecanics.push(mecanic[i]);
-        }
-    }
-
-    const mecanicCard = document.createElement('ul');
-
-    differentMecanics.forEach(mecanic => {
-        const mecanicLi = document.createElement('li');
-        mecanicLi.textContent = mecanic;
-        mecanicCard.appendChild(mecanicLi);
-    });
-
-    listMecanic.appendChild(mecanicCard);
-
     //Mostramos los rangos de precios registradas en la base de datos en un elemento ul.
     const listPrice = document.getElementById('price');
     const price = boardgameOptions.map(boardgame => boardgame.price);
+    console.log(price)
     const differentPrices = [];
+    let label = null;
 
     for (let i = 0; i < price.length; i++) {
 
+        if (price[i] > 10.00) {
+            label = '+10';
+        }
+
+        if (price[i] > 20.00) {
+            label = '+20';
+        }
+
+        if (price[i] > 50.00) {
+            label = '+50';
+        }
+
         if (price[i] > 100.00) {
-            if (!differentPrices.includes(price[i])) {
-                differentPrices.push('10 euros o más');
-            }
+            label = '+100';
         }
 
-        else if (price[i] > 50.00) {
-            if (!differentPrices.includes(price[i])) {
-                differentPrices.push('20 euros o más');
-            }
-        }
-
-        else if (price[i] > 20.00) {
-            if (!differentPrices.includes(price[i])) {
-                differentPrices.push('50 euros o más');
-            }
-        }
-
-        else if (price[i] > 10.00) {
-            if (!differentPrices.includes(price[i])) {
-                differentPrices.push('100 euros o más');
-            }
+        if(!differentPrices.includes(label)){
+            differentPrices.push(label);
         }
     }
 
@@ -164,7 +145,7 @@ const createOptions = (boardgameOptions) => {
     });
 
     listPrice.appendChild(priceCard);
-};
+}
 
 getListBoardgames();
 getOptions();
