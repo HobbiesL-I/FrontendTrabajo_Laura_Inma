@@ -61,7 +61,11 @@ window.addEventListener('DOMContentLoaded', () => {
                         <button onclick="window.location.href=''" class="btn-style"><i
                                 class="fa-solid fa-star-half-stroke"></i>¡Valórame!</button>
                         <button onclick="window.location.href=''" 
-                                class="btn-style" id="delete-${idBoardgame}"><i class="fa-solid fa-trash"></i></button>        
+                                class="btn-style" id="delete-${idBoardgame}"><i class="fa-solid fa-trash"></i></button>  
+                        <a href="boardgameEditPage.html?id=${idBoardgame}&difficulty=${difficulty}">
+                            <button class="btn-style">Editar</button>
+                        </a>  
+    
                         <div class="data-share">
                             <p>Compartir: </p>
                             <i class="fa-brands fa-square-x-twitter"></i>
