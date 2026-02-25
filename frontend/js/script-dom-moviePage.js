@@ -1,63 +1,72 @@
-console.log("js conectado");
-function goToMovie(url) {
-    window.location.href = url;
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const filas = document.querySelectorAll('.fila');
+document.addEventListener("DOMContentLoaded", async () => {
 
-  filas.forEach(fila => {
-    const flechaIzquierda = fila.querySelector('.flecha.izquierda');
-    const flechaDerecha = fila.querySelector('.flecha.derecha');
-    const carrusel = fila.querySelector('.carrusel');
-    const peliculas = fila.querySelectorAll('.pelicula');
+    // 1. Obtener películas de la API
+    const response = await fetch("http://localhost:3000/movies");
+    const peliculas = await response.json();
 
-    // Creamos una copia de las películas para simular infinito
-    peliculas.forEach(pelicula => {
-      const clone = pelicula.cloneNode(true);
-      carrusel.appendChild(clone);
+    // 2. Agrupar por género
+    const generos = {};
+    peliculas.forEach(peli => {
+        const genero = peli.genre || "Sin categoría";
+        if (!generos[genero]) generos[genero] = [];
+        generos[genero].push(peli);
     });
 
-    const scrollAmount = peliculas[0].offsetWidth + 20; 
+    // 3. Crear las filas por género
+    const contenedor = document.getElementById("contenedor-peliculas");
 
-    flechaDerecha.addEventListener('click', () => {
-      carrusel.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
+    Object.keys(generos).forEach(genero => {
+        const fila = document.createElement("section");
+        fila.classList.add("fila");
+
+        fila.innerHTML = `
+            <h2>${genero}</h2>
+            <button class="flecha izquierda">&lt;</button>
+            <div class="pelis carrusel"></div>
+            <button class="flecha derecha">&gt;</button>
+        `;
+
+        const carrusel = fila.querySelector(".carrusel");
+
+        generos[genero].forEach(peli => {
+            const article = document.createElement("article");
+            article.classList.add("pelicula");
+            article.innerHTML = `
+                <img src="imagenes/${peli.image}" alt="${peli.title}">
+                <h3>${peli.title}</h3>
+                <button onclick="window.location.href='peli.html?id=${peli.id}'">Más información</button>
+                <button>+</button>
+            `;
+            carrusel.appendChild(article);
+        });
+
+        contenedor.appendChild(fila);
     });
 
-    flechaIzquierda.addEventListener('click', () => {
-      carrusel.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-      });
+    // 4. Carrusel
+    const filas = document.querySelectorAll(".fila");
+    filas.forEach(fila => {
+        const flechaIzquierda = fila.querySelector(".flecha.izquierda");
+        const flechaDerecha = fila.querySelector(".flecha.derecha");
+        const carrusel = fila.querySelector(".carrusel");
+
+        flechaDerecha.addEventListener("click", () => {
+            carrusel.scrollBy({ left: 260, behavior: "smooth" });
+        });
+
+        flechaIzquierda.addEventListener("click", () => {
+            carrusel.scrollBy({ left: -260, behavior: "smooth" });
+        });
     });
 
-    carrusel.addEventListener('scroll', () => {
-      if(carrusel.scrollLeft >= carrusel.scrollWidth / 2){
-        carrusel.scrollLeft = 0;
-      }
-      if(carrusel.scrollLeft <= 0){
-        carrusel.scrollLeft = carrusel.scrollWidth / 2;
-      }
+    // 5. Buscador
+    const buscador = document.getElementById("s");
+    buscador.addEventListener("input", () => {
+        const texto = buscador.value.toLowerCase();
+        document.querySelectorAll(".pelicula").forEach(peli => {
+            const titulo = peli.querySelector("h3").textContent.toLowerCase();
+            peli.style.display = titulo.includes(texto) ? "block" : "none";
+        });
     });
-  });
-  const buscador = document.getElementById("s");
-const peliculas = document.querySelectorAll(".pelicula");
-
-buscador.addEventListener("input", () => {
-  const texto = buscador.value.toLowerCase();
-
-  peliculas.forEach(peli => {
-    const titulo = peli.querySelector("h3").textContent.toLowerCase();
-
-    if (titulo.includes(texto)) {
-      peli.style.display = "block";
-    } else {
-      peli.style.display = "none";
-    }
-  });
-});
-
 });
 
