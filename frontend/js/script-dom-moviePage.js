@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
     // 1. Obtener películas de la API
-    const response = await fetch("http://localhost:3000/movies");
+    const response = await fetch("http://localhost:8080/hobbies/movies");
     const peliculas = await response.json();
+   
+
+
 
     // 2. Agrupar por género
     const generos = {};

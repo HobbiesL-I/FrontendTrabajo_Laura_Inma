@@ -8,15 +8,92 @@
     <link rel="stylesheet" href="./css/styleFonts.css">
 
 </head>
+
+<header class="header-area">
+
+    <div class="header-image">
+        <img src="https://placehold.co/100" alt="Logo Página Web">
+    </div>
+
+    <ul class="headerMenu-left font-title">
+        <li onclick="window.location.href=''"> Juegos de Mesa</li>
+        <li onclick="window.location.href=''"> Películas</li>
+        <li onclick="window.location.href=''"> Mis Reseñas</li>
+    </ul>
+
+    <div class="headerMenu-right font-title">
+            <input type="search"
+             id="s" 
+             class="search-hobbie" 
+             placeholder="Busca por titulo">
+        </form>
+    </div>
+
+</header>
 <body>
 
   <div id="detalle-pelicula">
     <h1 id="titulo"></h1>
     <img id="imagen" src="" alt="">
     <p id="descripcion"></p>
+    <p id="year"></p>
+    <p id="genero"></p>
+    <p id="Director"></p>
+    <p id="actores"></p>
+    <p id="Duracion"></p>
     <a href="MoviePage.html">← Volver</a>
   </div>
+  
 
   <script src="./js/detalle.js"></script>
 </body>
+<!-- FOOTER -->
+ <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>Titulo pagina web</h3>
+                <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
+                    <li><a href="MoviePage.html">Peliculas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
+                <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>¡Encuentranos en nuestras redes sociales!</h4>
+                <div class="social-links">
+                    <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+            <div class="footer-links">
+                <a href="">Política de privacidad</a>
+                <a href="">Términos de uso</a>
+                <a href="">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
 </html>

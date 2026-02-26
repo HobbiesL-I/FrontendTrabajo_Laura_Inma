@@ -8,7 +8,7 @@
 
 /* BODY */
 body {
-  background-color: #ffead8;
+  background-color: #fffefd;
 }
 
 /* ================= HEADER ================= */
@@ -189,43 +189,182 @@ body {
 
 /* ================= FOOTER ================= */
 
-.footer-area {
-  background-color: #2a1458;
-  color: #ffead8;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
+:root {
+    --color-main: rgb(255, 234, 216);
+    --color-firstSecondary: rgb(232, 152, 138);
+    --color-secondSecondary: rgb(156, 63, 136);
+    --color-tertiary: rgb(42, 20, 88);
 }
 
-.footer-area form {
-  display: flex;
-  gap: 10px;
+body {
+    /*background-color: rgba(255, 234, 216, 0.8);*/
+    padding-top: 100px;
+    /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
+    /*background-image: url('../images/background_image.jpg');
+    background-size: 30% auto;
+    background-repeat: repeat;
+    background-position: center;
+    background-blend-mode: multiply;*/
 }
 
-.field {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
+.header-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-firstSecondary);
+    z-index: 1000;
+    display: flex;
+    padding: 1%;
+    align-items: center;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn-submit {
-  padding: 8px 15px;
-  border-radius: 8px;
-  border: none;
-  background-color: #e8988a;
-  cursor: pointer;
+.header-options {
+    cursor: pointer;
 }
 
-.footer-images {
-  display: flex;
-  gap: 15px;
+.headerMenu-left {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 50%;
 }
 
-.image-socialMedia {
-  width: 40px;
-  height: 40px;
+.header-image {
+    display: flex;
+    justify-content: center;
+    width: 60%;
 }
 
+.headerMenu-right {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 50%;
+}
+
+.search-hobbie {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+table {
+    margin-bottom: 10px;
+    border-collapse: separate;
+    border-spacing: 8px 4px;
+    color: black;
+    border-bottom: 1px solid black;
+    gap: 10px;
+}
+
+table th {
+    border-right: 2px solid black;
+    text-align: start;
+    vertical-align: middle;
+}
+
+table td {
+    padding: 5px 10px;
+    text-align: start;
+    vertical-align: middle;
+}
+
+table td:first-child {
+    text-align: start;
+    vertical-align: middle;
+    border-right: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.newsletter {
+    background-color: rgba(232, 152, 138, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 98vw;
+    margin-bottom: 20%;
+    margin-top: 20%;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    padding: 3%;
+
+}
+
+footer {
+    background: var(--color-firstSecondary);
+    color: var(--color-tertiary);
+    padding: 1%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+h3,
+h4 {
+    color: black;
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--color-tertiary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--color-main);
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--color-tertiary);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    font-size: 0.9rem;
+}
