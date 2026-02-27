@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <link rel="stylesheet" href="./css/detalle.css">
+        <link rel="stylesheet" href="./css/valoracion.css">
 
 </head>
 <body>
@@ -32,19 +32,34 @@
 
 
     <script src="./js/Valoration.js"></script>
+<div class="valoracion container">
+    <h1>Valorar: <span id="title">  </span></h1>
 
-    <div id="Valoracion">
-    <h1 id="titulo de la pelicula"></h1>
-    <img id="imagen" src="" alt="">
-    <p id="movie_id"></p>
-    <p id="user_name"></p>
-    <p id="score"></p>
-    <p id="comment"></p>
+    <div class="estrellas">
+
+        <span class="estrella" data-valor="1">&#9733;</span>
+        <span class="estrella" data-valor="2">&#9733;</span>
+        <span class="estrella" data-valor="3">&#9733;</span>
+        <span class="estrella" data-valor="4">&#9733;</span>
+        <span class="estrella" data-valor="5">&#9733;</span>
+    </div>
     
-    <a href="peli.html">← Volver</a>
+    <p>Puntuacion: <span id="Puntuacion-texto">0</span> /5  </p>
+
+    <input type="text" id="user_name" placeholder="Tu nombre (opcional)">
+
+    <textarea id="comment" placeholder="Escribe tu comentario aquí..."></textarea>
+
+    <button id="btn-enviar">Enviar valoración</button>
+    
+        <a href="peli.html">← Volver</a>
+
+
+</div>
+    
   </div>
 
-  
+
    <footer>
         <div class="footer-content">
 

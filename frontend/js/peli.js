@@ -26,3 +26,8 @@ async function cargarPelicula() {
 }
 
 cargarPelicula();
+function irAValorar() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  window.location.href = `valoracion.html?id=${id}`;
+}
