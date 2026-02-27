@@ -1,11 +1,10 @@
+
+/* BODY */
 body {
-  background-color: #ffead8;
-  font-family: "Roboto", sans-serif;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  background-color: #fffefd;
 }
-.header-area {
+
+header-area {
   background-color: #e8988a;
   display: flex;
   align-items: center;
@@ -39,37 +38,6 @@ body {
   border-radius: 8px;
   border: none;
 }
-.detalle-container {
-  display: flex;
-  gap: 40px;
-  padding: 40px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.imagen-lado img {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-
-.info-lado {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.info-lado h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.info-lado a {
-  margin-top: 20px;
-  text-decoration: none;
-  color: #9b4e41;
-}
-
 
 :root {
     --color-main: rgb(255, 234, 216);

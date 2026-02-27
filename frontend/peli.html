@@ -32,20 +32,31 @@
 </header>
 <body>
 
-  <div id="detalle-pelicula">
-    <h1 id="titulo"></h1>
-    <img id="imagen" src="" alt="">
-    <p id="descripcion"></p>
-    <p id="year"></p>
-    <p id="genero"></p>
-    <p id="Director"></p>
-    <p id="actores"></p>
-    <p id="Duracion"></p>
-    <a href="MoviePage.html">← Volver</a>
+  
+  <div id="detalle-pelicula" class="detalle-container">
+
+    <div class="imagen-lado">
+      <img id="image" src="" alt="">
+    </div>
+
+    <div class="info-lado">
+      <h1 id="title"></h1>
+      <p><strong>Género:</strong> <span id="genre"></span></p>
+      <p><strong>Director:</strong> <span id="director"></span></p>
+      <p><strong>Año:</strong> <span id="year"></span></p>
+      <p><strong>Duración:</strong> <span id="duration"></span></p>
+      <p><strong>Actores:</strong> <span id="actors"></span></p>
+      <p><strong>Descripción:</strong> <span id="description"></span></p>
+          <a href="MoviePage.html">← Volver</a>
+
+
+    </div>
+
   </div>
+
   
 
-  <script src="./js/detalle.js"></script>
+  <script src="./js/peli.js"></script>
 </body>
 <!-- FOOTER -->
  <footer>
