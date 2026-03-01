@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Momo+Trust+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Paytone+One&family=Playwrite+DE+SAS:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rozha+One&family=Rye&family=Satisfy&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./js/script-dom-mainPage.js"></script>
+    <link rel="stylesheet" href="./css/styleMainPage.css">
+    <link rel="stylesheet" href="./css/styleFonts.css">
+    <link rel="stylesheet" href="./css/styleCommonElements.css">
+    <title>Página Principal</title>
+</head>
+
+<body class="body-area">
+    <header class="header-area">
+
+        <div class="header-image">
+            <img src="https://placehold.co/100" alto="Logo Página Web">
+        </div>
+
+        <ul class="headerMenu-left font-title">
+            <li onclick="window.location.href=''">Juegos de Mesa</li>
+            <li onclick="window.location.href=''">Películas</li>
+            <li onclick="window.location.href=''">Añadir Juego de Mesa</li>
+            <li onclick="window.location.href=''">Añadir Pelicula</li>
+        </ul>
+
+        <div class="headerMenu-right font-title">
+            <form method="get" id="search-pirate">
+                <input type="search" id="s" class="search-hobbie" value="" placeholder="Busca por titulo" />
+            </form>
+        </div>
+    </header>
+
+    <div class="container-area">
+
+        <!--Sección para dar una pequeña explicación del proyecto-->
+        <section class="container-mainDescription">
+            <div class="description-intro">
+                <h1>¡Queremos ser tu guía definitiva!</h1>
+                <p>Somos <strong>Hobbies Zaragoza</strong>, una comunidad apasionada por el cine y los juegos de mesa
+                    creada en el
+                    corazón de
+                    Aragón. Nuestro equipo está formado por cinéfilos, jugadores empedernidos y desarrolladores web
+                    locales
+                    que compartimos la misma misión.</p>
+            </div>
+
+            <div class="description-package">
+                <div class="description-element">
+                    <i class="fa-solid fa-book-open fa-3x"></i>
+                    <p><b>Explora</b> nuestros catálogos</p>
+                </div>
+
+                <div class="description-element">
+                    <i class="fa-regular fa-comment fa-3x"></i>
+                    <p><b>Lee</b> valoraciones honestas de otros usuarios</p>
+                </div>
+
+                <div class="description-element">
+                    <i class="fa-solid fa-comment-medical fa-3x"></i>
+                    <p><b>Comparte</b> tu opinión</p>
+                </div>
+
+                <div class="description-element">
+                    <i class="fa-solid fa-icons fa-3x"></i>
+                    <p><b>Encuentra</b> tu próxima obsesión</p>
+                </div>
+
+                <div class="description-element">
+                    <i class="fa-solid fa-folder-plus fa-3x"></i>
+                    <p><b>Contribuye</b> con tus gustos</p>
+                </div>
+            </div>
+        </section>
+
+        <!--Seccion para mostrar las nuevas adquisiciones. Dos de juegos de mesa y dos de peliculas-->
+        <section class="container-news">
+            <div class="news-information">
+                <h1 class="title-news">Nuevas Adquisciones</h1>
+                <p>Lo último que ha llegado a nuestra comunidad de aficionados: juegos de mesa que están
+                    revolucionando las noches de juego y películas que no te puedes perder. Desde estrenos mundiales
+                    hasta joyas ocultas recomendadas por cinéfilos locales.</p>
+            </div>
+        </section>
+
+        <!--Sección para mostrar de forma breve el apartado de películas-->
+        <section class="container-movies">
+            <div class="movies-information">
+                <h1><i class="fa-solid fa-clapperboard"></i> ¡A Reventar la Pantalla!</h1>
+                <h6>Descubre joyas ocultas recomendadas por la comunidad</h6>
+                <p>¡Bienvenid@ a nuestra pasión por el cine! Aquí encontrarás un catálogo completo de películas para
+                    todos los gustos: desde clásicos imprescindibles hasta los últimos estrenos que están revolucionando
+                    la cartelera.</p>
+                <button onclick="window.location.href=''" class="btn-list">Ver listado</button>
+            </div>
+
+            <div class="image-examples" id="movies-images">
+ 
+            </div>
+        </section>
+
+        <!--Sección para mostrar de forma breve el apartado de juegos de mesa-->
+        <section class="container-boardgames">
+            <div class="image2-examples" id="boardgames-images">
+            <!--Añade las imágenes de 3 elementos aleatorios de la tabla boardgame con la función getRandomBoardgameImages-->
+            </div>
+
+            <div class="boardgame-information">
+                <h1><i class="fa-solid fa-dice"></i> ¡Juegos de Mesa a Tope!</h1>
+                <h6>Descubre joyas de tablero que cambiarán tus noches</h6>
+                <p>¡Bienvenid@ a nuestro templo de los dados y las estrategias! Aquí encontrarás desde party-games para
+                    risas infinitas hasta eurogames cerebrales que te harán pensar hasta las 4 de la mañana.</p>
+                <button onclick="window.location.href=''" class="btn-list">Ver listado</button>
+            </div>
+        </section>
+
+        <!--TODO seccion de valoraciones-->
+        <section class="container-valorations">
+            <div class="valoration-intro">
+                <h1>¡Tu opinión CUENTA y MOLDEA nuestra comunidad!</h1>
+                <p>Aquí puedes ver las opiniones más recientes de aficionados reales como tú. Cada comentario, cada
+                    estrella, cada reseña detallada ayuda a otros a descubrir su próxima película favorita o juego de
+                    mesa
+                    perfecto.</p>
+            </div>
+            <div class="valorations-section" id="valorationBoardgame-card">
+                <!--Añade los últimos 2 elementos de la tabla valorationBoardgame con la función getRecentValorationBoardgame-->
+            </div>
+            <div class="valorations-section" id="valorationMovie-card">
+                <!--Añade los últimos 2 elementos de la tabla valorations con la función getRecentValorationMovies-->
+            </div>
+
+    </div>
+    </section>
+
+    <!--Sección para subscribirse al boletin-->
+    <section class="container-newsletter">
+        <h1>Subscribete a nuestro boletin para mantenerte informad@ de las últimas tendencias</h1>
+        <p>Nuevas películas y juegos de mesa recién llegados directo a tu email.</p>
+        <form class="subscription">
+            <input class="field-small" placeholder="Correo electrónico" type="text" required>
+            <button onclick="window.location.href=''" class="btn-submit">Subscribirse</button>
+        </form>
+
+    </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>Titulo pagina web</h3>
+                <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
+                    <li><a href="#">Peliculas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
+                <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>¡Encuentranos en nuestras redes sociales!</h4>
+                <div class="social-links">
+                    <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>¡Únete a nuestro canal de Discord!</h4>
+                <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+            <div class="footer-links">
+                <a href="">Política de privacidad</a>
+                <a href="">Términos de uso</a>
+                <a href="">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
