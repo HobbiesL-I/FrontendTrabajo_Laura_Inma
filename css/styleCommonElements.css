@@ -166,6 +166,82 @@ footer {
 }
 
 /*Colores para los iconos sacados de font Awesome*/
-.fa-star{
+.fa-star {
     color: var(--color-tertiary)
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 270px;
+    }
+
+    .header-area {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .headerMenu-left,
+    .headerMenu-right {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header-image {
+        width: 100%;
+        justify-content: center;
+        margin: 0.5rem 0;
+    }
+
+    .search-hobbie {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .newsletter {
+        width: 100vw;
+        padding: 1.5rem 1rem;
+        margin-bottom: 15%;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .newsletter form input,
+    .newsletter form button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-content{
+        grid-template-columns: 1fr;
+        padding: 0 1%;
+        gap: 1px;
+    }
+
+    .footer-section {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-links a {
+        display: inline-block;
+        margin: 0.25rem 0.5rem;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+        gap: 15px;
+    }
 }

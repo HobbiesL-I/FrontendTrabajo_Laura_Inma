@@ -92,42 +92,6 @@
     gap: 0.5rem;
 }
 
-.image-link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.image-link::after {
-    content: "Más detalles";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color: rgba(232, 152, 138, 0.5);
-    color: var(--color-tertiary);
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(100%);
-    transition: all 0.2s ease;
-    opacity: 0;
-}
-
-.image-link:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.image-link:hover {
-    transform: scale(1.3);
-    transition: transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    visibility: visible;
-}
-
 .new-image {
     width: 100%;
     height: 100%;
@@ -162,25 +126,6 @@
     max-width: 35%;
 }
 
-.btn-moreInfo {
-    margin-top: 10%;
-    border-radius: 5px;
-    height: 30px;
-    width: 50%;
-    padding: 2%;
-    background-color: var(--color-tertiary);
-    color: var(--color-main);
-    border: none;
-    cursor: pointer;
-    transition: transform 0.15s ease, background-color 0.15 ease;
-}
-
-.btn-moreInfo:hover {
-    transform: scale(1.05);
-    background-color: var(--color-firstSecondary);
-    color: var(--color-tertiary);
-}
-
 .btn-list {
     margin-top: 3%;
     border-radius: 5px;
@@ -207,7 +152,7 @@
     gap: 20px;
 }
 
-.imageMovie-size{
+.imageMovie-size {
     max-width: 160px;
     max-height: 240px;
 
@@ -315,22 +260,19 @@
 }
 
 .field-small {
-    height: 1%;
+    height: 1px;
     width: 200px;
     padding: 20px;
     font-size: 14px;
     background-color: var(--color-firstSecondary);
-    border-color: var(--color-tertiary);
     border-radius: 10px;
     border: none;
-    color: white;
-
 }
 
 .field-small::placeholder {
     font-style: italic;
-    color: white;
-}
+    color: var(--color-tertiary);
+}    
 
 .btn-submit {
     border-radius: 5px;
@@ -348,4 +290,134 @@
     transform: scale(1.05);
     background-color: var(--color-firstSecondary);
     color: var(--color-tertiary);
+}
+
+@media (max-width: 768px) {
+
+    .container-area {
+        margin-top: 10px;
+    }
+
+    .container-mainDescription,
+    .container-newsletter {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 96vw;
+    }
+
+    .description-intro {
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+
+    .description-package {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2%;
+    }
+
+    .description-element {
+        max-width: 280px;
+        flex: none;
+    }
+
+    .news-information,
+    .valoration-intro {
+        padding: 0 1rem;
+    }
+
+    .new-elements {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .new-boardgames,
+    .new-movies {
+        max-width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .new {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .uniform-image {
+        width: 150px;
+        height: 180px;
+    }
+
+    .imageMovie-size,
+    .image2-examples img {
+        width: 100px;
+        height: 160px;
+    }
+
+    .container-movies {
+        padding: 1rem;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-boardgames {
+        padding: 1rem;
+        gap: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .movies-information,
+    .boardgame-information {
+        max-width: 100%;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-moreInfo,
+    .btn-list,
+    .btn-submit {
+        width: 50%;
+        max-width: 150px;
+    }
+
+    .valorations-section {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 2%;
+    }
+
+    .valoration-card {
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0px 2px 6px rgba(32, 13, 13, 0.15);
+    }
+
+    .card-header {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .subscription {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .field-small {
+        width: 50%;
+        max-width: none;
+        height: 20px;
+        padding: 12px;
+        font-size: 16px;
+    }
 }
