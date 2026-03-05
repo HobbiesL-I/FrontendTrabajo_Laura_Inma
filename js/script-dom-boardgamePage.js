@@ -9,6 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log(difficultyBoardgame);
 
     const url = `http://localhost:8080/hobbies/boardgames/${idBoardgamePage}`;
+    const urlValoration = `http://localhost:8080/hobbies/valorationsBoardgame/${idBoardgamePage}`;
+
 
     const getBoardgameData = async () => {
         try {
@@ -23,13 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const createBoardgame = (boardgame) => {
         console.log(boardgame);
-        const boardgameElement = document.getElementById('boardgame');
 
         const {
-            idBoardgame,
             name,
             numberPlayers,
-            onePlayer,
             price,
             playTime,
             mecanic,
@@ -39,83 +38,273 @@ window.addEventListener('DOMContentLoaded', () => {
             yearRelease,
             imageBoardgame,
             videoBoardgame,
-            imageVideo
-        } = boardgame
+            imageVideo,
+            imageBoardgame2
+        } = boardgame;
 
-        const cardData = document.createElement(`section`);
-        cardData.classList.add('container-boardgameData');
-        cardData.innerHTML = `
-             <div class="container-imageDescription">
-                <h1>${name}</h1>
-                <img src="${imageBoardgame}" alt="${name} image">
-                <h2>Detalles</h2>
-                <p>${description}</p>
+        const cardBoardgameIntro = document.getElementById('boardgame-intro');
+
+        const cardSectionIntro = document.createElement(`section`);
+        cardSectionIntro.classList.add('intro-boardgame');
+
+        cardSectionIntro.innerHTML = `
+        <div class="intro">
+                <h2>${name}</h2>
+                <div class="stars">
+                    <div class="stars" id="stars"></div>
+                </div>
             </div>
+            <div class="display-information">
+                <div class="information">
+                    <h1><i class="fa-solid fa-user-group icon"></i></h1>
 
-            <div class="container-data">
-                <div class="data-information">
-                    <div class="information-element">
-                        <h2>${price}€</h2>
-                        <div class="valorationMedia" id="valorationMedia">
-                        </div>
-                        <button onclick="window.location.href=''" class="btn-style"><i
-                                class="fa-solid fa-star-half-stroke"></i>¡Valórame!</button>
-                        <button onclick="window.location.href=''" 
-                                class="btn-style" id="delete-${idBoardgame}"><i class="fa-solid fa-trash"></i></button>  
-                        <a href="boardgameEditPage.html?id=${idBoardgame}&difficulty=${difficulty}">
-                            <button class="btn-style">Editar</button>
-                        </a>  
-    
-                        <div class="data-share">
-                            <p>Compartir: </p>
-                            <i class="fa-brands fa-square-x-twitter"></i>
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <table>
-                            <tr>
-                                <td><i class="fa-solid fa-users"></i></td>
-                                <td><i class="fa-solid fa-user"></i></td>
-                                <td><i class="fa-solid fa-user-clock"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>${numberPlayers}</td>
-                                <td><i class="fa-regular fa-circle-check"></i></td>
-                                <td>${age}</td>
-                            </tr>
-                        </table>
+                    <div class="information-subElements">
+                        <p class="sub-p">Jugadores</p>
+                        <p class="font-subelement">${numberPlayers}</p>
                     </div>
+                </div>
 
-                    <div  class="information-element">
-                        <h2>Especificaciones</h2>
-                        <p>Mecánica: ${mecanic}</p>
-                        <p>Complejidad: ${difficulty}</p>
+                <div class="information">
+                    <h1><i class="fa-solid fa-user icon"></i></h1>
 
-                        <div class="data-detail">
-                            <i class="fa-solid  fa-hourglass fa-2x"></i>
-                            <p>${playTime}</p>
-                        </div>
+                    <div class="information-subElements">
+                        <p class="sub-p">Solitario</p>
+                        <p class="font-subelement" id="onePlayer"></p>
                     </div>
+                </div>
 
-                    <div class="video-tutorial">
-                        <h2>Tutorial</h2>
-                        <a href="${videoBoardgame}" target="_blank">
-                            <img src="${imageVideo}" class="image-youtube" alt="Preview video youtube">
-                            <div class="play-overlay">
-                                <i class="fa-regular fa-circle-play fa-5x"></i>
-                            </div>
-                        </a>
+                <div class="information">
+                    <h1><i class="fa-solid fa-hourglass-start icon"></i></h1>
+
+                    <div class="information-subElements">
+                        <p class="sub-p">Tiempo</p>
+                        <p class="font-subelement">${playTime}</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <button onclick="window.location.href=''" class="btn-style">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </button>
+
+                    <div class="information-subElements">
+                        <p class="sub-p">Valora</p>
+                        <p class="font-subelement">Da tu opinión</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <button onclick="window.location.href=''" class="btn-style">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+
+                    <div class="information-subElements">
+                        <p class="sub-p">Elimina</p>
+                        <p class="font-subelement">Elimina el juego</p>
                     </div>
                 </div>
             </div>
-        `;
+        `
+        cardBoardgameIntro.appendChild(cardSectionIntro);
 
-        boardgameElement.appendChild(cardData);
+        const cardBoardgameColumn1 = document.getElementById('boardgame-column1');
+        const cardDivColumn1 = document.createElement(`div`);
+        cardDivColumn1.classList.add('boardgame-description');
+
+        cardDivColumn1.innerHTML = `
+            <img class="boardgame-image"
+                    src="${imageBoardgame}">
+                <div class="boardgame-details">
+                    <h1>Detalles</h1>
+                    <p>${description}</p>
+                    <div>
+                        <h1>Mecanica</h1>
+                        <p>${mecanic}</p>
+                    </div>
+                    <div class="display-information">
+
+                        <div class="information">
+                            <h1><i class="fa-solid fa-book-open icon"></i></h1>
+
+                            <div class="information-subElements">
+                                <p class="sub-p">Dificultad</p>
+                                <p class="font-subelement">${difficulty}</p>
+                            </div>
+                        </div>
+
+                        <div class="information">
+                            <h1><i class="fa-solid fa-circle-info icon"></i></h1>
+
+                            <div class="information-subElements">
+                                <p class="sub-p">Edad</p>
+                                <p class="font-subelement">${age}</p>
+                            </div>
+                        </div>
+
+                        <div class="information">
+                            <h1><i class="fa-solid fa-euro-sign"></i></h1>
+
+                            <div class="information-subElements">
+                                <p class="sub-p">Precio</p>
+                                <p class="font-subelement">${price}</p>
+                            </div>
+                        </div>
+
+                        <div class="information">
+                            <h1><i class="fa-solid fa-calendar"></i></h1>
+
+                            <div class="information-subElements">
+                                <p class="sub-p">Año de salida</p>
+                                <p class="font-subelement">${yearRelease}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+        cardBoardgameColumn1.appendChild(cardDivColumn1);
+
+        const cardValorationsColumn1 = document.createElement(`div`);
+        cardValorationsColumn1.classList.add('container-valorations');
+
+        cardValorationsColumn1.innerHTML = `
+            <div class="valoration-intro">
+                    <h1>¡Mira lo que otros usuarios opinan de este juego!</h1>
+                    <p>Descubre las experiencias reales de quien ya ha probado este juego: desde sus puntos
+                        fuertes hasta los pequeños matices que lo hacen único. Sus valoraciones te ayudarán a saber si
+                        este juego encaja con tu estilo de partida y qué esperar antes de jugarlo por primera vez.</p>
+                </div>
+                <div class="valorations-section" id="valorations">
+
+                </div>
+        `
+
+        cardBoardgameColumn1.appendChild(cardValorationsColumn1);
+
+        const cardBoardgameColumn2 = document.getElementById('boardgame-column2');
+        const cardVideo = document.createElement(`div`);
+        cardVideo.classList.add('video');
+        cardVideo.innerHTML = `
+            <h1>¿No sabes como jugar?</h1>
+            <div class="video-tutorial">
+                <a href="${videoBoardgame}" target="_blank">
+                    <img src="${imageVideo}" class="image-youtube"
+                        alt="Preview video youtube">
+                    <div class="play-overlay">
+                        <i class="fa-regular fa-circle-play fa-5x"></i>
+                    </div>
+                </a>
+            </div>
+        `
+
+        cardBoardgameColumn2.appendChild(cardVideo);
+
+        const cardRecomendations = document.createElement(`div`);
+        cardRecomendations.classList.add('recomendations')
+        cardRecomendations.innerHTML = `
+            <h1>Juegos recomendados</h1>
+            <p>Creemos que estos juegos te pueden interesar</p>
+
+            <div class="boardgame-recomendation" id="boardgameRecomendation">
+            </div>
+        `
+
+        cardBoardgameColumn2.appendChild(cardRecomendations);
 
     }
 
-    const urlValoration = `http://localhost:8080/hobbies/valorationsBoardgame/${idBoardgamePage}`;
+    const getStarsBoardgame = async () => {
+        try {
+
+            const result = await fetch(urlValoration);
+            const valorationList = await result.json();
+            console.log(valorationList);
+
+            const filteredValorations = valorationList.filter(valoration => valoration.idBoardgame == idBoardgamePage);
+            console.log('Valoraciones del juego con id ', idBoardgamePage, filteredValorations)
+
+            createStarsBoardgame(filteredValorations);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const createStarsBoardgame = (boardgameValoration) => {
+        console.log(boardgameValoration);
+
+        const cardStars = document.getElementById('stars');
+        cardStars.innerHTML = ``
+
+        let qualificationBoardgame = 0;
+        let quantityValorations = 0;
+        let mediaQualifications = 0;
+
+        boardgameValoration.forEach((valoration) => {
+
+            const {
+                qualification
+            } = valoration;
+
+            qualificationBoardgame += qualification;
+            quantityValorations++;
+        });
+
+        mediaQualifications = qualificationBoardgame / quantityValorations;
+        mediaQualifications = Math.round(mediaQualifications * 100) / 100;
+
+        const getStars = (qualification) => {
+            console.log(qualification);
+            const valorationStarsBoardgame = Math.trunc(qualification / 2);
+            console.log(valorationStarsBoardgame);
+            const emptyStarsBoardgame = 5 - valorationStarsBoardgame;
+            let htmlStarsBoardgame = ' '
+
+            for (let i = 0; i < valorationStarsBoardgame; i++) {
+                htmlStarsBoardgame += '<i class="fa-solid fa-star icon-color"></i>'
+            }
+
+            for (let i = 0; i < emptyStarsBoardgame; i++) {
+                htmlStarsBoardgame += '<i class="fa-regular fa-star icon-color"></i>'
+            }
+
+            return htmlStarsBoardgame;
+        };
+
+        cardStars.innerHTML = getStars(mediaQualifications);
+
+        const cardValoration = document.createElement(`p`);
+        cardValoration.innerHTML = `
+            ${mediaQualifications}/10
+        `
+        cardStars.appendChild(cardValoration);
+    }
+
+    const getOnePlayer = async () => {
+        try {
+            const result = await fetch(url);
+            const data = await result.json();
+            console.log(data);
+            createOnePlayer(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const createOnePlayer = (boardgame) => {
+        const cardOnePlayer = document.getElementById('onePlayer');
+        cardOnePlayer.innerHTML = ``
+        const {
+            onePlayer
+        } = boardgame;
+
+        if (onePlayer === true) {
+            cardOnePlayer.innerHTML = `¡Juega solo!`
+        }
+        else {
+            cardOnePlayer.innerHTML = `No se puede`
+        }
+    }
 
     const getValorationData = async () => {
         try {
@@ -140,8 +329,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const createValorationEmpty = () => {
-        const cardValoration = document.getElementById('valorationSection');
+        const cardValoration = document.getElementById('valorations');
         const valorationContent = document.createElement(`div`);
+
         valorationContent.classList.add('container-valorations');
         valorationContent.innerHTML = `
         <h1>¡Se el primero en valorar este juego!</h1>
@@ -153,149 +343,46 @@ window.addEventListener('DOMContentLoaded', () => {
 
         console.log(valorations);
 
-        const cardValoration = document.getElementById('valorationSection');
+        const cardValoration = document.getElementById('valorations');
 
-        const cardValorationIntro = document.createElement(`div`);
-        cardValorationIntro.classList.add('container-valorations');
-        cardValorationIntro.innerHTML = `
-            <h1>Mira lo que otros opinan</h1>
-        `;
+        valorations.forEach((boardgameValoration) => {
+            const divCardValoration = document.createElement(`div`);
+            divCardValoration.classList.add('valoration-card');
 
-        cardValoration.appendChild(cardValorationIntro);
-
-        const cardValorationList = document.createElement(`div`);
-        cardValorationList.classList.add('valoration');
-
-        valorations.forEach((valorationBoardgame) => {
             const {
                 namePerson,
                 qualification,
                 review
-            } = valorationBoardgame;
+            } = boardgameValoration;
 
-            const tableValoration = document.createElement(`table`);
+            const getStars = (qualification) => {
+                const valorationStarsBoardgame = Math.trunc(qualification / 2);
+                console.log(valorationStarsBoardgame);
+                const emptyStarsBoardgame = 5 - valorationStarsBoardgame;
+                let htmlStarsBoardgame = ' '
 
-            tableValoration.innerHTML = `
-                    <tr>
-                        <td><i class="fa-solid fa-star"></i> ${qualification}</td>
-                        <td>Titulo de la valoración</td>
-                    </tr>
+                for (let i = 0; i < valorationStarsBoardgame; i++) {
+                    htmlStarsBoardgame += '<i class="fa-solid fa-star"></i>'
+                }
 
-                    <tr>
-                        <td>${namePerson}</td>
-                        <td>${review}</td>
-                    </tr>
-            `;
-            cardValorationList.appendChild(tableValoration);
+                for (let i = 0; i < emptyStarsBoardgame; i++) {
+                    htmlStarsBoardgame += '<i class="fa-regular fa-star"></i>'
+                }
+
+                return htmlStarsBoardgame;
+            };
+
+            divCardValoration.innerHTML = `
+            <div class="card-header">
+                <i class="fa-regular fa-comment-dots fa-2x"></i>
+                <h3 class="user-name">${namePerson}</h3>
+                <div>${getStars(qualification)}</div>
+                <h3>${qualification}</h3>
+                </div>
+                <p class="text-align">${review}</p>
+            `
+            cardValoration.appendChild(divCardValoration);
         });
-
-        cardValorationIntro.appendChild(cardValorationList);
-
-        const cardValorationMedia = document.getElementById('valorationMedia');
-        const quantityValorations = valorations.length;
-        let sumValorations = 0;
-
-        valorations.forEach(valoration => {
-
-            const {
-                qualification
-            } = valoration;
-
-            sumValorations += qualification;
-        });
-
-        sumValorations = sumValorations / quantityValorations;
-
-        if (sumValorations === 10) {
-            cardValorationMedia.innerHTML = `
-            <div class="stars">
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-            </div>
-            <div>
-                <p>${quantityValorations} valoraciones</p>
-            </div>
-            `
-        }
-
-        if (sumValorations < 10 && sumValorations >= 8) {
-            cardValorationMedia.innerHTML = `
-            <div class="stars">
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-            </div>
-            <div>
-                <p>${quantityValorations} valoraciones</p>
-            </div>
-            `
-        }
-
-        if (sumValorations < 8 && sumValorations >= 6) {
-            cardValorationMedia.innerHTML = `
-            <div class="stars">
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-            </div>
-            <div>
-                <p>${quantityValorations} valoraciones</p>
-            </div>
-            `
-        }
-
-        if (sumValorations < 6 && sumValorations >= 4) {
-            cardValorationMedia.innerHTML = `
-            <div class="stars">
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-            </div>
-            <div>
-                <p>${quantityValorations} valoraciones</p>
-            </div>
-            `
-        }
-
-        if (sumValorations < 4 && sumValorations >= 2) {
-            cardValorationMedia.innerHTML = `
-            <div class="stars">
-                <p><i class="fa-solid fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-            </div>
-            <div>
-                <p>${quantityValorations} valoraciones</p>
-            </div>
-            `
-        }
-
-        if (sumValorations < 2) {
-            cardValorationMedia.innerHTML = `
-            <div class="stars">
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-                <p><i class="fa-regular fa-star"></i></p>
-            </div>    
-            <div>
-                <p>${quantityValorations} valoraciones</p>
-            </div>
-            
-            `
-        }
 
     }
 
@@ -317,58 +404,42 @@ window.addEventListener('DOMContentLoaded', () => {
     const createRecomendation = (recomendations) => {
         console.log(recomendations);
 
-        const cardRecomendation = document.getElementById('sectionRecomendation');
+        const cardRecomendations = document.getElementById('boardgameRecomendation');
 
-        const cardRecomendationIntro = document.createElement(`div`);
-        cardRecomendationIntro.classList.add('recomendation-list');
-        cardRecomendationIntro.innerHTML = `
-            <h1>Otros juegos que te podrian gustar</h1>
-        `;
-
-        cardRecomendation.appendChild(cardRecomendationIntro);
-
-        const cardRecomendationList = document.createElement(`div`);
-        cardRecomendationList.classList.add('recomendation-list');
-
-        const maxRecomendations = 4;
+        const maxRecomendations = 3;
         let recomendationQuantity = 0;
-        const currentDifficulty = difficultyBoardgame;
 
         recomendations.forEach((boardgameRecomendation) => {
+
+            const cardBoardgameRecomendation = document.createElement(`div`);
+            cardBoardgameRecomendation.classList.add('boardgame-recomendation');
+
             const {
                 idBoardgame,
                 name,
-                difficulty,
-                imageBoardgame
+                numberPlayers,
+                playTime
             } = boardgameRecomendation;
 
-            if (difficulty === currentDifficulty && recomendationQuantity <= maxRecomendations && idBoardgame != idBoardgamePage) {
-
-                const recomendation = document.createElement(`div`);
-                recomendation.innerHTML = `
-                    <div>
-                    <div class="recomendation-boardgame">
-                        <img class="boardgame-image" src="${imageBoardgame}">
-                        <p>${name}</p>
-                        <div>
-                            <a href="boardgamePage.html?id=${idBoardgame}&difficulty=${difficulty}">
-                                <button class="btn-style">Más información</button>
-                            </a>
-                            <button onclick="window.location.href=''" class="btn-style">Valorar</button>
+            if (recomendationQuantity < maxRecomendations && idBoardgame !== Number(idBoardgamePage)) {
+                cardBoardgameRecomendation.innerHTML = `
+                    <h2>${name}</h2>
+                        <div class="little-info">
+                            <p><i class="fa-solid fa-user-group"></i>${numberPlayers}</p>
+                            <p><i class="fa-solid fa-user-group"></i>${playTime}</p>
                         </div>
-                    </div>
-                </div>
-            `;
-                cardRecomendationList.appendChild(recomendation);
+                `
+
+                cardRecomendations.appendChild(cardBoardgameRecomendation);
                 recomendationQuantity++;
             }
         });
-
-        cardRecomendation.appendChild(cardRecomendationList);
-
+    
     }
 
     getBoardgameData().then(() => {
+        getStarsBoardgame();
+        getOnePlayer();
         getValorationData();
         getRecomendationData();
     });

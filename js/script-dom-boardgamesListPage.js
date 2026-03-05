@@ -85,27 +85,6 @@ const createOptions = (boardgameOptions) => {
 
     listAge.appendChild(ageCard);
 
-    //Mostramos los rangos de numero de jugadores registrados en la base de datos en un elemento ul.
-    const listPlayers = document.getElementById('numberPlayers');
-    const players = boardgameOptions.map(boardgame => boardgame.numberPlayers);
-    const differentPlayers = [];
-
-    for (let i = 0; i < players.length; i++) {
-        if (!differentPlayers.includes(players[i])) {
-            differentPlayers.push(players[i]);
-        }
-    }
-
-    const playersCard = document.createElement('ul');
-
-    differentPlayers.forEach(player => {
-        const playerLi = document.createElement('li');
-        playerLi.textContent = player;
-        playersCard.appendChild(playerLi);
-    });
-
-    listPlayers.appendChild(playersCard);
-
     //Mostramos los rangos de precios registradas en la base de datos en un elemento ul.
     const listPrice = document.getElementById('price');
     const price = boardgameOptions.map(boardgame => boardgame.price);

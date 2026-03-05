@@ -1,4 +1,7 @@
-/*Tipografía para títulos: Fredoka*/
+:root {
+  --color-subtitle: rgb(98, 58, 65);
+}
+
 .font-title {
   font-family: "Fredoka", sans-serif;
   font-size: 20px;
@@ -9,10 +12,46 @@
 h1 {
   font-family: "Rozha One", serif;
   font-size: 30px;
-  font-weight: 200;
-  font-style: normal;
+  gap: 0;
+  margin-bottom: 0.2rem;
 }
 
-p{
-  text-align: justify;
+h2{
+    color: white;
+    font-size: 30px;
+}
+
+h3,
+h4 {
+  color: black;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+h6 {
+  color: var(--color-subtitle);
+  font-size: 20px;
+}
+
+p {
+  font-size: 19px;
+  margin: 1px;
+}
+
+button {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-family: "Rozha One", serif;
+    font-size: 25px;
+    gap: 0;
+    margin-bottom: 0.2rem;
+  }
+
+  p {
+    font-size: 15px;
+  }
 }

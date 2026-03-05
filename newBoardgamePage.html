@@ -19,35 +19,24 @@
 
         <form>
             <div class="title">
-                <h1>NUEVO JUEGO</h1>
+                <h1><i class="fa-solid fa-dice"></i> NUEVO JUEGO DE MESA</h1>
+                <p>¿No has encontrado tu juego de mesa favorito? Añádelo aquí y ayúdanos a ampliar la colección. Cuantos
+                    más juegos
+                    compartamos, más diversión para todos los jugadores.</p>
             </div>
-            <div class="space">
-                <div class="space-small">
-                    <input class="field-small" placeholder="Nombre*" type="text" required>
-                    <input class="field-small" placeholder="Número máximo de jugadores*" type="text" required>
-                    <label class="haki-option">
-                        <input type="checkbox"><label for="box">Modo Solitario</label>
-                    </label>
-                </div>
-                <div class="space-small">
-                    <input class="field-small" placeholder="Precio*" type="text" required>
-                    <input class="field-small" placeholder="Duración de la partida (aprox.)*" type="text" required><br>
-                </div>
-                <div class="space-small">
-                    <input class="field-small" placeholder="Mecánica" type="text" required>
-                    <input class="field-small" placeholder="Edad" type="text" required><br>
-                </div>
-                <div class="space-small">
-                    <input class="field-small" placeholder="Dificultad*" type="text" required>
-                    <!--El campo de categorias cambiarlo a un elemento de form que permita multiple seleccion accediendo a los campos
-                    ya establecidos en los insert de la tabla category de la base de datos-->
-                    <input class="field-small" placeholder="Categorias" type="text" required><br>
-                </div>
-                <div class="space-small">
-                    <!--Lo mismo que en el campo categorias-->
-                    <input class="field-small" placeholder="Idiomas*" type="text" required>
-                </div>
+            <div class="checkbox-zone">
+                <p>¿Puedes jugar solo?</p>
+                <label>
+                    <input type="checkbox"><label for="box">Modo Solitario</label>
+                </label>
             </div>
+                <input class="field" placeholder="Nombre del juego" type="text" required>
+                <input class="field" placeholder="Num. jugadores (2-4)" type="text" required>
+                <input class="field" placeholder="Precio*" type="text" required>
+                <input class="field" placeholder="Duración de la partida (aprox.)*" type="text" required><br>
+                <input class="field" placeholder="Mecánica" type="text" required>
+                <input class="field" placeholder="Edad" type="text" required><br>
+                <input class="field" placeholder="Dificultad*" type="text" required>
 
             <div class="space">
                 <textarea class="field-description" placeholder="Descripción" rows="9" cols="90"></textarea>

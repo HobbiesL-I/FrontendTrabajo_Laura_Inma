@@ -45,9 +45,15 @@
     <div class="container-area">
 
         <section class="container-addBoardgame">
-            <h1>Juegos de mesa</h1>
+            <div class="intro-text">
+                <h1><i class="fa-solid fa-dice"></i> El rincón de los jugones</h1>
+                <p>Nuestra página cuenta con una colección de juegos de mesa de todos los estilos y
+                    temáticas, desde los clásicos más conocidos hasta las últimas novedades. Si no encuentras un juego
+                    en la lista, ¡no te preocupes! Tú mismo puedes añadirlo fácilmente para que otros jugadores también
+                    lo descubran y compartan su experiencia.</p>
+            </div>
             <div class="addBoardgameBtn">
-                <p>¿No está en juego de mesa en la lista? ¡Inicialo tú!</p>
+                <p>¿No encuentras tu juego? ¡Añádelo tú!</p>
                 <button onclick="window.location.href=''" class="btn-style">¡Añádeme!</button>
             </div>
 
@@ -56,15 +62,12 @@
         <section class="container-filterMenu">
             <!--Menu filtrar-->
             <ul class="filterMenu">
-                <p>Opciones y filtros</p>
-                <li id="age">Edad
+                <p>Opciones y filtros </p>
+                <li id="age">Edad <i class="fa-solid fa-angle-up"></i>
                     <!--SubMenu Edad de juegos || Función createOptions en js-->
                 </li>
-
-                <li id="numberPlayers">Num. Jugadores
-                    <!--SubMenu Numero de Jugadores || Función createOptions en js-->
-                </li>
-                <li id="price">Precio
+                
+                <li id="price">Precio <i class="fa-solid fa-angle-up"></i>
                     <!--SubMenu Precio || Función createOptions en js-->
                 </li>
             </ul>
@@ -74,15 +77,14 @@
             <!--listado juegos de mesa || Función createBoardgames en js-->
         </section>
 
-        <section class="newsletter">
+        <!--Sección para subscribirse al boletin-->
+        <section class="container-newsletter">
             <h1>Subscribete a nuestro boletin para mantenerte informad@ de las últimas tendencias</h1>
-            <p>¿Quieres estar informado de nuestras novedades y noticias? Suscríbete a nuestra Newsletter!</p>
-            <div>
-                <form>
-                    <input class="field" placeholder="Correo electrónico" type="text" required>
-                    <button onclick="window.location.href=''" class="btn-style">Subscribirse</button>
-                </form>
-            </div>
+            <p>Nuevas películas y juegos de mesa recién llegados directo a tu email.</p>
+            <form class="subscription">
+                <input class="field-small" placeholder="Correo electrónico" type="text" required>
+                <button onclick="window.location.href=''" class="btn-submit">Subscribirse</button>
+            </form>
 
         </section>
     </div>
@@ -116,9 +118,14 @@
                 <div class="social-links">
                     <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
                     <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
-                    <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
                     <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
                 </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>¡Únete a nuestro canal de Discord!</h4>
+                <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+
             </div>
         </div>
 

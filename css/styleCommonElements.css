@@ -1,8 +1,7 @@
 :root {
     --color-main: rgb(255, 234, 216);
     --color-firstSecondary: rgb(232, 152, 138);
-    --color-secondSecondary: rgb(156, 63, 136);
-    --color-tertiary: rgb(42, 20, 88);
+    --color-tertiary: rgb(42, 20, 24);
 }
 
 body {
@@ -95,15 +94,13 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 98vw;
+    width: 97vw;
     margin-bottom: 20%;
-    margin-top: 20%;
 }
 
 form {
     display: flex;
     gap: 10px;
-    padding: 3%;
 
 }
 
@@ -118,15 +115,8 @@ footer {
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-}
-
-h3,
-h4 {
-    color: black;
-    margin-bottom: 1rem;
-    font-size: 1.2em;
 }
 
 .footer-section ul {
@@ -156,9 +146,6 @@ h4 {
 }
 
 .footer-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-top: 1px solid var(--color-tertiary);
     margin-top: 2rem;
     padding-top: 1.5rem;
@@ -176,4 +163,85 @@ h4 {
 .footer-links a {
     margin: 0 1rem;
     font-size: 0.9rem;
+}
+
+/*Colores para los iconos sacados de font Awesome*/
+.fa-star {
+    color: var(--color-tertiary)
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 270px;
+    }
+
+    .header-area {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .headerMenu-left,
+    .headerMenu-right {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header-image {
+        width: 100%;
+        justify-content: center;
+        margin: 0.5rem 0;
+    }
+
+    .search-hobbie {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .newsletter {
+        width: 100vw;
+        padding: 1.5rem 1rem;
+        margin-bottom: 15%;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .newsletter form input,
+    .newsletter form button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        padding: 0 1%;
+        gap: 1px;
+    }
+
+    .footer-section {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-links a {
+        display: inline-block;
+        margin: 0.25rem 0.5rem;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+        gap: 15px;
+    }
 }
