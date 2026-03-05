@@ -18,13 +18,11 @@
 }
 
 .intro {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 2%;
-    background-image:
-        linear-gradient(rgba(42, 20, 24, 0.4), rgba(42, 20, 24, 0.6)),
-        url(../images/hobbieIntroBackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -33,7 +31,27 @@
     height: 350px;
     max-width: 100%;
     margin-bottom: 1%;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(42, 20, 24, 0.2), rgba(42, 20, 24, 0.3));
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
     color: var(--color-main);
+}
+
+.h2-color{
+    color: white;
+}
+
+.p-color{
+    color: white;
 }
 
 .stars {
@@ -154,7 +172,7 @@
     justify-content: center;
     height: 100%;
     padding: 1%;
-    max-width: 450px;
+    width: 450px;
     margin-bottom: 2%;
 }
 
@@ -193,8 +211,10 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    padding: 2%;
+    padding: 1%;
     margin-bottom: 2%;
+    width: 400px;
+    gap: 10px;
 }
 
 .btn-style {
@@ -204,7 +224,6 @@
     color: var(--color-main);
     border: none;
     cursor: pointer;
-    max-width: 45%;
 }
 
 .video {
@@ -246,21 +265,32 @@
     text-align: center;
     gap: 10px;
     padding: 1rem 1rem;
- 
+
 }
 
 .boardgame-recomendation {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-image:
-        linear-gradient(rgba(42, 20, 24, 0.4), rgba(42, 20, 24, 0.6)),
-        url(../images/hobbieIntroBackground.jpg);
+    align-items: flex-start;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 5px;
+    position: relative;
+}
+
+.boardgame {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-size {
+    width: 100%;
+    height: 100px;
 }
 
 .little-info {
@@ -268,4 +298,117 @@
     flex-direction: row;
     color: var(--color-main);
     gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .container-area {
+        grid-template-columns: 100%;
+        grid-template-areas:
+        "intro-boardgame"
+        "boardgame-column1"
+        "boardgame-column2";
+        padding: 1%;
+        gap: 15px;
+    }
+
+    .intro {
+        height: 250px;
+        padding: 15px;
+    }
+
+    .display-information {
+        flex-direction: row;
+        gap: 15px;
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .information {
+        gap: 8px;
+    }
+
+    .boardgame-description {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .boardgame-image {
+        display: none;
+    }
+
+    .boardgame-details {
+        padding: 15px 0;
+    }
+
+    .container-valorations {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .valorations-section {
+        grid-template-columns: 1fr;
+        margin-top: 4%;
+        gap:20%;
+        justify-items: center;
+    }
+
+    .valoration-card {
+        width: 70%;
+        padding: 20px 15px;
+        margin-bottom: 15px;
+        
+    }
+
+    .card-header {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .text-align {
+        padding: 20px 15px;
+        font-size: 14px;
+    }
+
+    .edit-boardgame {
+        width: 100%;
+        max-width: 1300px;
+        padding: 5%;
+        margin-top: 5%;
+    }
+
+    .btn-style {
+        width: 35%;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .video {
+        padding: 20px;
+    }
+
+    .image-youtube {
+        height: 200px;
+    }
+
+    .recomendations {
+        padding: 20px;
+    }
+
+    .boardgame {
+        flex-direction: row;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .image-size {
+        height: 150px;
+        width: 100%;
+    }
+
+    .little-info {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }

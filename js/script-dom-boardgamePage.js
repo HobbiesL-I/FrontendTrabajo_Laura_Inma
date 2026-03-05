@@ -11,7 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const url = `http://localhost:8080/hobbies/boardgames/${idBoardgamePage}`;
     const urlValoration = `http://localhost:8080/hobbies/valorationsBoardgame/${idBoardgamePage}`;
 
-
     const getBoardgameData = async () => {
         try {
             const result = await fetch(url);
@@ -27,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log(boardgame);
 
         const {
+            idBoardgame,
             name,
             numberPlayers,
             price,
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         cardSectionIntro.innerHTML = `
         <div class="intro">
-                <h2>${name}</h2>
+                <h2 class="h2-color">${name}</h2>
                 <div class="stars">
                     <div class="stars" id="stars"></div>
                 </div>
@@ -83,10 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <div class="information">
-                    <button onclick="window.location.href=''" class="btn-style">
-                        <i class="fa-solid fa-thumbs-up"></i>
-                    </button>
-
+                    <h1><i class="fa-solid fa-thumbs-up icon"></i></h1>
                     <div class="information-subElements">
                         <p class="sub-p">Valora</p>
                         <p class="font-subelement">Da tu opinión</p>
@@ -94,18 +91,17 @@ window.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <div class="information">
-                    <button onclick="window.location.href=''" class="btn-style">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-
+                    <h1><i class="fa-solid fa-trash icon"></i></h1>
                     <div class="information-subElements">
                         <p class="sub-p">Elimina</p>
                         <p class="font-subelement">Elimina el juego</p>
                     </div>
                 </div>
             </div>
-        `
+        `;
+
         cardBoardgameIntro.appendChild(cardSectionIntro);
+        document.querySelector('.intro').style.backgroundImage = `url(${imageBoardgame2})`;
 
         const cardBoardgameColumn1 = document.getElementById('boardgame-column1');
         const cardDivColumn1 = document.createElement(`div`);
@@ -142,7 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         </div>
 
                         <div class="information">
-                            <h1><i class="fa-solid fa-euro-sign"></i></h1>
+                            <h1><i class="fa-solid fa-euro-sign icon"></i></h1>
 
                             <div class="information-subElements">
                                 <p class="sub-p">Precio</p>
@@ -151,7 +147,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         </div>
 
                         <div class="information">
-                            <h1><i class="fa-solid fa-calendar"></i></h1>
+                            <h1><i class="fa-solid fa-calendar icon"></i></h1>
 
                             <div class="information-subElements">
                                 <p class="sub-p">Año de salida</p>
@@ -159,9 +155,23 @@ window.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <a href="boardgameListPage.html">
+                            <button class="btn-style" id="deleteBoardgame">
+                            <i class="fa-solid fa-trash"></i> Eliminar juego</button>
+                        </a>    
+
+                        <a href="valorateBoardgamePage.html?id=${idBoardgamePage}">
+                            <button class="btn-style">
+                            <i class="fa-solid fa-comment-medical"></i> ¡Valóralo!</button>
+                        </a>    
+                    </div>
+                    
+
                 </div>
             </div>
-        `
+        `;
+
         cardBoardgameColumn1.appendChild(cardDivColumn1);
 
         const cardValorationsColumn1 = document.createElement(`div`);
@@ -177,11 +187,27 @@ window.addEventListener('DOMContentLoaded', () => {
                 <div class="valorations-section" id="valorations">
 
                 </div>
-        `
+        `;
 
         cardBoardgameColumn1.appendChild(cardValorationsColumn1);
 
         const cardBoardgameColumn2 = document.getElementById('boardgame-column2');
+
+        const cardEditBoardgame = document.createElement(`div`);
+        cardEditBoardgame.classList.add('edit-boardgame');
+        cardEditBoardgame.innerHTML = `
+            <h1>¿Ves algo raro?</h1>
+            <p>Si ves que el número de jugadores, la duración, la dificultad, el año de publicación u otro detalle
+                    de este juego no es correcto, puedes corregirlo para que la información esté siempre al día.</p>
+            <a href="boardgameEditPage.html?id=${idBoardgame}">
+                <button class="btn-style">
+                    <i class="fa-solid fa-pen-to-square"></i> ¡Edita la información!</button>
+            </a>
+        `;
+
+        cardBoardgameColumn2.appendChild(cardEditBoardgame);
+
+
         const cardVideo = document.createElement(`div`);
         cardVideo.classList.add('video');
         cardVideo.innerHTML = `
@@ -195,7 +221,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </a>
             </div>
-        `
+        `;
 
         cardBoardgameColumn2.appendChild(cardVideo);
 
@@ -207,10 +233,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
             <div class="boardgame-recomendation" id="boardgameRecomendation">
             </div>
-        `
+        `;
 
         cardBoardgameColumn2.appendChild(cardRecomendations);
 
+        const deleteBtn = document.getElementById('deleteBoardgame');
+        deleteBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            await deleteBoardgame(idBoardgamePage);
+        });
+
+        const deleteBoardgame = async () => {
+            try {
+                const deleteResponse = await fetch(`http://localhost:8080/hobbies/boardgames/${idBoardgame}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-type": "application/json; charset=UFT-8",
+
+                    }
+                });
+
+                if (deleteResponse.ok) {
+                    console.log('Juego de mesa eliminado');
+                    window.location.href = 'boardgameListPage.html';
+                }
+                else {
+                    console.error('Error: ', deleteResponse.status);
+                }
+            } catch (error) {
+                console.error('Error: ', error);
+            }
+        }
     }
 
     const getStarsBoardgame = async () => {
@@ -274,8 +328,9 @@ window.addEventListener('DOMContentLoaded', () => {
         cardStars.innerHTML = getStars(mediaQualifications);
 
         const cardValoration = document.createElement(`p`);
+        cardValoration.classList.add('p-color');
         cardValoration.innerHTML = `
-            ${mediaQualifications}/10
+            <b>${mediaQualifications}/10</b>
         `
         cardStars.appendChild(cardValoration);
     }
@@ -412,29 +467,39 @@ window.addEventListener('DOMContentLoaded', () => {
         recomendations.forEach((boardgameRecomendation) => {
 
             const cardBoardgameRecomendation = document.createElement(`div`);
-            cardBoardgameRecomendation.classList.add('boardgame-recomendation');
+            cardBoardgameRecomendation.classList.add('boardgame');
 
             const {
                 idBoardgame,
                 name,
                 numberPlayers,
-                playTime
+                playTime,
+                imageBoardgame
             } = boardgameRecomendation;
+
+
 
             if (recomendationQuantity < maxRecomendations && idBoardgame !== Number(idBoardgamePage)) {
                 cardBoardgameRecomendation.innerHTML = `
-                    <h2>${name}</h2>
+                <a href="boardgamePage.html?id=${idBoardgame}">
+                    <img class="image-size" src="${imageBoardgame}">
+                </a>
+                    <div>
+                        <h2>${name}</h2>
                         <div class="little-info">
                             <p><i class="fa-solid fa-user-group"></i>${numberPlayers}</p>
                             <p><i class="fa-solid fa-user-group"></i>${playTime}</p>
                         </div>
+                    </div>
+                    
                 `
 
                 cardRecomendations.appendChild(cardBoardgameRecomendation);
                 recomendationQuantity++;
+
             }
         });
-    
+
     }
 
     getBoardgameData().then(() => {

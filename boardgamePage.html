@@ -20,25 +20,23 @@
 <body>
     <header class="header-area">
 
-        <div class="header-image">
+        <div class="logo-area">
             <img src="https://placehold.co/100" alto="Logo Página Web">
+            <div>
+                <h1>Nombre Pagina Web</h1>
+                <p>Tu comunidad de entretenimiento</p>
+            </div>
         </div>
 
-        <ul class="headerMenu-left font-title">
-            <li onclick="window.location.href=''" class="header-options">Inicio</li>
-            <li onclick="window.location.href='boardgameListPage.html'" class="header-options">Juegos de Mesa</li>
-            <li onclick="window.location.href=''" class="header-options">Películas</li>
-            <li onclick="window.location.href=''" class="header-options">Añadir Juego Nuevo</li>
-            <li onclick="window.location.href=''" class="header-options">Añadir Película Nueva</li>
+        <ul class="headerMenu font-title">
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-paper-plane"></i> Inicio</li>
+            <li onclick="window.location.href='boardgameListPage.html'" class="header-options"><i class="fa-solid fa-dice"></i> Juegos de Mesa</li>
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-clapperboard"></i> Películas</li>
+            <li onclick="window.location.href='newBoardgamePage.html'" class="header-options"><i class="fa-solid fa-file-circle-plus"></i> Añadir Juego Nuevo</li>
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-file-circle-plus"></i> Añadir Película Nueva</li>
         </ul>
 
-        <div class="headerMenu-right font-title">
-            <form method="get" id="search-hobbie">
-                <input type="search" id="s" class="search-hobbie" value=""
-                    placeholder="¡Búscalo directamente y no te pierdas nada!" />
-            </form>
-        </div>
-    </header>
+    </header>    
 
     <div class="container-area" id="boardgame-intro">
 
@@ -48,15 +46,6 @@
 
         <section class="container-boardgame-column2" id="boardgame-column2">
 
-            <div class="edit-boardgame">
-                <h1>¿Ves algo raro?</h1>
-                <p>Si ves que el número de jugadores, la duración, la dificultad, el año de publicación u otro detalle
-                    de este juego no es correcto, puedes corregirlo para que la información esté siempre al día.</p>
-
-                <button onclick="window.location.href=''" class="btn-style">
-                    <i class="fa-solid fa-pen-to-square"></i> ¡Edita la información!
-                </button>
-            </div>
         </section>
     </div>
 

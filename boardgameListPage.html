@@ -22,59 +22,31 @@
 <body>
     <header class="header-area">
 
-        <div class="header-image">
+        <div class="logo-area">
             <img src="https://placehold.co/100" alto="Logo Página Web">
+            <div>
+                <h1>Nombre Pagina Web</h1>
+                <p>Tu comunidad de entretenimiento</p>
+            </div>
         </div>
 
-        <ul class="headerMenu-left font-title">
-            <li onclick="window.location.href=''" class="header-options">Inicio</li>
-            <li onclick="window.location.href='boardgameListPage.html'" class="header-options">Juegos de Mesa</li>
-            <li onclick="window.location.href=''" class="header-options">Películas</li>
-            <li onclick="window.location.href=''" class="header-options">Añadir Juego Nuevo</li>
-            <li onclick="window.location.href=''" class="header-options">Añadir Película Nueva</li>
+        <ul class="headerMenu font-title">
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-paper-plane"></i> Inicio</li>
+            <li onclick="window.location.href='boardgameListPage.html'" class="header-options"><i class="fa-solid fa-dice"></i> Juegos de Mesa</li>
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-clapperboard"></i> Películas</li>
+            <li onclick="window.location.href='newBoardgamePage.html'" class="header-options"><i class="fa-solid fa-file-circle-plus"></i> Añadir Juego Nuevo</li>
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-file-circle-plus"></i> Añadir Película Nueva</li>
         </ul>
-
-        <div class="headerMenu-right font-title">
-            <form method="get" id="search-hobbie">
-                <input type="search" id="s" class="search-hobbie" value=""
-                    placeholder="¡Búscalo directamente y no te pierdas nada!" />
-            </form>
-        </div>
     </header>
 
     <div class="container-area">
 
-        <section class="container-addBoardgame">
-            <div class="intro-text">
-                <h1><i class="fa-solid fa-dice"></i> El rincón de los jugones</h1>
-                <p>Nuestra página cuenta con una colección de juegos de mesa de todos los estilos y
-                    temáticas, desde los clásicos más conocidos hasta las últimas novedades. Si no encuentras un juego
-                    en la lista, ¡no te preocupes! Tú mismo puedes añadirlo fácilmente para que otros jugadores también
-                    lo descubran y compartan su experiencia.</p>
-            </div>
-            <div class="addBoardgameBtn">
-                <p>¿No encuentras tu juego? ¡Añádelo tú!</p>
-                <button onclick="window.location.href=''" class="btn-style">¡Añádeme!</button>
-            </div>
-
+        <!--Section de introduccion de la página-->
+        <section class="container-addBoardgame" id="container-addBoardgame">
         </section>
 
-        <section class="container-filterMenu">
-            <!--Menu filtrar-->
-            <ul class="filterMenu">
-                <p>Opciones y filtros </p>
-                <li id="age">Edad <i class="fa-solid fa-angle-up"></i>
-                    <!--SubMenu Edad de juegos || Función createOptions en js-->
-                </li>
-                
-                <li id="price">Precio <i class="fa-solid fa-angle-up"></i>
-                    <!--SubMenu Precio || Función createOptions en js-->
-                </li>
-            </ul>
-        </section>
-
-        <section class="container-boardgameList" id="content">
-            <!--listado juegos de mesa || Función createBoardgames en js-->
+        <!--Sección que lista todos los juegos de la base de datos-->
+        <section class="container-boardgameList" id="boardgameList">
         </section>
 
         <!--Sección para subscribirse al boletin-->

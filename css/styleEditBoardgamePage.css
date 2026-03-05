@@ -1,31 +1,62 @@
-.body-class {
-    padding-top: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.edit-boardgame {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.newBoardgame-intro {
+.boardgame-summary {
+    background: var(--color-main);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    height: fit-content;
+}
+
+.game-cover {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.old-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.stat {
+    background: #f8f9ff;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    border-radius: 8px;
     text-align: center;
-    max-width: 1200px;
-    margin-bottom: 2%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    height: 50px;
 }
+
 
 .game-form {
     background: var(--color-main);
-    border-radius: 10px;
+    border-radius: 16px;
     padding: 2rem;
-    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
-    width: 800px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.form-section {
+    margin-bottom: 2rem;
 }
 
 .form-section h3 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
-    border-bottom: 2px solid var(--color-tertiary);
+    border-bottom: 2px solid #e2e8f0;
     padding-bottom: 0.5rem;
 }
 
@@ -119,52 +150,56 @@ textarea {
     box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
 }
 
-/* MÓVIL (hasta 768px) */
 @media (max-width: 768px) {
-    .body-class {
-        padding-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .newBoardgame-intro {
+    .edit-boardgame {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
         padding: 0 1rem;
-        margin-bottom: 1.5rem;
+        margin: 0;
     }
 
+    .boardgame-summary,
     .game-form {
-        width: 90%;
-        padding: 1.5rem 1.25rem;
+        padding: 1.5rem;
         border-radius: 12px;
-        margin: 0 -1rem;
-        /* Ancho completo */
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .game-cover {
+       display: none;
+    }
+
+    .old-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        font-size: 0.85rem;
+        width: 300px;
+    }
+
+    .stat {
+        padding: 0.75rem 0.5rem;
     }
 
     .form-row-checkbox {
-        flex-direction: row;
-        gap: 50px;
+        flex-direction: column;
+        gap: 1rem;
         align-items: flex-start;
     }
 
     .form-row {
-        grid-template-columns: 95px 1fr;
+        grid-template-columns: 100px 1fr;
         gap: 0.75rem;
-        padding: 0 0.25rem;
+        padding: 0 0.5rem;
     }
 
     .form-section h3 {
         font-size: 1.1rem;
     }
 
-    label {
-        font-size: 0.9rem;
-    }
-
     input,
     textarea,
     select {
-        padding: 1rem;
+        padding: 0.875rem;
         font-size: 16px;
     }
 
@@ -174,8 +209,7 @@ textarea {
 
     .form-actions {
         flex-direction: row;
-        gap: 0.875rem;
-        padding-top: 1.25rem;
+        gap: 0.75rem;
     }
 
     .btn {

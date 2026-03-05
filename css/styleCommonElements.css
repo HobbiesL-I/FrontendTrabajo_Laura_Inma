@@ -5,84 +5,34 @@
 }
 
 body {
-    /*background-color: rgba(255, 234, 216, 0.8);*/
-    padding-top: 100px;
-    /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
-    /*background-image: url('../images/background_image.jpg');
-    background-size: 30% auto;
-    background-repeat: repeat;
-    background-position: center;
-    background-blend-mode: multiply;*/
+    margin: 0;
 }
 
 .header-area {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 98%;
     background-color: var(--color-firstSecondary);
-    z-index: 1000;
     display: flex;
-    padding: 1%;
     align-items: center;
+    justify-content: space-around;
+    padding: 1%;
     box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header-options {
-    cursor: pointer;
+.logo-area {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
-.headerMenu-left {
+.headerMenu {
     display: flex;
     justify-content: space-around;
     list-style: none;
     width: 50%;
 }
 
-.header-image {
-    display: flex;
-    justify-content: center;
-    width: 60%;
-}
-
-.headerMenu-right {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    width: 50%;
-}
-
-.search-hobbie {
-    padding: 6px 10px;
-    border-radius: 8px;
-    border: none;
-}
-
-table {
-    margin-bottom: 10px;
-    border-collapse: separate;
-    border-spacing: 8px 4px;
-    color: black;
-    border-bottom: 1px solid black;
-    gap: 10px;
-}
-
-table th {
-    border-right: 2px solid black;
-    text-align: start;
-    vertical-align: middle;
-}
-
-table td {
-    padding: 5px 10px;
-    text-align: start;
-    vertical-align: middle;
-}
-
-table td:first-child {
-    text-align: start;
-    vertical-align: middle;
-    border-right: 1px solid black;
+li {
+    cursor: pointer;
 }
 
 a {
@@ -96,12 +46,6 @@ a {
     align-items: center;
     width: 97vw;
     margin-bottom: 20%;
-}
-
-form {
-    display: flex;
-    gap: 10px;
-
 }
 
 footer {
@@ -172,32 +116,35 @@ footer {
 
 @media (max-width: 768px) {
 
-    body {
-        padding-top: 270px;
-    }
-
     .header-area {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 20px;
+        align-items: center;
+        margin: 0;
     }
 
-    .headerMenu-left,
-    .headerMenu-right {
-        width: 100%;
+    .logo-area {
         justify-content: center;
+        order: 2;
+    }
+
+    .headerMenu {
+        width: 80%;
+        align-items: center;
         gap: 10px;
+        padding: 0;
+        margin: 0;
     }
 
-    .header-image {
-        width: 100%;
-        justify-content: center;
-        margin: 0.5rem 0;
+    .headerMenu li {
+        flex: 1 1 45%;
+        text-align: center;
     }
 
-    .search-hobbie {
-        width: 100%;
-        max-width: 300px;
+    .headerMenu a {
+        display: block;
+        padding: 12px 8px;
     }
 
     .newsletter {
@@ -218,7 +165,7 @@ footer {
     }
 
     footer {
-        padding: 1rem 0.5rem;
+        width: 100%;
     }
 
     .footer-content {

@@ -14,117 +14,106 @@ const getListBoardgames = async () => {
 
 const createBoardgames = (boardgameList) => {
     console.log(boardgameList);
-    const listContent = document.getElementById('content')
+    const listContent = document.getElementById('boardgameList')
 
     //bucle para recorrer todo el array de juegos de mesa e imprimir la lista en pantalla
     boardgameList.forEach(async (boardgame) => {
 
         console.log(boardgame)
 
+        const cardIntro = document.getElementById('container-addBoardgame');
+        cardIntro.innerHTML=`
+            <div class="intro-text">
+                <h1><i class="fa-solid fa-dice"></i> El rincón de los jugones</h1>
+                <p>Nuestra página cuenta con una colección de juegos de mesa de todos los estilos y
+                    temáticas, desde los clásicos más conocidos hasta las últimas novedades. Si no encuentras un juego
+                    en la lista, ¡no te preocupes! Tú mismo puedes añadirlo fácilmente para que otros jugadores también
+                    lo descubran y compartan su experiencia.</p>
+            </div>
+            <div class="addBoardgameBtn">
+                <p>¿No encuentras tu juego? ¡Añádelo tú!</p>
+                <a href="newBoardgamePage.html">
+                    <button class="btn-style">¡Añádeme!</button>
+                </a>
+            </div>
+        `
+
         //Destructuracion del objeto juego de mesa
         const {
             idBoardgame,
             name,
+            numberPlayers,
+            playTime,
+            age,
             difficulty,
-            imageBoardgame
+            imageBoardgame2
         } = boardgame;
 
         const card = document.createElement(`div`);
-        card.classList.add('list-boardgame')
+        card.classList.add('boardgameCard')
         card.innerHTML = `
-            <img class="boardgame-image" src="${imageBoardgame}">
-                <p>${name}</p>
-                <div>
+            <img class="image-List"
+                    src="${imageBoardgame2}">
+                <div class="cardInfo">
+                    <h2>${name}</h2>
+                    <div class="info-extra">
+                        <p><i class="fa-solid fa-user-group"></i> ${numberPlayers}</p>
+                        <p><i class="fa-solid fa-hourglass"></i> ${playTime}</p>
+                        <p><i class="fa-regular fa-calendar"></i> ${age}</p>
+                    </div>
+
+                </div>
+                <div class="buttons">
                     <a href="boardgamePage.html?id=${idBoardgame}&difficulty=${difficulty}">
-                        <button class="btn-style">Más información</button>
+                        <button class="btn-style">
+                            <i class="fa-solid fa-circle-info"></i> Obtener más información
+                        </button>
                     </a>
-                    <button onclick="window.location.href=''" class="btn-style">Valorar</button>
-                    <a href="boardgameDeletePage.html?id=${idBoardgame}&name=${name}">
-                        <button class="btn-style"><i class="fa-solid fa-trash"></i></button>
-                    </a>
-                    
+
+                        <a href="valorateBoardgamePage.html?id=${idBoardgame}">
+                            <button class="btn-style">
+                                <i class="fa-solid fa-comment-medical"></i> Valorar
+                            </button>
+                        </a>
+                            <button class="btn-style btn-delete" data-id="${idBoardgame}">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                 </div>
         `;
-
         listContent.appendChild(card);
-    });
-}
 
-//Funciones para sacar las opciones
-const getOptions = async () => {
-    try {
-        const result = await fetch(url);
-        const data = await result.json();
-        createOptions(data);
+        const deleteBtn = card.querySelector('.btn-delete');
+        deleteBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
 
-    } catch (error) {
-        console.error(error);
-    }
-}
+            const idBoardgame = deleteBtn.dataset.id;
 
-const createOptions = (boardgameOptions) => {
+            await deleteBoardgame(idBoardgame);
+        });
+  
+    });       
 
-    //Mostramos los rangos edades registradas en la base de datos en un elemento ul.
-    const listAge = document.getElementById('age');
-    const ages = boardgameOptions.map(boardgame => boardgame.age);
-    const differentAges = [];
+        const deleteBoardgame = async (idBoardgame) => {
+            try {
+                const deleteResponse = await fetch(`http://localhost:8080/hobbies/boardgames/${idBoardgame}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-type": "application/json; charset=UFT-8",
 
-    for (let i = 0; i < ages.length; i++) {
-        if (!differentAges.includes(ages[i])) {
-            differentAges.push(ages[i]);
+                    }
+                });
+
+                if (deleteResponse.ok) {
+                    console.log('Juego de mesa eliminado');
+                    window.location.href = 'boardgameListPage.html';
+                }
+                else {
+                    console.error('Error: ', deleteResponse.status);
+                }
+            } catch (error){
+                console.error('Error: ', error);
+            }
         }
-    };
-
-    const ageCard = document.createElement('ul');
-
-    differentAges.forEach(age => {
-        const ageLi = document.createElement('li');
-        ageLi.textContent = age;
-        ageCard.appendChild(ageLi);
-    });
-
-    listAge.appendChild(ageCard);
-
-    //Mostramos los rangos de precios registradas en la base de datos en un elemento ul.
-    const listPrice = document.getElementById('price');
-    const price = boardgameOptions.map(boardgame => boardgame.price);
-    console.log(price)
-    const differentPrices = [];
-    let label = null;
-
-    for (let i = 0; i < price.length; i++) {
-
-        if (price[i] > 10.00) {
-            label = '+10';
-        }
-
-        if (price[i] > 20.00) {
-            label = '+20';
-        }
-
-        if (price[i] > 50.00) {
-            label = '+50';
-        }
-
-        if (price[i] > 100.00) {
-            label = '+100';
-        }
-
-        if(!differentPrices.includes(label)){
-            differentPrices.push(label);
-        }
-    }
-
-    const priceCard = document.createElement('ul');
-
-    differentPrices.forEach(price => {
-        const priceLi = document.createElement('li');
-        priceLi.textContent = price;
-        priceCard.appendChild(priceLi);
-    });
-
-    listPrice.appendChild(priceCard);
 }
 
 getListBoardgames();
-getOptions();

@@ -17,7 +17,7 @@ h1 {
 }
 
 h2{
-    color: white;
+    color: var(--color-tertiary);
     font-size: 30px;
 }
 
@@ -36,6 +36,7 @@ h6 {
 p {
   font-size: 19px;
   margin: 1px;
+  color: var(--color-tertiary);
 }
 
 button {
