@@ -1,0 +1,270 @@
+.container-area {
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "addBoardgame"
+        "boardgameList"
+        "newsletter";
+}
+
+.container-addBoardgame {
+    grid-area: addBoardgame;
+    background-color: var(--color-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    gap: 10px;
+}
+
+.intro-text {
+    text-align: center;
+    max-width: 1200px;
+}
+
+.addBoardgameBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-boardgameList {
+    grid-area: boardgameList;
+    color: var(--color-tertiary);
+    padding: 1%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    padding: 1%;
+}
+
+.boardgameCard {
+    background-color: var(--color-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+}
+
+.image-List {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 4px solid var(--color-tertiary);
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+.info-extra {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto;
+
+}
+
+.buttons {
+    padding: 2%;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 3%;
+}
+
+.btn-style:hover {
+    transform: scale(1.1);
+    background-color: var(--color-firstSecondary);
+    color: var(--color-tertiary);
+}
+
+
+.container-filterMenu {
+    grid-area: filterMenu;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.filterMenu {
+    background-color: var(--color-main);
+    border-radius: 10px;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+.list-boardgame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.boardgame-image {
+    display: block;
+    width: 80%;
+}
+
+.btn-style {
+    border-radius: 3px;
+    height: 30px;
+    background-color: var(--color-tertiary);
+    color: var(--color-main);
+    border: none;
+    cursor: pointer;
+}
+
+.container-newsletter {
+    grid-area: newsletter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    background-color: var(--color-main);
+}
+
+.subscription {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1%;
+}
+
+.field-small {
+    height: 1px;
+    width: 200px;
+    padding: 20px;
+    font-size: 14px;
+    background-color: var(--color-firstSecondary);
+    border-radius: 10px;
+    border: none;
+}
+
+.field-small::placeholder {
+    font-style: italic;
+    color: var(--color-tertiary);
+}
+
+.btn-submit {
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    padding: 2%;
+    background-color: var(--color-tertiary);
+    color: var(--color-main);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15 ease;
+}
+
+.btn-submit:hover {
+    transform: scale(1.05);
+    background-color: var(--color-firstSecondary);
+    color: var(--color-tertiary);
+}
+
+@media (max-width: 768px) {
+    .container-area {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .container-boardgameList {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 1rem;
+    }
+
+    .boardgameCard {
+        max-width: 100%;
+    }
+
+    .image-List {
+        height: 160px;
+    }
+
+    .info-extra {
+        gap: 0.75rem;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+
+    .buttons {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .btn-style {
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .container-addBoardgame {
+        padding: 1.5rem 1rem;
+        justify-content: center;
+    }
+
+    .addBoardgameBtn {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .subscription {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .field-small {
+        width: 100%;
+        max-width: 300px;
+        height: 20px;
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .btn-submit {
+        width: 20%;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .container-newsletter {
+        gap: 1rem;
+        text-align: center;
+    }
+}
