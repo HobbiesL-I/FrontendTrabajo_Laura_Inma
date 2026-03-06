@@ -30,6 +30,8 @@ window.addEventListener('DOMContentLoaded', () => {
             difficulty
         } = boardgame
 
+        document.title =`Valorando ${name}`;
+
         const cardBoardgameSummary = document.getElementById('boardgame-summary');
         cardBoardgameSummary.innerHTML = `
             <div class="image">

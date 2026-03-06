@@ -38,6 +38,8 @@ window.addEventListener('DOMContentLoaded', () => {
             imageBoardgame2
         } = boardgame
 
+        document.title=`Editando ${name}`;
+
         const previewInfo = document.getElementById('boardgame-summary');
         previewInfo.classList.add('boardgame-summary');
 
@@ -101,7 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 <h3>Jugabilidad (Marca la casilla Solitario si es también para 1 jugador)</h3>
                 <div class="form-row-checkbox">
                     <label>Solitario:</label>
-                    <input type="checkbox" id="onePlayer" value="${onePlayer ? 'checked' : ''}">
+                    <input type="checkbox" id="onePlayer" ${onePlayer ? 'checked' : ''}>
                 </div>
                 <div class="form-row">
                     <label>Jugadores:</label>

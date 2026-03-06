@@ -28,10 +28,9 @@ const createBoardgames = (boardgameList) => {
                 <p>Nuestra página cuenta con una colección de juegos de mesa de todos los estilos y
                     temáticas, desde los clásicos más conocidos hasta las últimas novedades. Si no encuentras un juego
                     en la lista, ¡no te preocupes! Tú mismo puedes añadirlo fácilmente para que otros jugadores también
-                    lo descubran y compartan su experiencia.</p>
+                    lo descubran y compartan su experiencia. ¿No encuentras tu juego? <b>¡Añádelo tú!</b></p>
             </div>
             <div class="addBoardgameBtn">
-                <p>¿No encuentras tu juego? ¡Añádelo tú!</p>
                 <a href="newBoardgamePage.html">
                     <button class="btn-style">¡Añádeme!</button>
                 </a>

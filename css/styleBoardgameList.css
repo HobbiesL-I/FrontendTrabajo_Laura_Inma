@@ -16,6 +16,7 @@
     flex-direction: column;
     align-items: center;
     padding: 1%;
+    gap: 10px;
 }
 
 .intro-text {
@@ -25,6 +26,8 @@
 
 .addBoardgameBtn {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
@@ -62,6 +65,7 @@
 .cardInfo {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 2%;
 }
 

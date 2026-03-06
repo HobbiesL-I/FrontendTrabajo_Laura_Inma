@@ -4,8 +4,7 @@
 
 .font-title {
   font-family: "Fredoka", sans-serif;
-  font-size: 20px;
-  font-weight: weight;
+  font-size: 17px;
   font-style: normal;
 }
 
@@ -17,24 +16,28 @@ h1 {
 }
 
 h2{
+  font-family: "Rozha One", serif;
     color: var(--color-tertiary);
     font-size: 30px;
 }
 
 h3,
 h4 {
-  color: black;
+  font-family: "Rozha One", serif;
+  color: var(--color-tertiary);
   margin-bottom: 1rem;
   font-size: 1.2em;
 }
 
 h6 {
+  font-family: "Rozha One", serif;
   color: var(--color-subtitle);
   font-size: 20px;
 }
 
 p {
-  font-size: 19px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
   margin: 1px;
   color: var(--color-tertiary);
 }

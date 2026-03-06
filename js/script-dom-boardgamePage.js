@@ -28,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const {
             idBoardgame,
             name,
+            onePlayer,
             numberPlayers,
             price,
             playTime,
@@ -69,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     <div class="information-subElements">
                         <p class="sub-p">Solitario</p>
-                        <p class="font-subelement" id="onePlayer"></p>
+                        <p class="font-subelement" id="onePlayer-message">${onePlayer ? '¡Juega solo!' : 'No se puede'}</p>
                     </div>
                 </div>
 
@@ -327,38 +328,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
         cardStars.innerHTML = getStars(mediaQualifications);
 
+        mediaQualifications = mediaQualifications || 0;
+
         const cardValoration = document.createElement(`p`);
         cardValoration.classList.add('p-color');
         cardValoration.innerHTML = `
             <b>${mediaQualifications}/10</b>
         `
         cardStars.appendChild(cardValoration);
-    }
-
-    const getOnePlayer = async () => {
-        try {
-            const result = await fetch(url);
-            const data = await result.json();
-            console.log(data);
-            createOnePlayer(data);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    const createOnePlayer = (boardgame) => {
-        const cardOnePlayer = document.getElementById('onePlayer');
-        cardOnePlayer.innerHTML = ``
-        const {
-            onePlayer
-        } = boardgame;
-
-        if (onePlayer === true) {
-            cardOnePlayer.innerHTML = `¡Juega solo!`
-        }
-        else {
-            cardOnePlayer.innerHTML = `No se puede`
-        }
     }
 
     const getValorationData = async () => {
@@ -387,10 +364,9 @@ window.addEventListener('DOMContentLoaded', () => {
         const cardValoration = document.getElementById('valorations');
         const valorationContent = document.createElement(`div`);
 
-        valorationContent.classList.add('container-valorations');
+        valorationContent.classList.add('valorationsEmpty');
         valorationContent.innerHTML = `
-        <h1>¡Se el primero en valorar este juego!</h1>
-        `
+        <h2>Todavía no hay valoraciones de este juego</h2>`
         cardValoration.appendChild(valorationContent);
     }
 
@@ -425,6 +401,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
 
                 return htmlStarsBoardgame;
+
+
             };
 
             divCardValoration.innerHTML = `
@@ -504,7 +482,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     getBoardgameData().then(() => {
         getStarsBoardgame();
-        getOnePlayer();
         getValorationData();
         getRecomendationData();
     });

@@ -24,11 +24,16 @@ body {
     gap: 20px;
 }
 
+.image-logo{
+    width: 10%;
+}
+
+
 .headerMenu {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    width: 50%;
+    width: 70%;
 }
 
 li {
@@ -36,6 +41,7 @@ li {
 }
 
 a {
+    color: var(--color-tertiary);
     text-decoration: none;
 }
 
@@ -61,6 +67,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
+    align-items: self-start;
 }
 
 .footer-section ul {
@@ -73,6 +80,7 @@ footer {
 }
 
 .footer-section a {
+    font-family: "Fredoka", sans-serif;
     color: var(--color-tertiary);
     text-decoration: none;
     transition: color 0.3s ease;
