@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .container-area {
     margin-top: 20px;
     display: grid;
@@ -18,8 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 98vw;
-    margin-top: 3%;
+    width: 100%;
     margin-bottom: 2%;
     color: var(--color-tertiary);
 }
@@ -251,12 +254,14 @@
     width: 97vw;
     margin-top: 2%;
     margin-bottom: 3%;
+    gap: 10px;
 }
 
 .subscription {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 10px;
 }
 
 .field-small {
@@ -272,7 +277,7 @@
 .field-small::placeholder {
     font-style: italic;
     color: var(--color-tertiary);
-}    
+}
 
 .btn-submit {
     border-radius: 5px;
@@ -296,6 +301,10 @@
 
     .container-area {
         margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .container-mainDescription,
@@ -305,8 +314,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         justify-content: center;
-        width: 96vw;
+        width: 100%;
+        padding: 1%;
     }
 
     .description-intro {
@@ -371,14 +382,15 @@
         gap: 20px;
         display: flex;
         flex-direction: column-reverse;
+        align-items: center;
     }
 
     .movies-information,
     .boardgame-information {
         max-width: 100%;
-        padding: 1rem;
         display: flex;
         align-items: center;
+        padding: 0;
     }
 
     .btn-moreInfo,
@@ -393,11 +405,9 @@
         justify-content: center;
         align-items: center;
         gap: 15px;
-        padding: 2%;
     }
 
     .valoration-card {
-        max-width: 100%;
         height: auto;
         box-shadow: 0px 2px 6px rgba(32, 13, 13, 0.15);
     }
@@ -408,16 +418,22 @@
     }
 
     .subscription {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
     }
 
     .field-small {
         width: 50%;
         max-width: none;
-        height: 20px;
+        height: 30px;
         padding: 12px;
         font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .btn-submit {
+        padding: 0;
     }
 }
