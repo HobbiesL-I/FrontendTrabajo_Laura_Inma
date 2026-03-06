@@ -13,12 +13,13 @@ h1 {
   font-size: 30px;
   gap: 0;
   margin-bottom: 0.2rem;
+  color: var(--color-tertiary);
 }
 
-h2{
+h2 {
   font-family: "Rozha One", serif;
-    color: var(--color-tertiary);
-    font-size: 30px;
+  color: var(--color-tertiary);
+  font-size: 30px;
 }
 
 h3,
@@ -33,6 +34,7 @@ h6 {
   font-family: "Rozha One", serif;
   color: var(--color-subtitle);
   font-size: 20px;
+  margin: 1%;
 }
 
 p {
