@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle Película</title>
-  <link rel="stylesheet" href="./css/detalle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Película</title>
+    <link rel="stylesheet" href="./css/detalle.css">
     <link rel="stylesheet" href="./css/styleFonts.css">
 
 </head>
@@ -22,91 +23,90 @@
     </ul>
 
     <div class="headerMenu-right font-title">
-            <input type="search"
-             id="s" 
-             class="search-hobbie" 
-             placeholder="Busca por titulo">
+        <input type="search" id="s" class="search-hobbie" placeholder="Busca por titulo">
         </form>
     </div>
 
 </header>
+
 <body>
 
-  
-  <div id="detalle-pelicula" class="detalle-container">
 
-    <div class="imagen-lado">
-      <img id="image" src="" alt="">
+    <div id="detalle-pelicula" class="detalle-container">
+
+        <div class="imagen-lado">
+            <img id="image" src="" alt="">
+        </div>
+
+        <div class="info-lado">
+            <h1 id="title"></h1>
+            <p><strong>Género:</strong> <span id="genre"></span></p>
+            <p><strong>Director:</strong> <span id="director"></span></p>
+            <p><strong>Año:</strong> <span id="year"></span></p>
+            <p><strong>Duración:</strong> <span id="duration"></span></p>
+            <p><strong>Actores:</strong> <span id="actors"></span></p>
+            <p><strong>Descripción:</strong> <span id="description"></span></p>
+            <a href="MovieValoration.html"><button id="btn-valorar">Valorar película</button>
+            </a>
+
+
+
+        </div>
+
     </div>
 
-    <div class="info-lado">
-      <h1 id="title"></h1>
-      <p><strong>Género:</strong> <span id="genre"></span></p>
-      <p><strong>Director:</strong> <span id="director"></span></p>
-      <p><strong>Año:</strong> <span id="year"></span></p>
-      <p><strong>Duración:</strong> <span id="duration"></span></p>
-      <p><strong>Actores:</strong> <span id="actors"></span></p>
-      <p><strong>Descripción:</strong> <span id="description"></span></p>
-          <a href="MoviePage.html">← Volver</a>
-          
-          <button id="btn-valorar" onclick="irAValorar()">valorar película</button>
 
 
-    </div>
-
-  </div>
-
-  
-
-  <script src="./js/peli.js"></script>
+    <script src="./js/peli.js"></script>
 </body>
 <!-- FOOTER -->
- <footer>
-        <div class="footer-content">
+<footer>
+    <div class="footer-content">
 
-            <div class="footer-section">
-                <h3>Titulo pagina web</h3>
-                <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
-            </div>
-
-            <div class="footer-section">
-                <h4>Explora</h4>
-                <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
-                    <li><a href="MoviePage.html">Peliculas</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Contacto</h4>
-                <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
-                <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
-                <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
-            </div>
-
-            <div class="footer-section">
-                <h4>¡Encuentranos en nuestras redes sociales!</h4>
-                <div class="social-links">
-                    <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
-                    <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
-                    <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
-                </div>
-            </div>
+        <div class="footer-section">
+            <h3>Titulo pagina web</h3>
+            <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
         </div>
 
-        <div class="footer-bottom">
-            <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
-            <div class="footer-links">
-                <a href="">Política de privacidad</a>
-                <a href="">Términos de uso</a>
-                <a href="">Cookies</a>
+        <div class="footer-section">
+            <h4>Explora</h4>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
+                <li><a href="MoviePage.html">Peliculas</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contacto</h4>
+            <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
+            <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
+            <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>¡Encuentranos en nuestras redes sociales!</h4>
+            <div class="social-links">
+                <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+                <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+        <div class="footer-links">
+            <a href="">Política de privacidad</a>
+            <a href="">Términos de uso</a>
+            <a href="">Cookies</a>
+        </div>
+    </div>
+</footer>
 
 </body>
 
 </html>
+
 </html>
