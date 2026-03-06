@@ -1,0 +1,202 @@
+:root {
+    --color-main: rgb(255, 234, 216);
+    --color-firstSecondary: rgb(232, 152, 138);
+    --color-tertiary: rgb(42, 20, 24);
+}
+
+body {
+    margin: 0;
+}
+
+.header-area {
+    width: 98%;
+    background-color: var(--color-firstSecondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1%;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-area {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.image-logo{
+    width: 10%;
+}
+
+
+.headerMenu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 70%;
+}
+
+li {
+    cursor: pointer;
+}
+
+a {
+    color: var(--color-tertiary);
+    text-decoration: none;
+}
+
+.newsletter {
+    background-color: rgba(232, 152, 138, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 97vw;
+    margin-bottom: 20%;
+}
+
+footer {
+    background: var(--color-firstSecondary);
+    color: var(--color-tertiary);
+    padding: 1%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    align-items: self-start;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    font-family: "Fredoka", sans-serif;
+    color: var(--color-tertiary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--color-main);
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-tertiary);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    font-size: 0.9rem;
+}
+
+/*Colores para los iconos sacados de font Awesome*/
+.fa-star {
+    color: var(--color-tertiary)
+}
+
+@media (max-width: 768px) {
+
+    .header-area {
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 20px;
+        align-items: center;
+        margin: 0;
+    }
+
+    .logo-area {
+        justify-content: center;
+        order: 2;
+    }
+
+    .headerMenu {
+        width: 80%;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .headerMenu li {
+        flex: 1 1 45%;
+        text-align: center;
+    }
+
+    .headerMenu a {
+        display: block;
+        padding: 12px 8px;
+    }
+
+    .newsletter {
+        width: 100vw;
+        padding: 1.5rem 1rem;
+        margin-bottom: 15%;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .newsletter form input,
+    .newsletter form button {
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        padding: 0 1%;
+        gap: 1px;
+    }
+
+    .footer-section {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-links a {
+        display: inline-block;
+        margin: 0.25rem 0.5rem;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+        gap: 15px;
+    }
+}

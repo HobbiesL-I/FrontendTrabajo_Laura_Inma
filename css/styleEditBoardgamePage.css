@@ -1,0 +1,220 @@
+.edit-boardgame {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.boardgame-summary {
+    background: var(--color-main);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    height: fit-content;
+}
+
+.game-cover {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.old-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.stat {
+    background: #f8f9ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1%;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    height: 50px;
+}
+
+
+.game-form {
+    background: var(--color-main);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.form-row-checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+    margin-bottom: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-row.full {
+    grid-template-columns: 1fr;
+}
+
+label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+input,
+textarea {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e2e8f0;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--color-tertiary);
+    color: var(--color-main);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    background-color: var(--color-main);
+    color: var(--color-tertiary);
+}
+
+.btn-secondary {
+    background: var(--color-tertiary);
+    color: var(--color-main);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    background: rgb(200, 91, 91);
+    color: var(--color-main);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+    .edit-boardgame {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 0 1rem;
+        margin: 0;
+    }
+
+    .boardgame-summary,
+    .game-form {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .game-cover {
+       display: none;
+    }
+
+    .old-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        font-size: 0.85rem;
+        width: 300px;
+    }
+
+    .stat {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .form-row-checkbox {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .form-row {
+        grid-template-columns: 100px 1fr;
+        gap: 0.75rem;
+        padding: 0 0.5rem;
+    }
+
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+
+    input,
+    textarea,
+    select {
+        padding: 0.875rem;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    .form-actions {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 16px;
+    }
+}
