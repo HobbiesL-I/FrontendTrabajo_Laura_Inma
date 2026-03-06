@@ -9,7 +9,7 @@ body {
 }
 
 .header-area {
-    width: 98%;
+    width: 100%;
     background-color: var(--color-firstSecondary);
     display: flex;
     align-items: center;
