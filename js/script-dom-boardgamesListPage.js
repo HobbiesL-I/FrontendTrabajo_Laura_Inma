@@ -65,7 +65,7 @@ const createBoardgames = (boardgameList) => {
                 <div class="buttons">
                     <a href="boardgamePage.html?id=${idBoardgame}&difficulty=${difficulty}">
                         <button class="btn-style">
-                            <i class="fa-solid fa-circle-info"></i> Obtener más información
+                            <i class="fa-solid fa-circle-info"></i> Más información
                         </button>
                     </a>
 
@@ -84,6 +84,9 @@ const createBoardgames = (boardgameList) => {
         const deleteBtn = card.querySelector('.btn-delete');
         deleteBtn.addEventListener('click', async (e) => {
             e.preventDefault();
+
+            const confirmAction = window.confirm(`¿Segur@ que deseas eliminar el juego de mesa ${name}? También se eliminarán las valoraciones que tenga.`);
+            if(!confirmAction) return;
 
             const idBoardgame = deleteBtn.dataset.id;
 

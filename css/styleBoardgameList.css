@@ -54,7 +54,7 @@
 
 .image-List {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
     object-position: center;
     border-top-left-radius: 10px;
@@ -67,6 +67,8 @@
     flex-direction: column;
     align-items: center;
     padding: 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
 }
 
 .info-extra {
@@ -114,8 +116,6 @@ li {
     list-style: none;
 }
 
-
-
 .list-boardgame {
     display: flex;
     flex-direction: column;
@@ -129,6 +129,7 @@ li {
 }
 
 .btn-style {
+    padding: 1%;
     border-radius: 3px;
     height: 40px;
     background-color: var(--color-tertiary);

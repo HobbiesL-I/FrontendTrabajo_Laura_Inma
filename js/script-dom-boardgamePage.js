@@ -43,6 +43,8 @@ window.addEventListener('DOMContentLoaded', () => {
             imageBoardgame2
         } = boardgame;
 
+        document.title=`${name}`;
+
         const cardBoardgameIntro = document.getElementById('boardgame-intro');
 
         const cardSectionIntro = document.createElement(`section`);
@@ -201,8 +203,8 @@ window.addEventListener('DOMContentLoaded', () => {
             <p>Si ves que el número de jugadores, la duración, la dificultad, el año de publicación u otro detalle
                     de este juego no es correcto, puedes corregirlo para que la información esté siempre al día.</p>
             <a href="boardgameEditPage.html?id=${idBoardgame}">
-                <button class="btn-style">
-                    <i class="fa-solid fa-pen-to-square"></i> ¡Edita la información!</button>
+                <button class="btnEdit-style">
+                    <i class="fa-solid fa-pen-to-square"></i> ¡Edítame!</button>
             </a>
         `;
 
@@ -241,6 +243,9 @@ window.addEventListener('DOMContentLoaded', () => {
         const deleteBtn = document.getElementById('deleteBoardgame');
         deleteBtn.addEventListener('click', async (e) => {
             e.preventDefault();
+
+            const confirmAction = window.confirm(`¿Segur@ que deseas eliminar el juego de mesa ${name}? También se eliminarán las valoraciones que tenga.`);
+            if(!confirmAction) return;
 
             await deleteBoardgame(idBoardgamePage);
         });
