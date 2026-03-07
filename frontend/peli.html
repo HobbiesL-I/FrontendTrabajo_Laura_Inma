@@ -1,112 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle Película</title>
-    <link rel="stylesheet" href="./css/detalle.css">
-    <link rel="stylesheet" href="./css/styleFonts.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle Película</title>
+  <link rel="stylesheet" href="./css/styleFonts.css">
+  <link rel="stylesheet" href="./css/detalle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <header class="header-area">
-
-    <div class="header-image">
-        <img src="https://placehold.co/100" alt="Logo Página Web">
-    </div>
-
-    <ul class="headerMenu-left font-title">
-        <li onclick="window.location.href=''"> Juegos de Mesa</li>
-        <li onclick="window.location.href=''"> Películas</li>
-        <li onclick="window.location.href=''"> Mis Reseñas</li>
-    </ul>
-
-    <div class="headerMenu-right font-title">
-        <input type="search" id="s" class="search-hobbie" placeholder="Busca por titulo">
-        </form>
-    </div>
-
+  <div class="header-image">
+    <img src="./imagenes/Logo.png" alt="Logo">
+  </div>
+  <ul class="headerMenu-left font-title">
+    <li onclick="window.location.href=''">Juegos de Mesa</li>
+    <li onclick="window.location.href=''">Películas</li>
+    <li onclick="window.location.href=''">Mis Reseñas</li>
+  </ul>
+  
 </header>
 
 <body>
 
+  <!-- HERO -->
+  <div class="hero-detalle">
+    <img id="hero-bg" class="hero-bg" src="" alt="">
+    <div class="hero-overlay">
+      <h1 id="hero-title">Cargando...</h1>
+      <div class="hero-stars" id="hero-stars">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <span>Sin valoraciones</span>
+      </div>
+    </div>
+  </div>
 
-    <div id="detalle-pelicula" class="detalle-container">
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <i class="fa-solid fa-masks-theater"></i>
+      <span class="stat-label">Género</span>
+      <span class="stat-value" id="genre">—</span>
+    </div>
+    <div class="stat-item">
+      <i class="fa-solid fa-video"></i>
+      <span class="stat-label">Director</span>
+      <span class="stat-value" id="director">—</span>
+    </div>
+    <div class="stat-item">
+      <i class="fa-solid fa-calendar"></i>
+      <span class="stat-label">Año</span>
+      <span class="stat-value" id="year">—</span>
+    </div>
+    <div class="stat-item">
+      <i class="fa-solid fa-clock"></i>
+      <span class="stat-label">Duración</span>
+      <span class="stat-value" id="duration">—</span>
+    </div>
+  </div>
 
+  <!-- LAYOUT PRINCIPAL -->
+  <div class="detalle-layout">
+    <div>
+      <div class="card-detalles">
         <div class="imagen-lado">
-            <img id="image" src="" alt="">
+          <img id="image" src="" alt="">
         </div>
-
         <div class="info-lado">
-            <h1 id="title"></h1>
-            <p><strong>Género:</strong> <span id="genre"></span></p>
-            <p><strong>Director:</strong> <span id="director"></span></p>
-            <p><strong>Año:</strong> <span id="year"></span></p>
-            <p><strong>Duración:</strong> <span id="duration"></span></p>
-            <p><strong>Actores:</strong> <span id="actors"></span></p>
-            <p><strong>Descripción:</strong> <span id="description"></span></p>
-            <a href="MovieValoration.html"><button id="btn-valorar">Valorar película</button>
+          <h2>Detalles</h2>
+          <p id="description"></p>
+          <div class="info-grid">
+            <p><strong>Actores:</strong></p><p id="actors"></p>
+            <p><strong>Género:</strong></p><p id="genre2"></p>
+            <p><strong>Director:</strong></p><p id="director2"></p>
+            <p><strong>Duración:</strong></p><p id="duration2"></p>
+          </div>
+          <div class="botones">
+            <a href="MovieValoration.html">
+              <button class="btn-valorar"><i class="fa-solid fa-star"></i> ¡Valóralo!</button>
             </a>
-
-
-
+            <button class="btn-volver" onclick="window.location.href='MoviePage.html'">
+              <i class="fa-solid fa-arrow-left"></i> Volver
+            </button>
+          </div>
         </div>
-
+      </div>
     </div>
 
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-card">
+        <h3>Películas recomendadas</h3>
+        <div id="recomendadas">
+          <p>Cargando...</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- VALORACIONES -->
+  <div class="valoraciones-section">
+    <h2>¡Mira lo que otros usuarios opinan!</h2>
+    <p class="sub">Descubre las experiencias de quienes ya han visto esta película</p>
+    <div id="valoraciones-lista">
+      <div class="no-valoraciones">Todavía no hay valoraciones de esta película</div>
+    </div>
+  </div>
 
-    <script src="./js/peli.js"></script>
+  <script src="./js/peli.js"></script>
+
 </body>
-<!-- FOOTER -->
+
 <footer>
-    <div class="footer-content">
-
-        <div class="footer-section">
-            <h3>Titulo pagina web</h3>
-            <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>Explora</h4>
-            <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
-                <li><a href="MoviePage.html">Peliculas</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h4>Contacto</h4>
-            <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
-            <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
-            <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>¡Encuentranos en nuestras redes sociales!</h4>
-            <div class="social-links">
-                <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
-                <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
-                <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
-                <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
-            </div>
-        </div>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Titulo pagina web</h3>
+      <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
     </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
-        <div class="footer-links">
-            <a href="">Política de privacidad</a>
-            <a href="">Términos de uso</a>
-            <a href="">Cookies</a>
-        </div>
+    <div class="footer-section">
+      <h4>Explora</h4>
+      <ul>
+        <li><a href="">Inicio</a></li>
+        <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
+        <li><a href="MoviePage.html">Peliculas</a></li>
+      </ul>
     </div>
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
+      <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
+      <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
+    </div>
+    <div class="footer-section">
+      <h4>¡Encuentranos en nuestras redes sociales!</h4>
+      <div class="social-links">
+        <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+        <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+        <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+        <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+    <div class="footer-links">
+      <a href="">Política de privacidad</a>
+      <a href="">Términos de uso</a>
+      <a href="">Cookies</a>
+    </div>
+  </div>
 </footer>
-
-</body>
-
-</html>
 
 </html>
