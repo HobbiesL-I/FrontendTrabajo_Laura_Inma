@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valorar Película</title>
-  <link rel="stylesheet" href="./css/valoracion.css">
+  <title>Editar Película</title>
   <link rel="stylesheet" href="./css/styleFonts.css">
+  <link rel="stylesheet" href="./css/editarPeli.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -18,32 +18,62 @@
     <li onclick="window.location.href=''">Películas</li>
     <li onclick="window.location.href=''">Mis Reseñas</li>
   </ul>
-  <div class="headerMenu-right font-title">
-    <input type="search" id="s" class="search-hobbie" placeholder="Busca por titulo">
+  <div class="headerMenu-right">
+    <input type="search" class="search-hobbie" placeholder="Busca por título">
   </div>
 </header>
 
 <body>
 
-  <div class="valoracion-container">
+  <div class="editar-container">
+    <h1><i class="fa-solid fa-pen"></i> Editar película</h1>
 
-    <h1>Valorar: <span id="title"></span></h1>
-
-    <div class="estrellas">
-      <span class="estrella" data-value="1">★</span>
-      <span class="estrella" data-value="2">★</span>
-      <span class="estrella" data-value="3">★</span>
-      <span class="estrella" data-value="4">★</span>
-      <span class="estrella" data-value="5">★</span>
+    <div class="form-group">
+      <label for="title">Título</label>
+      <input type="text" id="title" placeholder="Título">
     </div>
-    <p>Puntuación: <span id="puntuacion-texto">0</span> / 5</p>
 
-    <input type="text" id="user_name" placeholder="Tu nombre (opcional)">
-    <textarea id="comment" placeholder="Escribe tu comentario..."></textarea>
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea id="description" placeholder="Descripción"></textarea>
+    </div>
 
-    <button id="btn-enviar"><i class="fa-solid fa-star"></i> Enviar valoración</button>
-    <a href="#" id="volver">← Volver</a>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="genre">Género</label>
+        <input type="text" id="genre" placeholder="Género">
+      </div>
+      <div class="form-group">
+        <label for="director">Director</label>
+        <input type="text" id="director" placeholder="Director">
+      </div>
+    </div>
 
+    <div class="form-row">
+      <div class="form-group">
+        <label for="year">Año</label>
+        <input type="number" id="year" placeholder="Año">
+      </div>
+      <div class="form-group">
+        <label for="duration">Duración (min)</label>
+        <input type="number" id="duration" placeholder="Duración">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="actors">Actores</label>
+      <input type="text" id="actors" placeholder="Actores separados por coma">
+    </div>
+
+    <div class="form-group">
+      <label for="image">Imagen (nombre del archivo)</label>
+      <input type="text" id="image" placeholder="ejemplo.jpg">
+    </div>
+
+    <div class="botones">
+      <button id="btn-guardar"><i class="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
+      <a href="#" id="volver"><button class="btn-volver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+    </div>
   </div>
 
   <footer>
@@ -86,6 +116,6 @@
     </div>
   </footer>
 
-  <script src="./js/valoracion.js"></script>
+  <script src="./js/editarPeli.js"></script>
 </body>
 </html>

@@ -80,7 +80,7 @@ a { text-decoration: none; color: inherit; }
   gap: 6px;
   margin-top: 8px;
   font-size: 1.4rem;
-  color: gold;
+  color: rgb(183, 65, 110);
 }
 .hero-stars span {
   color: white;
@@ -106,6 +106,48 @@ a { text-decoration: none; color: inherit; }
 .stat-item i { font-size: 1.4rem; color: var(--salmon-dark); }
 .stat-label { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
 .stat-value { font-size: 0.95rem; font-weight: 600; color: var(--purple); }
+
+.btn-eliminar {
+  background-color: #b0444e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: "Fredoka", sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-eliminar:hover {
+  background-color: #8f3039;
+}
+.btn-editar {
+  background-color: #a85a54;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: "Fredoka", sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+  margin-top: 8px;
+}
+
+.btn-editar:hover {
+  background-color: #8f3039;
+}
+.botones-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
 
 /* ── LAYOUT PRINCIPAL ── */
 .detalle-layout {

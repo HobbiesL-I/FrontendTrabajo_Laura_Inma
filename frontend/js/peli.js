@@ -38,6 +38,8 @@ const mostrarPelicula = (pelicula) => {
     document.getElementById("genre2").textContent = pelicula.genre;
     document.getElementById("director2").textContent = pelicula.director;
     document.getElementById("duration2").textContent = pelicula.duration + " min";
+    document.getElementById("btn-valorar-link").href = `MovieValoration.html?id=${pelicula.id}`;
+document.getElementById("btn-editar-link").href = `editarPeli.html?id=${pelicula.id}`;
 }
 
 const mostrarRecomendadas = (peliculas, pelicula) => {
@@ -101,6 +103,30 @@ const mostrarValoraciones = (valoraciones) => {
         `).join("");
     }
 }
+
+const eliminarPelicula = async () => {
+    const confirmar = confirm("¿Seguro que quieres eliminar esta película?");
+    
+    if (!confirmar) return;
+
+    try {
+        const res = await fetch(`${urlMovies}/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if (res.ok) {
+            alert("¡Película eliminada!");
+            window.location.href = "MoviePage.html";
+        } else {
+            alert("Error al eliminar la película");
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+document.getElementById("btn-eliminar").addEventListener("click", eliminarPelicula);
 
 getPelicula();
 getValoraciones();

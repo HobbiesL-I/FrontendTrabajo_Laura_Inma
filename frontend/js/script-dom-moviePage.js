@@ -1,21 +1,29 @@
-document.addEventListener("DOMContentLoaded", async () => {
+const url = `http://localhost:8080/hobbies/movies`;
 
-    // 1. Obtener películas de la API
-    const response = await fetch("http://localhost:8080/hobbies/movies");
-    const peliculas = await response.json();
-   
+const getPeliculas = async () => {
+    try {
+        const result = await fetch(url);
+        const peliculas = await result.json();
+        const generos = agruparPorGenero(peliculas);
+        crearFilas(generos);
+        iniciarCarrusel();
+        iniciarBuscador();
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-
-
-    // 2. Agrupar por género
+const agruparPorGenero = (peliculas) => {
     const generos = {};
     peliculas.forEach(peli => {
         const genero = peli.genre || "Sin categoría";
         if (!generos[genero]) generos[genero] = [];
         generos[genero].push(peli);
     });
+    return generos;
+}
 
-    // 3. Crear las filas por género
+const crearFilas = (generos) => {
     const contenedor = document.getElementById("contenedor-peliculas");
 
     Object.keys(generos).forEach(genero => {
@@ -45,8 +53,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         contenedor.appendChild(fila);
     });
+}
 
-    // 4. Carrusel
+const iniciarCarrusel = () => {
     const filas = document.querySelectorAll(".fila");
     filas.forEach(fila => {
         const flechaIzquierda = fila.querySelector(".flecha.izquierda");
@@ -61,15 +70,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             carrusel.scrollBy({ left: -260, behavior: "smooth" });
         });
     });
+}
 
-    // 5. Buscador
-    const buscador = document.getElementById("s");
-    buscador.addEventListener("input", () => {
-        const texto = buscador.value.toLowerCase();
-        document.querySelectorAll(".pelicula").forEach(peli => {
-            const titulo = peli.querySelector("h3").textContent.toLowerCase();
-            peli.style.display = titulo.includes(texto) ? "block" : "none";
-        });
-    });
-});
 
+
+getPeliculas();

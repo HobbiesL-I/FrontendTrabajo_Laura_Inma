@@ -27,7 +27,7 @@
   <div class="hero-detalle">
     <img id="hero-bg" class="hero-bg" src="" alt="">
     <div class="hero-overlay">
-      <h1 id="hero-title">Cargando...</h1>
+      <h1 id="hero-title"></h1>
       <div class="hero-stars" id="hero-stars">
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
@@ -39,30 +39,36 @@
     </div>
   </div>
 
+  
   <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <i class="fa-solid fa-masks-theater"></i>
-      <span class="stat-label">Género</span>
-      <span class="stat-value" id="genre">—</span>
-    </div>
-    <div class="stat-item">
-      <i class="fa-solid fa-video"></i>
-      <span class="stat-label">Director</span>
-      <span class="stat-value" id="director">—</span>
-    </div>
-    <div class="stat-item">
-      <i class="fa-solid fa-calendar"></i>
-      <span class="stat-label">Año</span>
-      <span class="stat-value" id="year">—</span>
-    </div>
-    <div class="stat-item">
-      <i class="fa-solid fa-clock"></i>
-      <span class="stat-label">Duración</span>
-      <span class="stat-value" id="duration">—</span>
-    </div>
+<div class="stats-bar">
+  <div class="stat-item">
+    <i class="fa-solid fa-masks-theater"></i>
+    <span class="stat-label">Género</span>
+    <span class="stat-value" id="genre">—</span>
   </div>
-
+  <div class="stat-item">
+    <i class="fa-solid fa-video"></i>
+    <span class="stat-label">Director</span>
+    <span class="stat-value" id="director">—</span>
+  </div>
+  <div class="stat-item">
+    <i class="fa-solid fa-calendar"></i>
+    <span class="stat-label">Año</span>
+    <span class="stat-value" id="year">—</span>
+  </div>
+  <div class="stat-item">
+    <i class="fa-solid fa-clock"></i>
+    <span class="stat-label">Duración</span>
+    <span class="stat-value" id="duration">—</span>
+  </div>
+  <button class="btn-eliminar" id="btn-eliminar">
+  <i class="fa-solid fa-trash"></i> Eliminar
+</button>
+</div>
+<a id="btn-editar-link" href="#">
+  <button class="btn-editar"><i class="fa-solid fa-pen"></i> Editar</button>
+</a>
   <!-- LAYOUT PRINCIPAL -->
   <div class="detalle-layout">
     <div>
@@ -80,8 +86,8 @@
             <p><strong>Duración:</strong></p><p id="duration2"></p>
           </div>
           <div class="botones">
-            <a href="MovieValoration.html">
-              <button class="btn-valorar"><i class="fa-solid fa-star"></i> ¡Valóralo!</button>
+            <a id="btn-valorar-link" href="#">
+              <button class="btn-valorar">¡Valóralo! </button>
             </a>
             <button class="btn-volver" onclick="window.location.href='MoviePage.html'">
               <i class="fa-solid fa-arrow-left"></i> Volver
@@ -96,7 +102,7 @@
       <div class="sidebar-card">
         <h3>Películas recomendadas</h3>
         <div id="recomendadas">
-          <p>Cargando...</p>
+          
         </div>
       </div>
     </div>
@@ -113,9 +119,7 @@
 
   <script src="./js/peli.js"></script>
 
-</body>
-
-<footer>
+  <footer>
   <div class="footer-content">
     <div class="footer-section">
       <h3>Titulo pagina web</h3>
@@ -154,5 +158,9 @@
     </div>
   </div>
 </footer>
+
+</body>
+
+
 
 </html>

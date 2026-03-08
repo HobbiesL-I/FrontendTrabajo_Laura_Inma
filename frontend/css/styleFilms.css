@@ -14,39 +14,51 @@ body {
 /* ================= HEADER ================= */
 
 .header-area {
-  background-color: #e8988a;
-  display: flex;
-  align-items: center;
-  padding: 15px 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 98%;
+    background-color: var(--color-firstSecondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1%;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header-image {
-  width: 15%;
+.logo-area {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
-.headerMenu-left {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  width: 55%;
+.image-logo{
+    width: 10%;
 }
 
-.headerMenu-left li {
-  cursor: pointer;
+
+.headerMenu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 70%;
 }
 
-.headerMenu-right {
-  width: 30%;
-  display: flex;
-  justify-content: flex-end;
+li {
+    cursor: pointer;
 }
 
-.search-hobbie {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: none;
+a {
+    color: var(--color-tertiary);
+    text-decoration: none;
 }
+
+.newsletter {
+    background-color: rgba(232, 152, 138, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 97vw;
+    margin-bottom: 20%;
+}
+
 
 /* ================= PRESENTACIÓN ================= */
 
@@ -95,6 +107,23 @@ body {
   line-height: 1.5;
 }
 
+.hero-banner {
+  background-color: #e7ada2;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--purple);
+}
+
+.hero-banner h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
 /* ================= MAIN ================= */
 
 .peliculas {
@@ -111,6 +140,11 @@ body {
 
 .fila h2 {
   margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #a85a54;
+  border-left: 4px solid #e8988a;
+  padding-left: 12px;
+  letter-spacing: 0.5px;
 }
 
 /* CARRUSEL */
@@ -119,39 +153,57 @@ body {
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 40px;
+  padding: 10px 40px 20px;
 }
 
 .pelis::-webkit-scrollbar {
-  display: none;
+  height: 5px;
+}
+
+.pelis::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pelis::-webkit-scrollbar-thumb {
+  background-color: #e8988a;
+  border-radius: 10px;
 }
 
 /* CARD PELÍCULA */
 .pelicula {
-  min-width: 240px;
-  background-color: #e8988a;
-  padding: 15px;
-  border-radius: 2px;
+  min-width: 200px;
+  background-color: #fff;
+  border-radius: 12px;
   text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .pelicula:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 }
 
 .pelicula img {
   width: 100%;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  height: 300px;
+  border-radius: 0;
+  margin-bottom: 0;
+  height: 280px;
   object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.pelicula:hover img {
+  transform: scale(1.05);
 }
 
 .pelicula h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 15px;
+  margin: 10px 8px 8px;
+  color: #2c2c2c;
 }
 
 /* BOTONES */
@@ -159,10 +211,17 @@ body {
   background-color: #b0444e;
   color: #ffead8;
   border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 7px 12px;
+  border-radius: 8px;
   cursor: pointer;
-  margin: 4px;
+  margin: 4px 4px 12px;
+  font-size: 0.82rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pelicula button:hover {
+  background-color: #8f3039;
+  transform: scale(1.05);
 }
 
 /* FLECHAS */
@@ -174,9 +233,15 @@ body {
   color: #fff;
   border: none;
   font-size: 28px;
-  padding: 10px;
+  padding: 10px 14px;
   cursor: pointer;
   z-index: 10;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.flecha:hover {
+  background-color: #8f3039;
 }
 
 .izquierda {
@@ -185,6 +250,79 @@ body {
 
 .derecha {
   right: -25px;
+}
+
+/* ================= PÁGINA DE DETALLES ================= */
+
+.detalle-container {
+  display: flex;
+  gap: 50px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-lado img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.info-lado {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+}
+
+.info-lado h1 {
+  font-size: 2.2rem;
+  color: #a85a54;
+  margin-bottom: 6px;
+}
+
+.info-lado p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+.info-lado strong {
+  color: #b0444e;
+}
+
+.info-lado a {
+  margin-top: 10px;
+  color: #b0444e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.info-lado a:hover {
+  color: #8f3039;
+}
+
+#btn-valorar {
+  background-color: #b0444e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 6px;
+  width: fit-content;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#btn-valorar:hover {
+  background-color: #8f3039;
+  transform: scale(1.04);
 }
 
 /* ================= FOOTER ================= */
@@ -197,14 +335,7 @@ body {
 }
 
 body {
-    /*background-color: rgba(255, 234, 216, 0.8);*/
     padding-top: 100px;
-    /*Añadido despues de colocar que el header esta fijo. Para separar y que no este todo pegado*/
-    /*background-image: url('../images/background_image.jpg');
-    background-size: 30% auto;
-    background-repeat: repeat;
-    background-position: center;
-    background-blend-mode: multiply;*/
 }
 
 .header-area {
@@ -282,7 +413,7 @@ a {
 }
 
 .newsletter {
-    background-color: rgba(232, 152, 138, 0.5);
+    background-color: rgba(231, 176, 166, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -295,7 +426,6 @@ form {
     display: flex;
     gap: 10px;
     padding: 3%;
-
 }
 
 footer {
@@ -367,4 +497,21 @@ h4 {
 .footer-links a {
     margin: 0 1rem;
     font-size: 0.9rem;
+}
+
+.newsletter {
+    width: 100vw;
+    padding: 1.5rem 1rem;
+    margin-bottom: 15%;
+}
+
+.newsletter form {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+
+.newsletter form input,
+.newsletter form button {
+    width: 100%;
 }

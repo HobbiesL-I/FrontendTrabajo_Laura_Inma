@@ -7,37 +7,55 @@
 
     <link rel="stylesheet" href="./css/styleFilms.css">
     <link rel="stylesheet" href="./css/styleFonts.css">
+    <script src="./js/script-dom-moviePage.js"></script>
+
 </head>
 
 <body class="body-area">
 
-<script src="./js/script-dom-moviePage.js"></script>
 
 <header class="header-area">
 
-    <div class="header-image">
-        <img src="https://placehold.co/100" alt="Logo Página Web">
-    </div>
+        <div class="logo-area">
+            <img class="image-logo" src="./imagenes/Logo.png" alto="Logo Página Web">
+            <div>
+                <h1>Nombre Pagina Web</h1>
+                <p>Tu comunidad de entretenimiento</p>
+            </div>
+        </div>
 
-    <ul class="headerMenu-left font-title">
-        <li onclick="window.location.href=''"> Juegos de Mesa</li>
-        <li onclick="window.location.href=''"> Películas</li>
-        <li onclick="window.location.href=''"> Mis Reseñas</li>
-    </ul>
+        <ul class="headerMenu font-title">
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-paper-plane"></i> Inicio
+            </li>
+            <li onclick="window.location.href='boardgameListPage.html'" class="header-options"><i
+                    class="fa-solid fa-dice"></i> Juegos de Mesa</li>
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-clapperboard"></i>
+                Películas</li>
+            <li onclick="window.location.href='newBoardgamePage.html'" class="header-options"><i
+                    class="fa-solid fa-file-circle-plus"></i> Añadir Juego Nuevo</li>
+            <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-file-circle-plus"></i>
+                Añadir Película Nueva</li>
+        </ul>
+    </header>
 
-    <div class="headerMenu-right font-title">
-            <input type="search"
-             id="s" 
-             class="search-hobbie" 
-             placeholder="Busca por titulo">
-        </form>
-    </div>
-
-</header>
+    <section class="hero-banner">
+  <h1>Mira las fabulosas películas que tenemos disponibles para ti</h1>
+  <p>Descubre, valora y comparte tus películas favoritas</p>
+</section>
 
 <!-- MAIN -->
 <main class="peliculas" id="contenedor-peliculas">
 </main>
+
+
+ <section class="container-newsletter">
+            <h1>Subscribete a nuestro boletin para mantenerte informad@ de las últimas tendencias</h1>
+            <p>Nuevas películas y juegos de mesa recién llegados directo a tu email.</p>
+            <form class="subscription">
+                <input class="field-small" placeholder="Correo electrónico" type="text" required>
+                <button onclick="window.location.href=''" class="btn-submit">Subscribirse</button>
+            </form>
+ </section>
 
 <!-- FOOTER -->
  <footer>
