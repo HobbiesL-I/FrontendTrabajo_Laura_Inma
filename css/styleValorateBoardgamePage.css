@@ -1,5 +1,4 @@
 .body-class {
-    background-color: var(--color-main);
     padding-top: 0;
 }
 
@@ -7,6 +6,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 4%;
+    margin-bottom: 2%;
 }
 
 .valoration-page {
@@ -28,7 +29,7 @@
     padding: 1%;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(112, 53, 53, 0.5);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--color-main);
     width: 55%;
     gap: 10px;
     align-items: center;
@@ -86,7 +87,7 @@
     width: 55%;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(112, 53, 53, 0.5);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--color-main);
     border-radius: 10px;
     padding: 1%;
 }
@@ -148,8 +149,8 @@ textarea {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
-    background-color: var(--color-main);
+    box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
+    background-color: rgb(127, 212, 127);
     color: var(--color-tertiary);
 }
 
@@ -162,32 +163,74 @@ textarea {
     transform: translateY(-2px);
     background: rgb(200, 91, 91);
     color: var(--color-main);
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .boardgame-summary {
+        width: 85%;
+        grid-template-columns: 45% 55%;
+        padding: 1.5%;
+        gap: 12px;
+    }
+
+    .game-cover {
+        width: 65%;
+        height: 250px;
+    }
+
+    .data-group {
+        grid-template-columns: 48% 48%;
+        gap: 10px;
+    }
+
+    .addValoration {
+        width: 85%;
+        padding: 2%;
+    }
+
+    .form-row {
+        grid-template-columns: 120px 1fr;
+        gap: 1.2rem;
+    }
+
+    input,
+    textarea {
+        padding: 0.9rem;
+        font-size: 1.05rem;
+    }
+
+    .btn {
+        padding: 1rem 2.2rem;
+        font-size: 1.05rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
     .valoration-page {
-        max-width:80%;
+        max-width: 80%;
     }
 
     .boardgame-summary {
         width: 80%;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "data";
-        padding: 1.5rem;
-        gap: 12px;
-        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 3%;
     }
 
     .game-cover {
-        display: none;
+        width: 65%;
+        height: 250px;
     }
 
     .data {
         margin-top: 0;
-        padding-top: 1rem;
-        border-top: 1px solid rgba(112, 53, 53, 0.3);
+        padding-top: 2%;
     }
 
     .data-group {

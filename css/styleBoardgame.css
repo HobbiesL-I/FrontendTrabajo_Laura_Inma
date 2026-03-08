@@ -34,9 +34,9 @@
     color: white;
 }
 
-.intro > * {
+.intro>* {
     position: relative;
-    z-index: 2; 
+    z-index: 2;
 }
 
 .intro::before {
@@ -51,11 +51,11 @@
     border-radius: 10px 10px 0 0;
 }
 
-.h2-color{
+.h2-color {
     color: white;
 }
 
-.p-color{
+.p-color {
     color: white;
     font-size: 20px;
 }
@@ -142,6 +142,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 1%;
+    gap: 5px;
 }
 
 .container-valorations {
@@ -152,7 +153,7 @@
     padding-right: 9%;
 }
 
-.valorationsEmpty{
+.valorationsEmpty {
     margin-left: 25%;
     text-align: center;
     width: 150%;
@@ -215,6 +216,7 @@
     align-items: center;
     justify-content: start;
     margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .edit-boardgame {
@@ -239,6 +241,13 @@
     height: 30px;
 }
 
+.btn-style:hover {
+    transform: translateY(-2px);
+    background: rgb(200, 91, 91);
+    color: var(--color-main);
+    box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
+}
+
 .btnEdit-style {
     border-radius: 3px;
     background-color: var(--color-tertiary);
@@ -248,6 +257,13 @@
     padding: 1%;
     width: 100px;
     height: 30px;
+}
+
+.btnEdit-style:hover {
+    transform: translateY(-2px);
+    background: rgb(200, 91, 91);
+    color: var(--color-main);
+    box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
 }
 
 .video {
@@ -312,6 +328,11 @@
     align-items: center;
 }
 
+.boardgame:hover {
+    transform: translateX(10px);
+    box-shadow: 0px 3px 3px rgba(32, 13, 13, 0.1);
+}
+
 .image-size {
     width: 100%;
     height: 100px;
@@ -324,15 +345,84 @@
     gap: 10px;
 }
 
+@media(min-width: 768px) and (max-width: 1024px) {
+    .container-area {
+        grid-template-columns: 65% 35%;
+        padding: 1.5%;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .intro {
+        height: 300px;
+        padding: 25px;
+    }
+
+    .display-information {
+        gap: 30px;
+        padding: 1.2%;
+    }
+
+    .boardgame-description {
+        flex-direction: column;
+        max-width: 98%;
+        padding: 1.5%;
+        gap: 12px;
+    }
+
+    .boardgame-image {
+        display: none;
+    }
+
+    .container-valorations {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .valorations-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .valoration-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 1.2%;
+    }
+
+    .edit-boardgame {
+        width: 95%;
+        max-width: 380px;
+        padding: 1.5%;
+    }
+
+    .btn-style {
+        height: 32px;
+        padding: 1.2%;
+        width: 25%;
+    }
+
+    .video {
+        padding: 2.5%;
+    }
+
+    .image-youtube {
+        height: 250px;
+    }
+
+    .image-size {
+        height: 110px;
+    }
+}
+
 @media (max-width: 768px) {
     .container-area {
         grid-template-columns: 100%;
         grid-template-areas:
-        "intro-boardgame"
-        "boardgame-column1"
-        "boardgame-column2";
-        padding: 1%;
-        gap: 15px;
+            "intro-boardgame"
+            "boardgame-column1"
+            "boardgame-column2";
+        padding: 2%;
     }
 
     .intro {
@@ -342,9 +432,9 @@
 
     .display-information {
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 15px;
         padding: 15px;
-        align-items: flex-start;
     }
 
     .information {
@@ -373,15 +463,14 @@
     .valorations-section {
         grid-template-columns: 1fr;
         margin-top: 4%;
-        gap:20%;
         justify-items: center;
     }
 
     .valoration-card {
-        width: 70%;
+        width: 100%;
         padding: 20px 15px;
         margin-bottom: 15px;
-        
+
     }
 
     .card-header {
@@ -398,12 +487,10 @@
     .edit-boardgame {
         width: 100%;
         max-width: 1300px;
-        padding: 5%;
-        margin-top: 5%;
     }
 
     .btn-style {
-        width: 35%;
+        width: 20%;
         height: 35px;
         font-size: 16px;
     }
@@ -423,7 +510,7 @@
     .boardgame {
         flex-direction: row;
         gap: 15px;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .image-size {

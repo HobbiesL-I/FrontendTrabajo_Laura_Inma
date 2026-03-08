@@ -90,37 +90,10 @@
     margin-bottom: 3%;
 }
 
-.btn-style:hover {
-    transform: scale(1.1);
-    background-color: var(--color-firstSecondary);
-    color: var(--color-tertiary);
-}
-
-
 .container-filterMenu {
     grid-area: filterMenu;
     margin-top: 3%;
     margin-left: 3%;
-}
-
-.filterMenu {
-    background-color: var(--color-main);
-    border-radius: 10px;
-    padding: 3%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-li {
-    list-style: none;
-}
-
-.list-boardgame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15px;
 }
 
 .boardgame-image {
@@ -131,11 +104,33 @@ li {
 .btn-style {
     padding: 1%;
     border-radius: 3px;
-    height: 40px;
+    height: 35px;
     background-color: var(--color-tertiary);
     color: var(--color-main);
     border: none;
     cursor: pointer;
+}
+
+.btn-style:hover {
+    transform: scale(1.1);
+    background-color: var(--color-firstSecondary);
+    color: var(--color-tertiary);
+}
+
+.btnInformation {
+    width: 150px;
+}
+
+.btnValoration {
+    width: 100px;
+}
+
+.btnDelete {
+    width: 40px;
+}
+
+.btn-addNewBoardgame {
+    width: 100px;
 }
 
 .container-newsletter {
@@ -191,16 +186,36 @@ li {
     color: var(--color-tertiary);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+
     .container-area {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "addBoardgame"
+            "filterMenu"
+            "boardgameList"
+            "newsletter";
         gap: 1rem;
-        padding: 0 1rem;
     }
 
     .container-boardgameList {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
         padding: 1rem;
+    }
+
+    .container-addBoardgame {
+        padding: 2rem 1rem;
+        flex-direction: column;
+    }
+
+    .container-filterMenu {
+        grid-area: filterMenu;
+        margin: 0;
+        width: 100%;
+        max-width: 400px;
+        align-self: center;
     }
 
     .boardgameCard {
@@ -208,31 +223,66 @@ li {
     }
 
     .image-List {
-        height: 160px;
+        height: 180px;
     }
 
-    .info-extra {
-        gap: 0.75rem;
-        flex-direction: row;
-        width: 100%;
-        align-items: center;
+    .intro-text {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .container-newsletter {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .field-small {
+        width: 250px;
+    }
+
+    .buttons {
+    padding: 2%;
+    border-radius: 5px;
+    gap: 6px;
+}
+
+    .btnInformation,
+    .btnValoration,
+    .btnDelete {
+        height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-area {
+        gap: 1rem;
+    }
+
+    .container-boardgameList {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 12px;
+        padding: 1rem;
+    }
+
+    .image-List {
+        height: 160px;
     }
 
     .buttons {
         flex-direction: row;
         align-items: center;
-        gap: 8px;
+        gap: 5px;
         padding: 1rem;
         width: 100%;
     }
 
     .btn-style {
-        height: 36px;
+        height: 30px;
         font-size: 14px;
     }
 
     .container-addBoardgame {
-        padding: 1.5rem 1rem;
+        padding: 2%;
         justify-content: center;
     }
 
@@ -260,8 +310,9 @@ li {
 
     .btn-submit {
         width: 20%;
-        height: 48px;
+        height: 28px;
         font-size: 16px;
+        padding: 0;
     }
 
     .container-newsletter {

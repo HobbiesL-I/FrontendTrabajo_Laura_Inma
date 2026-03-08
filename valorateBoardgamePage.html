@@ -13,6 +13,7 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./js/script-dom-valorateBoardgamePage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="css/styleCommonElements.css">
     <link rel="stylesheet" href="css/styleFonts.css">
     <link rel="stylesheet" href="css/styleValorateBoardgamePage.css">
@@ -23,6 +24,34 @@
 </head>
 
 <body class="body-class">
+
+    <header class="header-area">
+
+        <div class="logo-area">
+            <img class="image-logo" src="./images/Logo.png" alto="Logo Página Web">
+            <div>
+                <h1>HobbiesL-I</h1>
+                <p>Tu comunidad de entretenimiento</p>
+            </div>
+        </div>
+
+        <ul class="headerMenu font-title">
+            <li onclick="window.location.href='MainPage.html'" class="header-options"><i
+                    class="fa-solid fa-paper-plane"></i> Inicio
+            </li>
+            <li onclick="window.location.href='boardgameListPage.html'" class="header-options"><i
+                    class="fa-solid fa-dice"></i> Juegos de Mesa</li>
+            <li onclick="window.location.href='moviesListPage.html'" class="header-options"><i
+                    class="fa-solid fa-clapperboard"></i>
+                Películas</li>
+            <li onclick="window.location.href='newBoardgamePage.html'" class="header-options"><i
+                    class="fa-solid fa-file-circle-plus"></i> Añadir Juego</li>
+            <li onclick="window.location.href='newMoviePage.html'" class="header-options"><i
+                    class="fa-solid fa-file-circle-plus"></i>
+                Añadir Película</li>
+        </ul>
+    </header>
+
     <div class="valoration">
         <section class="valoration-page" id="valoration-page">
 
@@ -36,6 +65,51 @@
 
         </section>
     </div>
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>Titulo pagina web</h3>
+                <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="mainPage.html">Inicio</a></li>
+                    <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
+                    <li><a href="moviesListPage.html">Peliculas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
+                <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>¡Encuentranos en nuestras redes sociales!</h4>
+                <div class="social-links">
+                    <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+            <div class="footer-links">
+                <a href="">Política de privacidad</a>
+                <a href="">Términos de uso</a>
+                <a href="">Cookies</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 

@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
             imageBoardgame2
         } = boardgame
 
-        document.title=`Editando ${name}`;
+        document.title = `Editando ${name}`;
 
         const previewInfo = document.getElementById('boardgame-summary');
         previewInfo.classList.add('boardgame-summary');
@@ -46,25 +46,27 @@ window.addEventListener('DOMContentLoaded', () => {
         previewInfo.innerHTML = `
             <img src="${imageBoardgame}" alt="Portada del juego"
                 class="game-cover">
+            <div>
 
             <h1>${name}</h1>
 
             <div class="old-stats">
                 <div class="stat">
-                    <p class="stat-value">${numberPlayers}</p>
-                    <p>Jugadores</p>
-                </div>
-                <div class="stat">
-                    <p class="stat-value">${playTime}</p>
-                    de partida
-                </div>
-                <div class="stat">
-                    <p class="stat-value">${age}</p>
-                    Edad
-                </div>
-                <div class="stat">
-                    <p class="stat-value">${difficulty}</p>
-                    Dificultad
+                        <p class="stat-value">${numberPlayers}</p>
+                        <p>Jugadores</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-value">${playTime}</p>
+                        de partida
+                    </div>
+                    <div class="stat">
+                        <p class="stat-value">${age}</p>
+                        Edad
+                    </div>
+                    <div class="stat">
+                        <p class="stat-value">${difficulty}</p>
+                        Dificultad
+                    </div>
                 </div>
             </div>
         `
@@ -82,7 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="form-row">
                     <label>Año:</label>
-                    <input type="number" id="yearRelease" value="${yearRelease}" min="1900" max="2030">
+                    <input type="number" id="yearRelease" value="${yearRelease}" min="1900" max="2026" placerholder="1900-2026">
                 </div>
                 <div class="form-row">
                     <label>Precio:</label>
@@ -119,7 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="form-row">
                     <label>Dificultad:</label>
-                    <input type="text" id="difficulty" value="${difficulty}" placeholder="Ej: 12+">
+                    <input type="text" id="difficulty" value="${difficulty}" placeholder="Ej: Alta Media Baja">
                 </div>
             </div>
 
@@ -180,6 +182,148 @@ window.addEventListener('DOMContentLoaded', () => {
                 imageBoardgame2: document.getElementById('imageBoardgame2').value.trim()
             }
 
+            const {
+                name,
+                numberPlayers,
+                price, playTime,
+                mecanic,
+                age,
+                difficulty,
+                yearRelease,
+                imageBoardgame,
+                imageBoardgame2,
+                videoBoardgame,
+                imageVideo
+            } = dataSendAPI;
+
+            if (!name) {
+                Swal.fire({
+                    title: 'El campo título está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!yearRelease) {
+                Swal.fire({
+                    title: 'El campo año está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (yearRelease < 1900) {
+                Swal.fire({
+                    title: 'El campo año debe ser mayor o igual que 1900',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (yearRelease > 2027) {
+                Swal.fire({
+                    title: 'El campo año debe ser menor de 2027',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (price === '0' || !price) {
+                Swal.fire({
+                    title: 'El valor del campo precio no es válido',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!imageBoardgame) {
+                Swal.fire({
+                    title: 'El campo primera imagen juego de mesa está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!imageBoardgame2) {
+                Swal.fire({
+                    title: 'El campo segunda imagen juego de mesa está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!numberPlayers) {
+                Swal.fire({
+                    title: 'El campo jugadores está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (numberPlayers === '0') {
+                Swal.fire({
+                    title: 'El número de jugadores no puede ser 0',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!playTime) {
+                Swal.fire({
+                    title: 'El campo duración está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return
+            }
+
+            if (playTime === '0' || playTime === '0 min') {
+                Swal.fire({
+                    title: 'La duración no puede ser 0',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!age) {
+                Swal.fire({
+                    title: 'El campo edad mínima está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!difficulty) {
+                Swal.fire({
+                    title: 'El campo dificultad está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!mecanic) {
+                Swal.fire({
+                    title: 'El campo mecánicas está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!videoBoardgame) {
+                Swal.fire({
+                    title: 'El campo enlace video está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!imageVideo) {
+                Swal.fire({
+                    title: 'El campo thumbnail video está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
             await sendDataBoardgame(dataSendAPI, idBoardgamePage);
 
         });
@@ -191,20 +335,37 @@ window.addEventListener('DOMContentLoaded', () => {
                 method: "PUT",
                 body: JSON.stringify(dataSendAPI),
                 headers: {
-                    "Content-type": "application/json; charset=UTF-8",
+                    "Content-type": "application/json; charset=UTF-8"
                 }
             });
 
             if (PutResponse.ok) {
-                console.log('Juego de mesa actualizado');
-                window.location.href = `boardgamePage.html?id=${idBoardgamePage}`;
+                Swal.fire({
+                    title: '¡Datos actualizados!',
+                    text: 'El juego de mesa se ha actualizado correctamente',
+                    icon: 'success',
+                    iconColor: '#318a3a',
+                    confirmButtonText: 'Volver al juego',
+                    confirmButtonColor: '#2a1418'
+                }).then(() => {
+                    window.location.href = `boardgamePage.html?id=${idBoardgamePage}`;
+                });
+
             }
             else {
-                console.error('Error: ', PutResponse.status);
+                Swal.fire({
+                    title: 'Error',
+                    text: `Error: ${PutResponse.status}`,
+                    icon: 'error'
+                });
             }
         }
         catch {
-            console.error('Error: ', error);
+            Swal.fire({
+                title: 'Error de conexión',
+                text: error.message,
+                icon: 'error'
+            });
         }
     }
 

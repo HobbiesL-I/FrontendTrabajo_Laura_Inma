@@ -25,6 +25,7 @@
     width: 100%;
     margin-bottom: 2%;
     color: var(--color-tertiary);
+    padding: 2%;
 }
 
 .description-intro {
@@ -63,6 +64,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 
 .title-news {
@@ -116,6 +119,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 1%;
 }
 
 .movies-information {
@@ -168,6 +172,7 @@
     gap: 20px;
     margin-top: 1%;
     margin-bottom: 2%;
+     padding: 1%;
 }
 
 .boardgame-information {
@@ -203,7 +208,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1%;
+    padding: 2%;
 }
 
 .valoration-intro {
@@ -296,6 +301,88 @@
     transform: scale(1.05);
     background-color: var(--color-firstSecondary);
     color: var(--color-tertiary);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .container-area {
+        gap: 20px;
+    }
+
+    .description-package {
+        gap: 15px;
+    }
+
+    .description-element {
+        max-width: 220px;
+        padding: 1.2%;
+    }
+
+    .new-elements {
+        gap: 3%;
+        flex-wrap: wrap;
+    }
+
+    .new-boardgames,
+    .new-movies {
+        max-width: 48%;
+        gap: 15px;
+    }
+
+    .uniform-image {
+        width: 180px;
+        height: 220px;
+    }
+
+    .container-movies {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .movies-information {
+        max-width: 38%;
+        padding: 1.5%;
+    }
+
+    .imageMovie-size {
+        max-width: 150px;
+        max-height: 220px;
+    }
+
+    .container-boardgames {
+        gap: 15px;
+    }
+
+    .boardgame-information {
+        max-width: 38%;
+    }
+
+    .valorations-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .valoration-card {
+        max-width: 100%;
+        padding: 1.5%;
+    }
+
+    .container-newsletter {
+        width: 98vw;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .field-small {
+        width: 220px;
+        padding: 18px;
+    }
+
+    .btn-list,
+    .btn-submit {
+        width: 30%;
+        height: 32px;
+    }
 }
 
 @media (max-width: 768px) {

@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
             difficulty
         } = boardgame
 
-        document.title =`Valorando ${name}`;
+        document.title = `Valorando ${name}`;
 
         const cardBoardgameSummary = document.getElementById('boardgame-summary');
         cardBoardgameSummary.innerHTML = `
@@ -129,16 +129,67 @@ window.addEventListener('DOMContentLoaded', () => {
 
             e.preventDefault();
 
-            const qualification = parseFloat(document.getElementById('qualification').value);
+            const newQualification = parseFloat(document.getElementById('qualification').value);
 
             const dataSendAPI = {
                 idBoardgame: parseInt(idBoardgamePage),
                 namePerson: document.getElementById('namePerson').value.trim(),
-                qualification: qualification,
+                qualification: newQualification,
                 review: document.getElementById('description').value.trim()
             }
 
-            console.log("Datos: ", dataSendAPI);
+            const {
+                namePerson,
+                qualification,
+                review
+            } = dataSendAPI;
+
+            if (!namePerson) {
+                Swal.fire({
+                    title: 'El campo nombre o apodo está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+            }
+
+            if (!qualification) {
+                Swal.fire({
+                    title: 'El campo calificación está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (qualification > 10) {
+                Swal.fire({
+                    title: 'El campo calificación no puede ser mayor de 10',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (qualification < 0) {
+                Swal.fire({
+                    title: 'El campo calificación no puede ser menor de 0',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!review) {
+                Swal.fire({
+                    title: 'El campo review está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (review.length > 500) {
+                Swal.fire({
+                    title: 'El campo review no puede tener más de 500 caracteres',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
 
             await sendNewValoration(dataSendAPI);
 
@@ -146,25 +197,42 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const sendNewValoration = async (dataSendAPI) => {
+
         try {
             const postResponse = await fetch(url, {
                 method: "POST",
                 body: JSON.stringify(dataSendAPI),
                 headers: {
-                    "Content-type": "application/json; charset=UTF-8",
+                    "Content-type": "application/json; charset=UTF-8"
                 }
             });
 
             if (postResponse.ok) {
-                console.log('Juego de mesa actualizado');
-                window.location.href = `boardgamePage.html?id=${idBoardgamePage}`;
+                Swal.fire({
+                    title: 'Nuevos valoración añadida!',
+                    text: 'Se ha añadido la valoracion al juego',
+                    icon: 'success',
+                    iconColor: '#318a3a',
+                    confirmButtonText: 'Volver al juego de mesa',
+                    confirmButtonColor: '#2a1418'
+                }).then(() => {
+                    window.location.href = `boardgamePage.html?id=${idBoardgamePage}`;
+                });
             }
             else {
-                console.error('Error: ', postResponse.status);
+                Swal.fire({
+                    title: 'Error',
+                    text: `Error: ${postResponse.status}`,
+                    icon: 'error'
+                });
             }
         }
         catch {
-            console.error('Error: ', error);
+            Swal.fire({
+                title: 'Error de conexión',
+                text: error.message,
+                icon: 'error'
+            });
         }
     }
 

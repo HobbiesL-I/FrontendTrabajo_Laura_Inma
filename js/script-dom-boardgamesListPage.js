@@ -22,7 +22,7 @@ const createBoardgames = (boardgameList) => {
         console.log(boardgame)
 
         const cardIntro = document.getElementById('container-addBoardgame');
-        cardIntro.innerHTML=`
+        cardIntro.innerHTML = `
             <div class="intro-text">
                 <h1><i class="fa-solid fa-dice"></i> El rincón de los jugones</h1>
                 <p>Nuestra página cuenta con una colección de juegos de mesa de todos los estilos y
@@ -32,7 +32,7 @@ const createBoardgames = (boardgameList) => {
             </div>
             <div class="addBoardgameBtn">
                 <a href="newBoardgamePage.html">
-                    <button class="btn-style">¡Añádeme!</button>
+                    <button class="btn-style btn-addNewBoardgame">¡Añádeme!</button>
                 </a>
             </div>
         `
@@ -64,17 +64,17 @@ const createBoardgames = (boardgameList) => {
                 </div>
                 <div class="buttons">
                     <a href="boardgamePage.html?id=${idBoardgame}&difficulty=${difficulty}">
-                        <button class="btn-style">
+                        <button class="btn-style btnInformation">
                             <i class="fa-solid fa-circle-info"></i> Más información
                         </button>
                     </a>
 
                         <a href="valorateBoardgamePage.html?id=${idBoardgame}">
-                            <button class="btn-style">
+                            <button class="btn-style btnValoration">
                                 <i class="fa-solid fa-comment-medical"></i> Valorar
                             </button>
                         </a>
-                            <button class="btn-style btn-delete" data-id="${idBoardgame}">
+                            <button class="btn-style btn-delete btnDelete" data-id="${idBoardgame}">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                 </div>
@@ -85,37 +85,65 @@ const createBoardgames = (boardgameList) => {
         deleteBtn.addEventListener('click', async (e) => {
             e.preventDefault();
 
-            const confirmAction = window.confirm(`¿Segur@ que deseas eliminar el juego de mesa ${name}? También se eliminarán las valoraciones que tenga.`);
-            if(!confirmAction) return;
+            const confirmAction = await Swal.fire({
+                title: '¡Estás a punto de eliminar el juego!',
+                html: `¿<strong>Segur@ que deseas eliminar</strong> ${name}</strong>? También se eliminarán todas las valoraciones que tenga.`,
+                icon: 'warning',
+                iconColor: '#8a3938',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar',
+            });
 
-            const idBoardgame = deleteBtn.dataset.id;
-
-            await deleteBoardgame(idBoardgame);
-        });
-  
-    });       
-
-        const deleteBoardgame = async (idBoardgame) => {
-            try {
-                const deleteResponse = await fetch(`http://localhost:8080/hobbies/boardgames/${idBoardgame}`, {
-                    method: "DELETE",
-                    headers: {
-                        "Content-type": "application/json; charset=UFT-8",
-
-                    }
-                });
-
-                if (deleteResponse.ok) {
-                    console.log('Juego de mesa eliminado');
-                    window.location.href = 'boardgameListPage.html';
-                }
-                else {
-                    console.error('Error: ', deleteResponse.status);
-                }
-            } catch (error){
-                console.error('Error: ', error);
+            if (confirmAction.isConfirmed) {
+                const idBoardgame = deleteBtn.dataset.id;
+                await deleteBoardgame(idBoardgame);
             }
+            else {
+                return
+            }
+
+        });
+
+    });
+
+    const deleteBoardgame = async (idBoardgame) => {
+        try {
+            const deleteResponse = await fetch(`http://localhost:8080/hobbies/boardgames/${idBoardgame}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json; charset=UFT-8"
+
+                }
+            });
+
+            if (deleteResponse.ok) {
+                Swal.fire({
+                    title: '¡Juego eliminado!',
+                    text: 'El juego de mesa y sus valoraciones se ha eliminado correctamente',
+                    icon: 'success',
+                    iconColor: '#318a3a',
+                    confirmButtonText: 'Volver al catálogo',
+                    confirmButtonColor: '#2a1418'
+                }).then(() => {
+                    window.location.href = 'boardgameListPage.html';
+                });
+            }
+            else {
+                Swal.fire({
+                    title: 'Error',
+                    text: `Error: ${deleteResponse.status}`,
+                    icon: 'error'
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                title: 'Error de conexión',
+                text: error.message,
+                icon: 'error'
+            });
         }
+    }
 }
 
 getListBoardgames();

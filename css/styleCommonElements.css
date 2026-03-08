@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 :root {
     --color-main: rgb(255, 234, 216);
     --color-firstSecondary: rgb(232, 152, 138);
-    --color-tertiary: rgb(42, 20, 24);
+    --color-tertiary: #2a1418;
 }
 
 body {
@@ -34,12 +34,11 @@ body {
     width: 10%;
 }
 
-
 .headerMenu {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    width: 100%;
+    width: 70%;
 }
 
 li {
@@ -59,6 +58,42 @@ a {
     width: 97vw;
     margin-bottom: 20%;
 }
+
+.swal2-confirm {
+    background-color: var(--color-tertiary);
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.swal2-confirm:hover {
+    background-color: rgb(86, 162, 86);
+    border-radius: 5px;
+    max-width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.swal2-cancel {
+    background-color: var(--color-tertiary);
+    transform: translateY(-2px);
+}
+
+.swal2-cancel:hover {
+    background-color: rgb(145, 48, 48);
+    border-radius: 5px;
+    max-width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.swal2-popup {
+    background: var(--color-main);
+    color: var(--color-tertiary);
+}
+
+.swal2-title {
+    color: var(--color-tertiary);
+    font-size: 20px;
+}
+
 
 footer {
     background: var(--color-firstSecondary);
@@ -129,6 +164,52 @@ footer {
     color: var(--color-tertiary)
 }
 
+@media(min-width: 768px) and (max-width: 1024px) {
+
+    .header-area {
+        padding: 1%;
+        gap: 10px;
+    }
+
+    .logo-area {
+        gap: 15px;
+    }
+
+    .image-logo {
+        width: 12%;
+    }
+
+    .headerMenu {
+        width: 150%;
+        gap: 5px;
+        align-items: center;
+    }
+
+    li {
+        font-size: 15px;
+    }
+
+    .newsletter {
+        width: 98vw;
+        padding: 2%;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        padding: 0 1.5rem;
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 768px) {
 
     body {
@@ -194,7 +275,7 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
         padding: 0 1%;
-        gap: 1px;
+        gap: 10px;
     }
 
     .footer-section {

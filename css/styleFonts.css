@@ -26,7 +26,6 @@ h3,
 h4 {
   font-family: "Rozha One", serif;
   color: var(--color-tertiary);
-  margin-bottom: 1rem;
   font-size: 1.2em;
 }
 
@@ -48,6 +47,42 @@ button {
   font-size: 14px;
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 0.3rem;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3,
+  h4 {
+    font-size: 1.3em;
+  }
+
+  h6 {
+    font-size: 18px;
+    margin: 0.8%;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .font-title {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 0.8% 1.5%;
+  }
+}
+
 @media (max-width: 768px) {
 
   h1 {
@@ -57,7 +92,11 @@ button {
     margin-bottom: 0.2rem;
   }
 
+  h2 {
+    font-size: 20px;
+  }
+
   p {
-    font-size: 15px;
+    font-size: 13px;
   }
 }

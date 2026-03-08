@@ -134,33 +134,148 @@ window.addEventListener('DOMContentLoaded', () => {
                 imageBoardgame2: document.getElementById('imageBoardgame2').value.trim()
             }
 
-            console.log("Datos: ", dataSendAPI);
+            const {
+                name,
+                numberPlayers,
+                price, playTime,
+                mecanic,
+                age,
+                difficulty,
+                imageBoardgame,
+                videoBoardgame,
+                imageVideo,
+                imageBoardgame2
+            } = dataSendAPI;
 
-            await sendNewValoration(dataSendAPI);
+            if (!name) {
+                Swal.fire({
+                    title: 'El campo título está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (numberPlayers === 0 || !numberPlayers) {
+                Swal.fire({
+                    title: 'El campo jugadores está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (price === 0 || !price) {
+                Swal.fire({
+                    title: 'El campo precio está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (playTime === 0 || !playTime) {
+                Swal.fire({
+                    title: 'El campo duración está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return
+            }
+
+            if (!mecanic) {
+                Swal.fire({
+                    title: 'El campo mecánicas está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!age) {
+                Swal.fire({
+                    title: 'El campo edad mínima está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!difficulty) {
+                Swal.fire({
+                    title: 'El campo dificultad está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!imageBoardgame) {
+                Swal.fire({
+                    title: 'El campo imagen del producto está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!imageBoardgame2) {
+                Swal.fire({
+                    title: 'El campo otra imagen está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!videoBoardgame) {
+                Swal.fire({
+                    title: 'El campo enlace del video está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            if (!imageVideo) {
+                Swal.fire({
+                    title: 'El campo thumbnail del video está vacío',
+                    confirmButtonText: 'Volver al formulario'
+                });
+                return;
+            }
+
+            await sendNewBoardgame(dataSendAPI);
 
         });
     }
 
-    const sendNewValoration = async (dataSendAPI) => {
+    const sendNewBoardgame = async (dataSendAPI) => {
         try {
             const postResponse = await fetch(urlNewBoardgame, {
                 method: "POST",
                 body: JSON.stringify(dataSendAPI),
                 headers: {
-                    "Content-type": "application/json; charset=UTF-8",
+                    "Content-type": "application/json; charset=UTF-8"
                 }
             });
 
             if (postResponse.ok) {
-                console.log('Juego de mesa actualizado');
-                window.location.href = `boardgameListPage.html`;
+                Swal.fire({
+                    title: 'Nuevos datos añadidos!',
+                    text: 'Se ha añadido el juego de mesa a la base de datos',
+                    icon: 'success',
+                    iconColor: '#318a3a',
+                    confirmButtonText: 'Volver al catálogo',
+                    confirmButtonColor: '#2a1418'
+                }).then(() => {
+                    window.location.href = `boardgameListPage.html`;
+                });
             }
             else {
-                console.error('Error: ', postResponse.status);
+                Swal.fire({
+                    title: 'Error',
+                    text: `Error: ${postResponse.status}`,
+                    icon: 'error'
+                });
             }
         }
         catch {
-            console.error('Error: ', error);
+            Swal.fire({
+                title: 'Error de conexión',
+                text: error.message,
+                icon: 'error'
+            });
         }
     }
 

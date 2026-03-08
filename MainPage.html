@@ -13,6 +13,7 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./js/script-dom-mainPage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./css/styleMainPage.css">
     <link rel="stylesheet" href="./css/styleFonts.css">
     <link rel="stylesheet" href="./css/styleCommonElements.css">
@@ -20,6 +21,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
     <title>HobbiesL-I</title>
+
 </head>
 
 <body class="body-area">
@@ -34,16 +36,17 @@
         </div>
 
         <ul class="headerMenu font-title">
-            <li onclick="window.location.href='mainPage.html'" class="header-options"><i class="fa-solid fa-paper-plane"></i> Inicio
+            <li onclick="window.location.href='mainPage.html'" class="header-options"><i
+                    class="fa-solid fa-paper-plane"></i> Inicio
             </li>
             <li onclick="window.location.href='boardgameListPage.html'" class="header-options"><i
                     class="fa-solid fa-dice"></i> Juegos de Mesa</li>
             <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-clapperboard"></i>
                 Películas</li>
             <li onclick="window.location.href='newBoardgamePage.html'" class="header-options"><i
-                    class="fa-solid fa-file-circle-plus"></i> Añadir Juego Nuevo</li>
+                    class="fa-solid fa-file-circle-plus"></i> Añadir Juego</li>
             <li onclick="window.location.href=''" class="header-options"><i class="fa-solid fa-file-circle-plus"></i>
-                Añadir Película Nueva</li>
+                Añadir Película</li>
         </ul>
     </header>
 
@@ -140,10 +143,10 @@
                     perfecto.</p>
             </div>
             <div class="valorations-section" id="valorationBoardgame-card">
-                <!--Añade los últimos 2 elementos de la tabla valorationBoardgame con la función getRecentValorationBoardgame-->
+                <!--Añade los últimos 3 elementos de la tabla valorationBoardgame con la función getRecentValorationBoardgame-->
             </div>
             <div class="valorations-section" id="valorationMovie-card">
-                <!--Añade los últimos 2 elementos de la tabla valorations con la función getRecentValorationMovies-->
+                <!--Añade los últimos 3 elementos de la tabla valorations con la función getRecentValorationMovies-->
             </div>
 
     </div>
@@ -174,7 +177,7 @@
                 <ul>
                     <li><a href="mainPage.html">Inicio</a></li>
                     <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
-                    <li><a href="#">Peliculas</a></li>
+                    <li><a href="moviesListPage.html">Peliculas</a></li>
                 </ul>
             </div>
 
@@ -190,14 +193,9 @@
                 <div class="social-links">
                     <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
                     <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
                     <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
                 </div>
-            </div>
-
-            <div class="footer-section">
-                <h4>¡Únete a nuestro canal de Discord!</h4>
-                <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
-
             </div>
         </div>
 

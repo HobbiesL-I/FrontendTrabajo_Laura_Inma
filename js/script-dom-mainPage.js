@@ -26,15 +26,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const size = movieList.length;
         const RandomMovies = [];
 
-        let counter =0;
-        let arrayNumbers= [];
+        let counter = 0;
+        let arrayNumbers = [];
 
-        while (counter < 3){
-           let number = movieList[randomInt(0, size - 1)];
-            if(!arrayNumbers.includes(number)){
+        while (counter < 3) {
+            let number = movieList[randomInt(0, size - 1)];
+            if (!arrayNumbers.includes(number)) {
                 RandomMovies.push(number);
                 arrayNumbers.push(number);
-                counter ++;
+                counter++;
             }
         }
 
@@ -54,7 +54,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             imageDisplay.alt = title;
 
             movieElement.appendChild(imageDisplay);
-            console.log("Elemento añadido correctamente.");
         });
 
     }
@@ -81,15 +80,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const size = boardgameList.length;
         const RandomBoardgames = [];
 
-        let counter =0;
-        let arrayNumbers= [];
+        let counter = 0;
+        let arrayNumbers = [];
 
-        while (counter < 3){
-           let number = boardgameList[randomInt(0, size - 1)];
-            if(!arrayNumbers.includes(number)){
+        while (counter < 3) {
+            let number = boardgameList[randomInt(0, size - 1)];
+            if (!arrayNumbers.includes(number)) {
                 RandomBoardgames.push(number);
                 arrayNumbers.push(number);
-                counter ++;
+                counter++;
             }
         }
 

@@ -20,6 +20,7 @@
     padding: 2rem;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
     width: 800px;
+    margin-bottom: 2%;
 }
 
 .form-section h3 {
@@ -81,7 +82,7 @@ textarea {
     gap: 1rem;
     justify-content: flex-end;
     padding-top: 1.5rem;
-    border-top: 2px solid #e2e8f0;
+    border-top: 2px solid var(--color-tertiary);
     margin-top: 2rem;
 }
 
@@ -119,17 +120,42 @@ textarea {
     box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
 }
 
-/* MÓVIL (hasta 768px) */
-@media (max-width: 768px) {
-    .body-class {
-        padding-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .game-form {
+        width: 90%;
+        max-width: 800px;
+        padding: 2%;
+        margin-bottom: 4%;
     }
 
     .newBoardgame-intro {
-        padding: 0 1rem;
-        margin-bottom: 1.5rem;
+        padding: 2%;
+        max-width: 90%;
+        margin-top: 3%;
+    }
+
+    .form-row-checkbox {
+        gap: 45px;
+        flex-wrap: wrap;
+    }
+
+    .form-row {
+        grid-template-columns: 130px 1fr;
+        gap: 1.2rem;
+    }
+
+    textarea {
+        min-height: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .newBoardgame-intro {
+        padding: 2%;
+        margin-bottom: 2%;
+        margin-top: 3%;
     }
 
     .game-form {
@@ -137,21 +163,17 @@ textarea {
         padding: 1.5rem 1.25rem;
         border-radius: 12px;
         margin: 0 -1rem;
-        /* Ancho completo */
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        margin-bottom: 4%;
     }
 
     .form-row-checkbox {
         flex-direction: row;
-        gap: 50px;
+        gap: 51px;
         align-items: flex-start;
+        margin-left: 9px;
     }
 
-    .form-row {
-        grid-template-columns: 95px 1fr;
-        gap: 0.75rem;
-        padding: 0 0.25rem;
-    }
 
     .form-section h3 {
         font-size: 1.1rem;
@@ -170,17 +192,5 @@ textarea {
 
     textarea {
         min-height: 100px;
-    }
-
-    .form-actions {
-        flex-direction: row;
-        gap: 0.875rem;
-        padding-top: 1.25rem;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 1rem;
-        font-size: 16px;
     }
 }

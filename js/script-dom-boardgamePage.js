@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
             imageBoardgame2
         } = boardgame;
 
-        document.title=`${name}`;
+        document.title = `${name}`;
 
         const cardBoardgameIntro = document.getElementById('boardgame-intro');
 
@@ -160,7 +160,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div>
                         <a href="boardgameListPage.html">
-                            <button class="btn-style" id="deleteBoardgame">
+                            <button class="btn-style btn" id="deleteBoardgame">
                             <i class="fa-solid fa-trash"></i> Eliminar juego</button>
                         </a>    
 
@@ -244,31 +244,58 @@ window.addEventListener('DOMContentLoaded', () => {
         deleteBtn.addEventListener('click', async (e) => {
             e.preventDefault();
 
-            const confirmAction = window.confirm(`¿Segur@ que deseas eliminar el juego de mesa ${name}? También se eliminarán las valoraciones que tenga.`);
-            if(!confirmAction) return;
+            const confirmAction = await Swal.fire({
+                title: '¡Estás a punto de eliminar el juego!',
+                html: `¿<strong>Segur@ que deseas eliminar</strong> el juego de mesa <strong>${name}</strong>? También se eliminarán todas las valoraciones que tenga.`,
+                icon: 'warning',
+                iconColor: '#8a3938',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar',
+            });
 
-            await deleteBoardgame(idBoardgamePage);
+            if (confirmAction.isConfirmed) {
+                await deleteBoardgame(idBoardgamePage);
+            }
+            else {
+                return
+            }
         });
 
-        const deleteBoardgame = async () => {
+        const deleteBoardgame = async (idBoardgamePage) => {
             try {
-                const deleteResponse = await fetch(`http://localhost:8080/hobbies/boardgames/${idBoardgame}`, {
+                const deleteResponse = await fetch(`http://localhost:8080/hobbies/boardgames/${idBoardgamePage}`, {
                     method: "DELETE",
                     headers: {
-                        "Content-type": "application/json; charset=UFT-8",
-
+                        "Content-type": "application/json; charset=UFT-8"
                     }
                 });
 
                 if (deleteResponse.ok) {
-                    console.log('Juego de mesa eliminado');
-                    window.location.href = 'boardgameListPage.html';
+                    Swal.fire({
+                        title: '¡Juego eliminado!',
+                        text: 'El juego de mesa y sus valoraciones se ha eliminado correctamente',
+                        icon: 'success',
+                        iconColor: '#318a3a',
+                        confirmButtonText: 'Volver al catálogo',
+                        confirmButtonColor: '#2a1418'
+                    }).then(() => {
+                        window.location.href = 'boardgameListPage.html';
+                    });
                 }
                 else {
-                    console.error('Error: ', deleteResponse.status);
+                    Swal.fire({
+                        title: 'Error',
+                        text: `Error: ${deleteResponse.status}`,
+                        icon: 'error'
+                    });
                 }
             } catch (error) {
-                console.error('Error: ', error);
+                Swal.fire({
+                    title: 'Error de conexión',
+                    text: error.message,
+                    icon: 'error'
+                });
             }
         }
     }
