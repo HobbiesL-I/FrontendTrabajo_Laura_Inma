@@ -87,9 +87,9 @@ a {
 
 #btn-enviar:hover {
   transform: translateY(-2px);
-    box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
-    background-color: rgb(127, 212, 127);
-    color: var(--color-tertiary);
+  box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
+  background-color: rgb(127, 212, 127);
+  color: var(--color-tertiary);
 }
 
 /* VOLVER */
@@ -102,4 +102,68 @@ a {
 
 .valoracion-container a:hover {
   color: #8f3039;
+}
+
+@media (max-width: 768px) {
+  .header-area {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .headerMenu-left {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .headerMenu-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .valoracion-container,
+  .editar-container,
+  .nueva-container {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .botones {
+    flex-direction: column;
+  }
+
+  .btn-valorar,
+  #btn-guardar,
+  #btn-añadir,
+  .btn-volver {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .estrellas {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
