@@ -159,11 +159,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/*Colores para los iconos sacados de font Awesome*/
-.fa-star {
-    color: var(--color-tertiary)
-}
-
 @media(min-width: 768px) and (max-width: 1024px) {
 
     .header-area {

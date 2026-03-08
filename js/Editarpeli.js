@@ -43,10 +43,22 @@ const guardarCambios = async () => {
         });
 
         if (res.ok) {
-            alert("¡Película actualizada!");
-            window.location.href = `peli.html?id=${id}`;
+            Swal.fire({
+                title: '¡Datos actualizados!',
+                text: '¡Película actualizada!',
+                icon: 'success',
+                iconColor: '#318a3a',
+                confirmButtonText: 'Volver a la película',
+                confirmButtonColor: '#2a1418'
+            }).then(() => {
+                window.location.href = `peli.html?id=${id}`;
+            });
         } else {
-            alert("Error al actualizar la película");
+            Swal.fire({
+                title: 'Error',
+                text: `Error: ${res.status}`,
+                icon: 'error'
+            });
         }
     } catch (error) {
         console.error(error);

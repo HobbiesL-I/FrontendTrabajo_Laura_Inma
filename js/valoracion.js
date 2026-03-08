@@ -41,12 +41,18 @@ const enviarValoracion = async () => {
     const comment = document.getElementById("comment").value;
 
     if (!comment) {
-        alert("Por favor escribe un comentario");
+        Swal.fire({
+            title: 'Por favor escribe un comentario',
+            confirmButtonText: 'Volver al formulario'
+        });
         return;
     }
 
     if (puntuacion == 0) {
-        alert("Por favor selecciona una puntuación");
+        Swal.fire({
+            title: 'Por favor selecciona una puntuación',
+            confirmButtonText: 'Volver al formulario'
+        });
         return;
     }
 
@@ -65,10 +71,22 @@ const enviarValoracion = async () => {
         });
 
         if (res.ok) {
-            alert("¡Valoración enviada!");
-            window.location.href = `peli.html?id=${id}`;
+            Swal.fire({
+                title: '¡Valoración enviada!',
+                text: 'Se ha añadido la valoracion a la película',
+                icon: 'success',
+                iconColor: '#318a3a',
+                confirmButtonText: 'Volver al juego de mesa',
+                confirmButtonColor: '#2a1418'
+            }).then(() => {
+                window.location.href = `peli.html?id=${id}`;
+            });
         } else {
-            alert("Error al enviar la valoración");
+            Swal.fire({
+                title: 'Error',
+                text: `Error: ${res.status}`,
+                icon: 'error'
+            });
         }
     } catch (error) {
         console.error(error);

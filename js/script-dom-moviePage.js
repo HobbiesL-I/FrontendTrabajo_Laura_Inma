@@ -7,7 +7,6 @@ const getPeliculas = async () => {
         const generos = agruparPorGenero(peliculas);
         crearFilas(generos);
         iniciarCarrusel();
-        iniciarBuscador();
     } catch (error) {
         console.error(error);
     }
@@ -46,7 +45,6 @@ const crearFilas = (generos) => {
                 <img src="imagenes/${peli.image}" alt="${peli.title}">
                 <h3>${peli.title}</h3>
                 <button onclick="window.location.href='peli.html?id=${peli.id}'">Más información</button>
-                <button>+</button>
             `;
             carrusel.appendChild(article);
         });
@@ -71,7 +69,5 @@ const iniciarCarrusel = () => {
         });
     });
 }
-
-
 
 getPeliculas();

@@ -274,7 +274,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (deleteResponse.ok) {
                     Swal.fire({
                         title: '¡Juego eliminado!',
-                        text: 'El juego de mesa y sus valoraciones se ha eliminado correctamente',
+                        text: 'El juego de mesa y sus valoraciones se han eliminado correctamente',
                         icon: 'success',
                         iconColor: '#318a3a',
                         confirmButtonText: 'Volver al catálogo',

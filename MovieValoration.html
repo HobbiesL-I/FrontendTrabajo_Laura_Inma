@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valorar Película</title>
   <link rel="stylesheet" href="./css/valoracion.css">
   <link rel="stylesheet" href="./css/styleFonts.css">
+  <link rel="stylesheet" href="./css/styleCommonElements.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
-<header class="header-area">
-  <div class="header-image">
-    <img src="./imagenes/Logo.png" alt="Logo">
-  </div>
-  <ul class="headerMenu-left font-title">
-    <li onclick="window.location.href=''">Juegos de Mesa</li>
-    <li onclick="window.location.href=''">Películas</li>
-    <li onclick="window.location.href=''">Mis Reseñas</li>
-  </ul>
-  <div class="headerMenu-right font-title">
-    <input type="search" id="s" class="search-hobbie" placeholder="Busca por titulo">
-  </div>
-</header>
-
 <body>
+  <header class="header-area">
+
+    <div class="logo-area">
+      <img class="image-logo" src="./images/Logo.png" alto="Logo Página Web">
+      <div>
+        <h1>HobbiesL-I</h1>
+        <p>Tu comunidad de entretenimiento</p>
+      </div>
+    </div>
+
+    <ul class="headerMenu font-title">
+      <li onclick="window.location.href='MainPage.html'" class="header-options"><i class="fa-solid fa-paper-plane"></i>
+        Inicio
+      </li>
+      <li onclick="window.location.href='boardgameListPage.html'" class="header-options"><i
+          class="fa-solid fa-dice"></i> Juegos de Mesa</li>
+      <li onclick="window.location.href='MovieListPage.html'" class="header-options"><i
+          class="fa-solid fa-clapperboard"></i>
+        Películas</li>
+      <li onclick="window.location.href='newBoardgamePage.html'" class="header-options"><i
+          class="fa-solid fa-file-circle-plus"></i> Añadir Juego</li>
+      <li onclick="window.location.href='Añadirpeli.html'" class="header-options"><i
+          class="fa-solid fa-file-circle-plus"></i>
+        Añadir Película</li>
+    </ul>
+  </header>
 
   <div class="valoracion-container">
 
@@ -46,26 +65,32 @@
 
   </div>
 
+  <script src="./js/valoracion.js"></script>
+
   <footer>
     <div class="footer-content">
+
       <div class="footer-section">
         <h3>Titulo pagina web</h3>
         <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
       </div>
+
       <div class="footer-section">
         <h4>Explora</h4>
         <ul>
-          <li><a href="">Inicio</a></li>
+          <li><a href="mainPage.html">Inicio</a></li>
           <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
-          <li><a href="MoviePage.html">Peliculas</a></li>
+          <li><a href="MovieListPage.html">Peliculas</a></li>
         </ul>
       </div>
+
       <div class="footer-section">
         <h4>Contacto</h4>
         <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
         <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
         <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
       </div>
+
       <div class="footer-section">
         <h4>¡Encuentranos en nuestras redes sociales!</h4>
         <div class="social-links">
@@ -76,6 +101,7 @@
         </div>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
       <div class="footer-links">
@@ -86,6 +112,7 @@
     </div>
   </footer>
 
-  <script src="./js/valoracion.js"></script>
+
 </body>
+
 </html>

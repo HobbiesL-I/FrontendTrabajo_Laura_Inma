@@ -1,6 +1,6 @@
-const url = `http://localhost:8080/hobbies/movies`;
-const urlValoraciones = `http://localhost:8080/hobbies/valorations`;
 
+const url = `http://localhost:8080/hobbies/movies/`;
+const urlValoraciones = `http://localhost:8080/hobbies/valorations`;
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
@@ -39,7 +39,61 @@ const mostrarPelicula = (pelicula) => {
     document.getElementById("director2").textContent = pelicula.director;
     document.getElementById("duration2").textContent = pelicula.duration + " min";
     document.getElementById("btn-valorar-link").href = `MovieValoration.html?id=${pelicula.id}`;
-document.getElementById("btn-editar-link").href = `editarPeli.html?id=${pelicula.id}`;
+    document.getElementById("btn-editar-link").href = `editarPeli.html?id=${pelicula.id}`;
+
+    const btnDelete = document.getElementById('btn-eliminar');
+    btnDelete.innerHTML = `<i class="fa-solid fa-trash icon"></i> Eliminar`
+
+    btnDelete.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const confirmAction = await Swal.fire({
+            title: '¡Estás a punto de eliminar la película!',
+            html: `¿<strong>Segur@ que deseas eliminar</strong> la película <strong>${pelicula.title}</strong>? También se eliminarán todas las valoraciones que tenga.`,
+            icon: 'warning',
+            iconColor: '#8a3938',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        });
+
+        if (confirmAction.isConfirmed) {
+            await eliminarPelicula(id);
+        }
+        else {
+            return
+        }
+    });
+}
+
+const eliminarPelicula = async () => {
+    try {
+        const res = await fetch(`http://localhost:8080/hobbies/movies/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if (res.ok) {
+            Swal.fire({
+                title: '¡Película eliminada!',
+                text: 'La película y sus valoraciones se han eliminado correctamente',
+                icon: 'success',
+                iconColor: '#318a3a',
+                confirmButtonText: 'Volver al catálogo',
+                confirmButtonColor: '#2a1418'
+            }).then(() => {
+                window.location.href = 'MovieListPage.html';
+            });
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: `Error: ${confirmar.status}`,
+                icon: 'error'
+            });
+        }
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 const mostrarRecomendadas = (peliculas, pelicula) => {
@@ -103,30 +157,6 @@ const mostrarValoraciones = (valoraciones) => {
         `).join("");
     }
 }
-
-const eliminarPelicula = async () => {
-    const confirmar = confirm("¿Seguro que quieres eliminar esta película?");
-    
-    if (!confirmar) return;
-
-    try {
-        const res = await fetch(`${urlMovies}/${id}`, {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" }
-        });
-
-        if (res.ok) {
-            alert("¡Película eliminada!");
-            window.location.href = "MoviePage.html";
-        } else {
-            alert("Error al eliminar la película");
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-document.getElementById("btn-eliminar").addEventListener("click", eliminarPelicula);
 
 getPelicula();
 getValoraciones();
