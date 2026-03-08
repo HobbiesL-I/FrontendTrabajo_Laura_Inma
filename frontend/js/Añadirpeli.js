@@ -14,6 +14,27 @@ const añadirPelicula = async () => {
         alert("Por favor rellena todos los campos");
         return;
     }
+    const cargarGeneros = async () => {
+    try {
+        const result = await fetch(urlMovies);
+        const peliculas = await result.json();
+
+        // Obtener géneros únicos
+        const generos = [...new Set(peliculas.map(p => p.genre))];
+
+        const select = document.getElementById("genre");
+        generos.forEach(genero => {
+            const option = document.createElement("option");
+            option.value = genero;
+            option.textContent = genero;
+            select.appendChild(option);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+cargarGeneros();
 
     const pelicula = {
         title: title,
