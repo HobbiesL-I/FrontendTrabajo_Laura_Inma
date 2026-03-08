@@ -51,7 +51,7 @@ const mostrarRecomendadas = (peliculas, pelicula) => {
 
     if (recomendadas.length > 0) {
         contenedor.innerHTML = recomendadas.map(p => `
-            <div class="peli-recomendada" onclick="window.location.href='detalle.html?id=${p.id}'">
+            <div class="peli-recomendada" onclick="window.location.href='peli.html?id=${p.id}'">
                 <img src="./imagenes/${p.image}" alt="${p.title}">
                 <div class="peli-rec-info">
                     <strong>${p.title}</strong>
