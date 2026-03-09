@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Película</title>
+    <link rel="stylesheet" href="./css/styleFonts.css">
+    <link rel="stylesheet" href="./css/Añadirpeli.css">
+    <link rel="stylesheet" href="./css/styleCommonElements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</head>
+
+<body>
+
+    <header class="header-area">
+
+        <div class="logo-area">
+            <img class="image-logo" src="./images/Logo.png" alto="Logo Página Web">
+            <div>
+                <h1>HobbiesL-I</h1>
+                <p>Tu comunidad de entretenimiento</p>
+            </div>
+        </div>
+
+        <ul class="headerMenu font-title">
+            <li onclick="window.location.href='MainPage.html'" class="header-options"><i
+                    class="fa-solid fa-paper-plane"></i> Inicio
+            </li>
+            <li onclick="window.location.href='boardgameListPage.html'" class="header-options"><i
+                    class="fa-solid fa-dice"></i> Juegos de Mesa</li>
+            <li onclick="window.location.href='MovieListPage.html'" class="header-options"><i
+                    class="fa-solid fa-clapperboard"></i>
+                Películas</li>
+            <li onclick="window.location.href='newBoardgamePage.html'" class="header-options"><i
+                    class="fa-solid fa-file-circle-plus"></i> Añadir Juego</li>
+            <li onclick="window.location.href='Añadirpeli.html'" class="header-options"><i
+                    class="fa-solid fa-file-circle-plus"></i>
+                Añadir Película</li>
+        </ul>
+    </header>
+
+    <div class="nueva-container">
+        <h1><i class="fa-solid fa-film"></i> Añadir nueva película</h1>
+
+        <div class="form-group">
+            <label for="title">Título</label>
+            <input type="text" id="title" placeholder="Título de la película">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <textarea id="description" placeholder="Descripción de la película"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Género</label>
+            <input type="text" id="genre" placeholder="Género de la película">
+        </div>
+        <div class="form-group">
+            <label for="director">Director</label>
+            <input type="text" id="director" placeholder="Nombre del director">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="year">Año</label>
+                <input type="number" id="year" placeholder="Ej: 2024">
+            </div>
+            <div class="form-group">
+                <label for="duration">Duración (min)</label>
+                <input type="number" id="duration" placeholder="Ej: 120">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="actors">Actores</label>
+            <input type="text" id="actors" placeholder="Ej: Actor1, Actor2, Actor3">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Imagen (nombre del archivo)</label>
+            <input type="text" id="image" placeholder="Ej: iron-man.jpg">
+        </div>
+
+        <div class="botones">
+            <button id="btn-añadir"><i class="fa-solid fa-plus"></i> Añadir película</button>
+            <button class="btn-volver" onclick="window.location.href='MovieListPage.html'">
+                <i class="fa-solid fa-arrow-left"></i> Volver
+            </button>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="./js/Añadirpeli.js"></script>
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>Titulo pagina web</h3>
+                <p>Tu espacio para descubrir juegos de mesa, películas. ¡Valora y ve lo que dicen otras personas!</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="mainPage.html">Inicio</a></li>
+                    <li><a href="boardgameListPage.html">Juegos de mesa</a></li>
+                    <li><a href="MovieListPage.html">Peliculas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fa-regular fa-envelope"></i> hobbies@example.com</p>
+                <p><i class="fa-solid fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fa-solid fa-location-dot"></i> Zaragoza, España</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>¡Encuentranos en nuestras redes sociales!</h4>
+                <div class="social-links">
+                    <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-discord fa-2x"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Copyright San Valero.com Todos los derechos reservados</p>
+            <div class="footer-links">
+                <a href="">Política de privacidad</a>
+                <a href="">Términos de uso</a>
+                <a href="">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

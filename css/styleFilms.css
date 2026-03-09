@@ -1,0 +1,396 @@
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
+/* ================= PRESENTACIÓN ================= */
+
+.presentacion {
+  height: 80vh;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-banner {
+  background-color: var(--color-main);
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-tertiary);
+  margin-top: 2%;
+}
+
+.hero-banner h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* ================= MAIN ================= */
+
+.peliculas {
+  max-width: 1400px;
+  margin: auto;
+  padding: 40px 30px;
+}
+
+/* FILA / CATEGORÍA */
+.fila {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.fila h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #a85a54;
+  border-left: 4px solid #e8988a;
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* CARRUSEL */
+.pelis {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 40px 20px;
+}
+
+.pelis::-webkit-scrollbar {
+  height: 5px;
+}
+
+.pelis::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pelis::-webkit-scrollbar-thumb {
+  background-color: #e8988a;
+  border-radius: 10px;
+}
+
+/* CARD PELÍCULA */
+.pelicula {
+  min-width: 200px;
+  background-color: var(--color-main);
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pelicula:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+.pelicula img {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 0;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.pelicula:hover img {
+  transform: scale(1.05);
+}
+
+.pelicula h3 {
+  font-size: 15px;
+  margin: 10px 8px 8px;
+  color: #2c2c2c;
+}
+
+/* BOTONES */
+.pelicula button {
+  background-color: #b0444e;
+  color: #ffead8;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 4px 4px 12px;
+  font-size: 0.82rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pelicula button:hover {
+  background-color: #8f3039;
+  transform: scale(1.05);
+}
+
+/* FLECHAS */
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #b0444e;
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.flecha:hover {
+  background-color: #8f3039;
+}
+
+.izquierda {
+  left: -25px;
+}
+
+.derecha {
+  right: -25px;
+}
+
+/* ================= PÁGINA DE DETALLES ================= */
+
+.detalle-container {
+  display: flex;
+  gap: 50px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-lado img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.info-lado {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+}
+
+.info-lado h1 {
+  font-size: 2.2rem;
+  color: #a85a54;
+  margin-bottom: 6px;
+}
+
+.info-lado p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+.info-lado strong {
+  color: #b0444e;
+}
+
+.info-lado a {
+  margin-top: 10px;
+  color: #b0444e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.info-lado a:hover {
+  color: #8f3039;
+}
+
+#btn-valorar {
+  background-color: #b0444e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 6px;
+  width: fit-content;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#btn-valorar:hover {
+  background-color: #8f3039;
+  transform: scale(1.04);
+}
+
+.container-newsletter {
+  grid-area: newsletter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 3%;
+  background-color: var(--color-main);
+}
+
+.subscription {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1%;
+}
+
+.field-small {
+  height: 1px;
+  width: 200px;
+  padding: 20px;
+  font-size: 14px;
+  background-color: var(--color-firstSecondary);
+  border-radius: 10px;
+  border: none;
+}
+
+.field-small::placeholder {
+  font-style: italic;
+  color: var(--color-tertiary);
+}
+
+.btn-submit {
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  padding: 2%;
+  background-color: var(--color-tertiary);
+  color: var(--color-main);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15 ease;
+}
+
+.btn-submit:hover {
+  transform: scale(1.05);
+  background-color: var(--color-firstSecondary);
+  color: var(--color-tertiary);
+}
+
+@media (max-width: 768px) {
+
+  .presentacion {
+    height: 70vh;
+    min-height: 400px;
+  }
+
+  .hero-banner {
+    padding: 30px 15px;
+    margin-top: 2%;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.8rem;
+  }
+
+  .peliculas {
+    padding: 30px 20px;
+  }
+
+  .pelis {
+    gap: 12px;
+    padding: 10px 25px 20px;
+    max-width: calc(160px * 4 + 12px * 3);
+  }
+
+  .pelicula {
+    min-width: 160px;
+    flex-shrink: 0;
+  }
+
+  .pelicula img {
+    height: 220px;
+  }
+
+  .flecha {
+    font-size: 24px;
+    padding: 8px 12px;
+  }
+
+  .izquierda {
+    left: -15px;
+  }
+
+  .derecha {
+    right: -15px;
+  }
+
+  .detalle-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+
+  .imagen-lado img {
+    width: 100%;
+    max-width: 280px;
+    height: 400px;
+  }
+
+  .info-lado h1 {
+    font-size: 1.8rem;
+  }
+
+  .subscription {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .field-small {
+    width: 100%;
+    max-width: 300px;
+    height: 20px;
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .btn-submit {
+    width: 20%;
+    height: 28px;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .container-newsletter {
+    gap: 10px;
+    text-align: center;
+    padding: 1%;
+  }
+
+}

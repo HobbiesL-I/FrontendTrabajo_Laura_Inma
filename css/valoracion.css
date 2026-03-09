@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* CONTENEDOR VALORACIÓN */
+.valoracion-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: var(--color-main);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.valoracion-container h1 {
+  font-size: 1.6rem;
+  color: var(--purple);
+}
+
+.valoracion-container h1 span {
+  color: var(--salmon-dark);
+}
+
+/* ESTRELLAS */
+.estrellas {
+  display: flex;
+  gap: 10px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.estrella {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.estrella.activa {
+  color: gold;
+}
+
+/* INPUTS */
+.valoracion-container input,
+.valoracion-container textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  font-family: "Fredoka", sans-serif;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.valoracion-container input:focus,
+.valoracion-container textarea:focus {
+  border-color: var(--salmon);
+}
+
+.valoracion-container textarea {
+  height: 130px;
+  resize: none;
+}
+
+.botones{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: end;
+}
+
+/* BOTÓN ENVIAR */
+#btn-enviar {
+  background-color: var(--color-tertiary);
+  color: var(--color-main);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#btn-enviar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 2px 2px rgba(58, 39, 39, 0.2);
+  background-color: rgb(127, 212, 127);
+  color: var(--color-tertiary);
+}
+
+/* VOLVER */
+.valoracion-container a {
+  color: var(--salmon-dark);
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+.valoracion-container a:hover {
+  color: #8f3039;
+}
+
+@media (max-width: 768px) {
+  .valoracion-container {
+    margin: 3% auto;
+    width: 90%;
+    justify-content: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .botones{
+    flex-direction: row;
+  }
+
+  #btn-enviar{
+    width: 40%;
+  }
+
+  .estrellas {
+    font-size: 2rem;
+  }
+}
