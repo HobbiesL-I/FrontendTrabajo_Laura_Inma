@@ -241,10 +241,10 @@
     }
 
     .buttons {
-    padding: 2%;
-    border-radius: 5px;
-    gap: 6px;
-}
+        padding: 2%;
+        border-radius: 5px;
+        gap: 6px;
+    }
 
     .btnInformation,
     .btnValoration,

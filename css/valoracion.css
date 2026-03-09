@@ -70,6 +70,14 @@ a {
   resize: none;
 }
 
+.botones{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: end;
+}
+
 /* BOTÓN ENVIAR */
 #btn-enviar {
   background-color: var(--color-tertiary);
@@ -105,65 +113,25 @@ a {
 }
 
 @media (max-width: 768px) {
-  .header-area {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .headerMenu-left {
-    width: 100%;
-    flex-wrap: wrap;
+  .valoracion-container {
+    margin: 3% auto;
+    width: 90%;
     justify-content: center;
-    gap: 10px;
-  }
-
-  .headerMenu-right {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .valoracion-container,
-  .editar-container,
-  .nueva-container {
-    margin: 20px 15px;
-    padding: 20px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
   }
 
-  .botones {
-    flex-direction: column;
+  .botones{
+    flex-direction: row;
   }
 
-  .btn-valorar,
-  #btn-guardar,
-  #btn-añadir,
-  .btn-volver {
-    width: 100%;
-    justify-content: center;
+  #btn-enviar{
+    width: 40%;
   }
 
   .estrellas {
     font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
   }
 }
