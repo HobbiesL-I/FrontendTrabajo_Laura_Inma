@@ -1,7 +1,7 @@
 # 🎬🎲 HobbiesL-I - Frontend
 
 **Hobbies Hub** es una **aplicación web** que une **cine** y **juegos de mesa** con **11 páginas responsive** construidas en **HTML5/CSS/JS vanilla**, conectadas a **Node.js API**.
-**Enlace de la API** ([📥 Enlace] (https://github.com/HobbiesL-I/BackendTrabajo_Laura_Inma))
+**Enlace de la API** ([📥 Enlace] (https://github.com/HobbiesL-I/API_HobbiesL-I))
 
 ## 📱 **Páginas Implementadas**
 
