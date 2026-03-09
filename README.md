@@ -1,30 +1,31 @@
-# Pasos para conectar el frontend de la rama Feature/boardgamePage a la API
+# 🎬🎲 HobbiesL-I - Frontend
 
-** Pasos a seguir ** para conectar el contenido de la rama a la correspondiente API para poder ver el contenido que se va a mostrar en la página web
+**Hobbies Hub** es una **aplicación web** que une **cine** y **juegos de mesa** con **11 páginas responsive** construidas en **HTML5/CSS/JS vanilla**, conectadas a **Node.js API**.
+**Enlace de la API** ([📥 Enlace] (https://github.com/HobbiesL-I/BackendTrabajo_Laura_Inma))
 
-## Enlance a la rama del repositorio del backend
+## 📱 **Páginas Implementadas**
 
-Hacer una copia en local de la siguiente rama: https://github.com/HobbiesL-I/BackendTrabajo_Laura_Inma/tree/Feature/BackendBoardgame
+| Página | Archivo HTML | JavaScript | CSS |
+|--------|--------------|------------|-----|
+| **Inicio** | `mainPage.html` | `script-dom-mainPage.js` | `styleMainPage.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Lista Películas** | `MovieListPage.html` | `script-dom-moviePage.js` | `styleFilms.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Lista Juegos** | `boardgameListPage.html` | `script-dom-boardgamesListPage.js` | `styleBoardgameListPage.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Detalle Película** | `peli.html` | `peli.js` | `detalle.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Valorar Película** | `MovieValoration.html` | `valoracion.css` | `valoracion.js` / `styleCommonElements.css` / `styleFonts.css` |
+| **Añadir Película** | `Añadirpeli.html` | `Añadirpeli.js` | `Añadirpeli.css` / `styleCommonElements.css` / `styleFonts.css`  |
+| **Editar Película** | `Editarpeli.html` | `Editarpeli.js` | `Editarpeli.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Detalle Juego** | `boardgamePage.html` | `script-dom-boardgamePage.js` | `boardgamePage.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Valorar Juego** | `valorateBoardgamePage.html` | `script-dom-valorateBoardgamePage.js.js` | `valorateBoardgamePage.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Nuevo Juego** | `newBoardgamePage.html` | `script-dom-newBoardgamePage.js` | `newBoardgamePage.css` / `styleCommonElements.css` / `styleFonts.css` |
+| **Editar Juego** | `boardgameEditPage.html` | `script-dom-boardgameEditPage.js` | `boardgameEditPage.css` / `styleCommonElements.css` / `styleFonts.css` |
 
-## Aplicaciones necesarias
--Visual Studio Code
--Docker Desktop
+---
 
-## Iniciar API
--**Iniciar el Docker**
-    -Una vez hecha la copia en local abrimos la carpeta descargada dentro de Visual Studio Code y abrimos una terminal nueva.
-    -Si la terminal powershell no funciona escribe cmd para cambiar a una terminal CMD
-    -Dentro de la terminal vamos a lanzar el docker mediante la instrucción: docker-compose -f docker-compose.dev.yaml up -d
-    -Una vez creado el docker, a veces ocurre que a los pocos segundos esta se para. Si ese es el caso, para volver a encenderla se puede hacer de dos formas:
-        -Darle al boton play del contenedor dentro de la aplicación de Docker Desktop
-        -Usar la siguiente instruccion en la terminal: docker-compose -f docker-compose.dev.yaml start
+## 📱 **Páginas Implementadas**
 
--**Instalar e Iniciar la API**
-    -En la terminal primero escribimos npm install para instalar todas las bibliotecas usadas en el proyecto.
-    -Una vez instalado todo escribimos npm start. Si la instrucción ha funcionado correctamente en la consola deberá salir el mensaje **Iniciando el backend en el puerto 8080**
-
-Una vez iniciados el docker y la API, al abrir **boardgameListPage y boardgamePage** aparecerá la página rellenada con la información del juego de mesa en su correspondiente apartado.
-
--**Comprobación de las funciones de la API en Postman**
-    -Si se quiere comprobar que función hace cada API se puede hacer a través de Postman.
-    - Dentro del backend hay un archivo llamado **hobbies_boardgames.postman_collection.json**. Dentro están todas las funciones actuales de get, post y put de las tablas de valoraciones y juegos de mesa. Para usarlo se debe importar la colección dentro de la aplicación Postman.    
+| Aspecto | Detalles |
+|---------|----------|
+| Paleta | #ffead8, #e8988a, #2a1418, #623a41, #b0444e |
+| Tipografías | Fredoka, Rozha One, Montserrat |
+| Librerias | FontAwesome 6.5.2, SweetAlert2 |
+| Responsive | 	Mobile ≤768px,  Tablet 769-1024px, Desktop ≥1025px |
