@@ -434,3 +434,26 @@ h1 {
     text-align: center;
   }
 }
+.trailer-section {
+  margin-top: 16px;
+}
+
+.btn-trailer {
+  background-color: #c27070;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-family: "Fredoka", sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-trailer:hover {
+  background-color: #a55555e3;
+  transform: scale(1.02);
+}

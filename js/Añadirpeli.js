@@ -9,6 +9,9 @@ const añadirPelicula = async () => {
     const duration = document.getElementById("duration").value;
     const actors = document.getElementById("actors").value;
     const image = document.getElementById("image").value;
+    const trailer = document.getElementById("trailer").value;
+
+    
 
     if (!title || !description || !genre || !director || !year || !duration || !actors || !image) {
         Swal.fire({
@@ -47,7 +50,8 @@ const añadirPelicula = async () => {
         year: parseInt(year),
         duration: parseInt(duration),
         actors: actors,
-        image: image
+        image: image,
+        trailer: trailer
     };
 
     try {

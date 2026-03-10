@@ -17,6 +17,13 @@ const cargarPelicula = async () => {
         document.getElementById("actors").value = pelicula.actors;
         document.getElementById("image").value = pelicula.image;
         document.getElementById("volver").href = `peli.html?id=${id}`;
+        
+
+        if (pelicula.trailer) {
+            document.getElementById("trailer").value = pelicula.trailer;
+        }   else {  
+            document.getElementById("trailer").value = "";
+        }
 
     } catch (error) {
         console.error(error);
@@ -32,7 +39,8 @@ const guardarCambios = async () => {
         year: parseInt(document.getElementById("year").value),
         duration: parseInt(document.getElementById("duration").value),
         actors: document.getElementById("actors").value,
-        image: document.getElementById("image").value
+        image: document.getElementById("image").value,
+        trailer: document.getElementById("trailer").value
     };
 
     try {

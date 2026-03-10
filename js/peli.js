@@ -40,6 +40,11 @@ const mostrarPelicula = (pelicula) => {
     document.getElementById("duration2").textContent = pelicula.duration + " min";
     document.getElementById("btn-valorar-link").href = `MovieValoration.html?id=${pelicula.id}`;
     document.getElementById("btn-editar-link").href = `editarPeli.html?id=${pelicula.id}`;
+    if (pelicula.trailer) {
+        document.getElementById("trailer-Link").href = pelicula.trailer;
+    }else {
+        document.getElementById("trailer-Link").style.display = "none";
+    }
 
     const btnDelete = document.getElementById('btn-eliminar');
     btnDelete.innerHTML = `<i class="fa-solid fa-trash icon"></i> Eliminar`
